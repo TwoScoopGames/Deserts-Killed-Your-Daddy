@@ -48,7 +48,7 @@
 			"msPerFrame": 20
 		},
 		"pot": {
-			"strip": "images/pot.png",
+			"strip": "images/pot-f11.png",
 			"frames": 11,
 			"msPerFrame": 25
 		}
