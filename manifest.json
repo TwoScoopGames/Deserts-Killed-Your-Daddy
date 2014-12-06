@@ -2,6 +2,8 @@
 	"images": {
 	},
 	"sounds": {
+		"pot-breaking": "audio/pot-breaking.wav",
+		"sword": "audio/sword.wav"
 	},
 	"fonts": {
 	},

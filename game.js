@@ -71,6 +71,7 @@ function moveSword(player, sword, timer) {
 		timer.reset();
 		timer.start();
 		sword.sprite.reset();
+		game.sounds.play("sword");
 	}
 	sword.visible = timer.running;
 	if (player.swordDirection === "up") {
@@ -129,6 +130,7 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 		sword.left.move(elapsedMillis);
 		sword.right.move(elapsedMillis);
 		if (this.interrupted && this.time >= this.expireMillis / 2) {
+			game.sounds.play("sword");
 			this.reset();
 			this.interrupted = false;
 			sword.up.reset();
@@ -138,6 +140,7 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 		}
 	}, 250, function() {
 		this.interrupted = false;
+		this.reset();
 		sword.up.reset();
 		sword.down.reset();
 		sword.left.reset();
@@ -165,10 +168,12 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 	movePlayer(this.player);
 	moveSword(this.player, this.sword, this.timers.sword);
 	this.player.move(elapsedMillis);
+	this.player.solveCollisions([this.pot], []);
 	this.pot.move(elapsedMillis);
-	if (this.sword.visible && this.sword.collides(this.pot) && !this.timers.pot.running) {
+	if (this.timers.sword.time > 120 && this.sword.collides(this.pot) && !this.timers.pot.running) {
 		this.timers.pot.reset();
 		this.timers.pot.start();
+		game.sounds.play("pot-breaking");
 	}
 }, function(context) {
 	// draw
