@@ -3,16 +3,7 @@
 var Splat = require("splatjs");
 var canvas = document.getElementById("canvas");
 
-var manifest = {
-	"images": {
-	},
-	"sounds": {
-	},
-	"fonts": {
-	},
-	"animations": {
-	}
-};
+var manifest = require("./manifest.json");
 
 var game = new Splat.Game(canvas, manifest);
 
