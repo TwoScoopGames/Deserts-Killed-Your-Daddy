@@ -110,10 +110,7 @@ function makePot(x, y) {
 		this.explodeTime += elapsedMillis;
 		Splat.AnimatedEntity.prototype.move.call(this, elapsedMillis);
 		if (this.explodeTime > this.sprite.frames.length * this.sprite.frames[0].time) {
-			//done, time to be deleted.
-			this.sprite.reset();
-			this.exploding = false;
-			this.explodeTime = 0;
+			this.dead = true;
 		}
 	};
 	return pot;
@@ -127,6 +124,7 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 	this.player.walkDown = playerWalkDown;
 	this.player.walkLeft = game.animations.get("player-walk-left");
 	this.player.walkRight = game.animations.get("player-walk-right");
+	this.player.swordDirection = "down";
 
 	var swordDown = game.animations.get("player-sword-down");
 	this.sword = new Splat.AnimatedEntity(0, 0, swordDown.width, swordDown.height, swordDown, 0, 0);
@@ -169,7 +167,11 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 	});
 	this.timers.sword.interrupted = false;
 
-	this.pot = makePot(600, 300);
+	this.solid = [];
+	this.solid.push(makePot(600, 300));
+	this.solid.push(makePot(100, 100));
+	this.solid.push(makePot(100, 400));
+	this.ghosts = [];
 }, function(elapsedMillis) {
 	// simulation
 
@@ -179,13 +181,23 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 	movePlayer(this.player);
 	moveSword(this.player, this.sword, this.timers.sword);
 	this.player.move(elapsedMillis);
-	if (!this.pot.exploding) {
-		this.player.solveCollisions([this.pot], []);
+	this.player.solveCollisions(this.solid, []);
+
+	for (var i = 0; i < this.solid.length; i++) {
+		this.solid[i].move(elapsedMillis);
+		if (this.timers.sword.time > 120 && this.sword.collides(this.solid[i]) && !this.solid[i].exploding) {
+			this.solid[i].exploding = true;
+			this.ghosts.push(this.solid.splice(i, 1)[0]);
+			i--;
+			game.sounds.play("pot-breaking");
+		}
 	}
-	this.pot.move(elapsedMillis);
-	if (this.timers.sword.time > 120 && this.sword.collides(this.pot) && !this.pot.exploding) {
-		this.pot.exploding = true;
-		game.sounds.play("pot-breaking");
+	for (i = 0; i < this.ghosts.length; i++) {
+		this.ghosts[i].move(elapsedMillis);
+		if (this.ghosts[i].dead) {
+			this.ghosts.splice(i, 1);
+			i--;
+		}
 	}
 }, function(context) {
 	// draw
@@ -198,7 +210,13 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 	if (this.sword.visible) {
 		outline(context, this.sword, "green");
 	}
-	this.pot.draw(context);
+
+	for (var i = 0; i < this.solid.length; i++) {
+		this.solid[i].draw(context);
+	}
+	for (i = 0; i < this.ghosts.length; i++) {
+		this.ghosts[i].draw(context);
+	}
 	outline(context, this.pot, "yellow");
 }));
 
