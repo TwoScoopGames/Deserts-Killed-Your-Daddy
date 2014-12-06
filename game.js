@@ -58,8 +58,12 @@ function movePlayer(player) {
 	player.vx = Math.min(maxV, Math.max(-maxV, player.vx));
 }
 
-function moveSword(player, sword) {
-	sword.visible = game.keyboard.isPressed("j");
+function moveSword(player, sword, timer) {
+	if (game.keyboard.consumePressed("j")) {
+		timer.reset();
+		timer.start();
+	}
+	sword.visible = timer.running;
 	if (player.swordDirection === "up") {
 		sword.x = player.x;
 		sword.y = player.y - sword.height;
@@ -94,11 +98,23 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 		context.fillStyle = "white";
 		context.fillRect(this.x, this.y, this.width, this.height);
 	};
+	this.timers.sword = new Splat.Timer(function() {
+		if (this.time < this.expireMillis / 2 && game.keyboard.consumePressed("j")) {
+			this.interrupted = true;
+		}
+		if (this.interrupted && this.time >= this.expireMillis / 2) {
+			this.reset();
+			this.interrupted = false;
+		}
+	}, 250, function() {
+		this.interrupted = false;
+	});
+	this.timers.sword.interrupted = false;
 }, function(elapsedMillis) {
 	// simulation
 
 	movePlayer(this.player);
-	moveSword(this.player, this.sword);
+	moveSword(this.player, this.sword, this.timers.sword);
 	this.player.move(elapsedMillis);
 }, function(context) {
 	// draw
