@@ -26,6 +26,22 @@
 			"frames": 14,
 			"msPerFrame": 20
 		},
+		"player-sword-up": {
+			"strip": "images/player-sword-right-f15.png",
+			"frames": 15,
+			"msPerFrame": 20
+		},
+		"player-sword-down": {
+			"strip": "images/player-sword-right-f15.png",
+			"frames": 15,
+			"msPerFrame": 20
+		},
+		"player-sword-left": {
+			"strip": "images/player-sword-right-f15.png",
+			"frames": 15,
+			"flip": "horizontal",
+			"msPerFrame": 20
+		},
 		"player-sword-right": {
 			"strip": "images/player-sword-right-f15.png",
 			"frames": 15,

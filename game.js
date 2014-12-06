@@ -142,12 +142,23 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 		sword.right.reset();
 	});
 	this.timers.sword.interrupted = false;
+
+	var potTimer = this.timers.pot = new Splat.Timer(undefined, 500, undefined);
+	this.pot = new Splat.Entity(600, 300, 50, 50);
+	this.pot.draw = function(context) {
+		context.fillStyle = potTimer.running ? "yellow" : "brown";
+		context.fillRect(this.x, this.y, this.width, this.height);
+	};
 }, function(elapsedMillis) {
 	// simulation
 
 	movePlayer(this.player);
 	moveSword(this.player, this.sword, this.timers.sword);
 	this.player.move(elapsedMillis);
+	this.pot.move(elapsedMillis);
+	if (this.sword.visible && this.sword.collides(this.pot) && !this.timers.pot.running) {
+		this.timers.pot.start();
+	}
 }, function(context) {
 	// draw
 	context.fillStyle = "#000000";
@@ -159,6 +170,7 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 	if (this.sword.visible) {
 		outline(context, this.sword, "green");
 	}
+	this.pot.draw(context);
 }));
 
 var debug = true;
