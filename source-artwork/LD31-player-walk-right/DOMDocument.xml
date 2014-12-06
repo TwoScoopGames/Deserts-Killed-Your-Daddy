@@ -20,7 +20,8 @@
           <Include href="Symbol 3.xml" loadImmediate="false" itemID="54829dfb-00000283" lastModified="1417846360"/>
           <Include href="Symbol 4.xml" loadImmediate="false" itemID="54832ea7-00000414" lastModified="1417883303"/>
           <Include href="Symbol 5.xml" loadImmediate="false" itemID="54832fd5-00000419" lastModified="1417884328"/>
-          <Include href="Symbol 6.xml" loadImmediate="false" itemID="5483388f-00000476" lastModified="1417886262"/>
+          <Include href="Symbol 6.xml" loadImmediate="false" itemID="5483388f-00000476" lastModified="1417887557"/>
+          <Include href="Symbol 7.xml" loadImmediate="false" itemID="54833f4f-00000489" lastModified="1417887567"/>
           <Include href="Tween 1.xml" itemIcon="1" loadImmediate="false" itemID="54829f27-0000028a" lastModified="1417846567"/>
           <Include href="Tween 2.xml" itemIcon="1" loadImmediate="false" itemID="54829f27-0000028c" lastModified="1417846567"/>
           <Include href="Tween 3.xml" itemIcon="1" loadImmediate="false" itemID="54829f27-0000028e" lastModified="1417846567"/>
@@ -66,7 +67,65 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Layer 10" color="#9933CC" current="true" isSelected="true">
+                    <DOMLayer name="Layer 11" color="#FF800A">
+                         <frames>
+                              <DOMFrame index="0" duration="6" keyMode="9728">
+                                   <elements/>
+                              </DOMFrame>
+                              <DOMFrame index="6" keyMode="9728">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="Symbol 7" centerPoint3DX="239.85" centerPoint3DY="181.1">
+                                             <matrix>
+                                                  <Matrix tx="115.85" ty="29.15"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="124" y="151.95"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                              <DOMFrame index="7" keyMode="9728">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="Symbol 7" centerPoint3DX="239.85" centerPoint3DY="181.1">
+                                             <matrix>
+                                                  <Matrix tx="115.85" ty="29.15"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="124" y="151.95"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                              <DOMFrame index="8" duration="9" keyMode="9728">
+                                   <elements/>
+                              </DOMFrame>
+                              <DOMFrame index="17" keyMode="9728">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="Symbol 7" centerPoint3DX="239.85" centerPoint3DY="181.1">
+                                             <matrix>
+                                                  <Matrix tx="115.85" ty="29.15"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="124" y="151.95"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                              <DOMFrame index="18" keyMode="9728">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="Symbol 7" centerPoint3DX="239.85" centerPoint3DY="181.1">
+                                             <matrix>
+                                                  <Matrix tx="115.85" ty="29.15"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="124" y="151.95"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="Layer 10" color="#9933CC">
                          <frames>
                               <DOMFrame index="0" duration="3" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
@@ -80,7 +139,7 @@
                                         </DOMSymbolInstance>
                                    </elements>
                               </DOMFrame>
-                              <DOMFrame index="3" duration="3" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                              <DOMFrame index="3" duration="2" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
                                         <DOMSymbolInstance libraryItemName="Symbol 6" centerPoint3DX="254.05" centerPoint3DY="182.95">
                                              <matrix>
@@ -92,7 +151,7 @@
                                         </DOMSymbolInstance>
                                    </elements>
                               </DOMFrame>
-                              <DOMFrame index="6" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                              <DOMFrame index="5" duration="2" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
                                         <DOMSymbolInstance libraryItemName="Symbol 6" centerPoint3DX="256.9" centerPoint3DY="182.95">
                                              <matrix>
@@ -104,10 +163,10 @@
                                         </DOMSymbolInstance>
                                    </elements>
                               </DOMFrame>
-                              <DOMFrame index="7" duration="11" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                              <DOMFrame index="7" duration="12" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements/>
                               </DOMFrame>
-                              <DOMFrame index="18" duration="3" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                              <DOMFrame index="19" duration="2" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
                                         <DOMSymbolInstance libraryItemName="Symbol 6" centerPoint3DX="261.3" centerPoint3DY="182.95">
                                              <matrix>
@@ -169,15 +228,15 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Symbol 4" color="#FF800A" autoNamed="false">
+                    <DOMLayer name="Symbol 4" color="#FF800A" current="true" isSelected="true" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="3" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements/>
                               </DOMFrame>
-                              <DOMFrame index="3" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                              <DOMFrame index="3" duration="5" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements/>
                               </DOMFrame>
-                              <DOMFrame index="7" duration="2" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                              <DOMFrame index="8" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
                                         <DOMSymbolInstance libraryItemName="Symbol 4" centerPoint3DX="252.85" centerPoint3DY="171.35">
                                              <matrix>
@@ -213,7 +272,7 @@
                                         </DOMSymbolInstance>
                                    </elements>
                               </DOMFrame>
-                              <DOMFrame index="15" duration="3" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                              <DOMFrame index="15" duration="2" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
                                         <DOMSymbolInstance libraryItemName="Symbol 4" centerPoint3DX="261.2" centerPoint3DY="176.9">
                                              <matrix>
@@ -225,7 +284,7 @@
                                         </DOMSymbolInstance>
                                    </elements>
                               </DOMFrame>
-                              <DOMFrame index="18" duration="3" tweenType="motion" motionTweenSnap="true" keyMode="22017">
+                              <DOMFrame index="17" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements/>
                               </DOMFrame>
                               <DOMFrame index="21" duration="3" tweenType="motion" motionTweenSnap="true" keyMode="22017">
@@ -1321,6 +1380,8 @@
                     <SolidSwatchItem color="#121010" saturation="15" brightness="16"/>
                     <SolidSwatchItem color="#161616" brightness="21"/>
                     <SolidSwatchItem color="#781109" hue="3" saturation="208" brightness="61"/>
+                    <SolidSwatchItem color="#7B1208" hue="3" saturation="209" brightness="62"/>
+                    <SolidSwatchItem color="#FFFDCD" hue="38" saturation="239" brightness="217"/>
                </swatches>
           </swatchList>
      </swatchLists>
