@@ -41,12 +41,12 @@
 			"msPerFrame": 20
 		},
 		"player-sword-up": {
-			"strip": "images/rolling-pin-right-f9.png",
+			"strip": "images/rolling-pin-up-f9.png",
 			"frames": 9,
 			"msPerFrame": 20
 		},
 		"player-sword-down": {
-			"strip": "images/rolling-pin-right-f9.png",
+			"strip": "images/rolling-pin-down-f9.png",
 			"frames": 9,
 			"msPerFrame": 20
 		},
