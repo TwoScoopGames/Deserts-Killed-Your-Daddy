@@ -149,7 +149,7 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 	var potTimer = this.timers.pot = new Splat.Timer(undefined, pot.frames.length * pot.frames[0].time, function() {
 		pot.reset();
 	});
-	this.pot = new Splat.AnimatedEntity(600, 300, pot.width, pot.height, pot, 0, 0);
+	this.pot = new Splat.AnimatedEntity(600, 300, 56, 56, pot, -28, -13);
 	this.pot.move = function(elapsedMillis) {
 		if (!potTimer.running) {
 			return;
