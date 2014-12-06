@@ -10,20 +10,22 @@ var game = new Splat.Game(canvas, manifest);
 function movePlayer(player) {
 	var accel = 0.03;
 	var maxV = 0.8;
-	var xPressed = false;
-	var yPressed = false;
+	var xPressed = game.keyboard.isPressed("a") || game.keyboard.isPressed("d");
+	var yPressed = game.keyboard.isPressed("w") || game.keyboard.isPressed("s");
 
 	if (game.keyboard.isPressed("w")) {
 		player.vy -= accel;
-		xPressed = true;
-		player.swordDirection = "up";
+		if (!xPressed) {
+			player.swordDirection = "up";
+		}
 	}
 	if (game.keyboard.isPressed("s")) {
 		player.vy += accel;
-		xPressed = true;
-		player.swordDirection = "down";
+		if (!xPressed) {
+			player.swordDirection = "down";
+		}
 	}
-	if (!xPressed) {
+	if (!yPressed) {
 		if (player.vy < 0) {
 			player.vy = Math.min(player.vy + accel, 0);
 		} else if (player.vy > 0) {
@@ -35,15 +37,17 @@ function movePlayer(player) {
 
 	if (game.keyboard.isPressed("a")) {
 		player.vx -= accel;
-		yPressed = true;
-		player.swordDirection = "left";
+		if (!yPressed) {
+			player.swordDirection = "left";
+		}
 	}
 	if (game.keyboard.isPressed("d")) {
 		player.vx += accel;
-		yPressed = true;
-		player.swordDirection = "right";
+		if (!yPressed) {
+			player.swordDirection = "right";
+		}
 	}
-	if (!yPressed) {
+	if (!xPressed) {
 		if (player.vx < 0) {
 			player.vx = Math.min(player.vx + accel, 0);
 		} else if (player.vx > 0) {
