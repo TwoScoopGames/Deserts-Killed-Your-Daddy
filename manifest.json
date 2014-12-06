@@ -46,6 +46,11 @@
 			"strip": "images/player-sword-right-f15.png",
 			"frames": 15,
 			"msPerFrame": 20
+		},
+		"pot": {
+			"strip": "images/pot.png",
+			"frames": 11,
+			"msPerFrame": 25
 		}
 	}
 }

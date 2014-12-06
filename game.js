@@ -95,6 +95,8 @@ function moveSword(player, sword, timer) {
 	}
 }
 
+var debug = false;
+
 game.scenes.add("title", new Splat.Scene(canvas, function() {
 	// initialization
 	var playerWalkDown = game.animations.get("player-walk-down");
@@ -143,20 +145,29 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 	});
 	this.timers.sword.interrupted = false;
 
-	var potTimer = this.timers.pot = new Splat.Timer(undefined, 500, undefined);
-	this.pot = new Splat.Entity(600, 300, 50, 50);
-	this.pot.draw = function(context) {
-		context.fillStyle = potTimer.running ? "yellow" : "brown";
-		context.fillRect(this.x, this.y, this.width, this.height);
+	var pot = game.animations.get("pot");
+	var potTimer = this.timers.pot = new Splat.Timer(undefined, pot.frames.length * pot.frames[0].time, function() {
+		pot.reset();
+	});
+	this.pot = new Splat.AnimatedEntity(600, 300, pot.width, pot.height, pot, 0, 0);
+	this.pot.move = function(elapsedMillis) {
+		if (!potTimer.running) {
+			return;
+		}
+		Splat.AnimatedEntity.prototype.move.call(this, elapsedMillis);
 	};
 }, function(elapsedMillis) {
 	// simulation
 
+	if (game.keyboard.consumePressed("f2")) {
+		debug = !debug;
+	}
 	movePlayer(this.player);
 	moveSword(this.player, this.sword, this.timers.sword);
 	this.player.move(elapsedMillis);
 	this.pot.move(elapsedMillis);
 	if (this.sword.visible && this.sword.collides(this.pot) && !this.timers.pot.running) {
+		this.timers.pot.reset();
 		this.timers.pot.start();
 	}
 }, function(context) {
@@ -171,9 +182,8 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 		outline(context, this.sword, "green");
 	}
 	this.pot.draw(context);
+	outline(context, this.pot, "yellow");
 }));
-
-var debug = true;
 
 function outline(context, entity, color) {
 	if (!debug) {
