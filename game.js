@@ -70,6 +70,7 @@ function moveSword(player, sword, timer) {
 	if (game.keyboard.consumePressed("j")) {
 		timer.reset();
 		timer.start();
+		sword.sprite.reset();
 	}
 	sword.visible = timer.running;
 	if (player.swordDirection === "up") {
@@ -99,14 +100,14 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 	this.player.walkLeft = game.animations.get("player-walk-left");
 	this.player.walkRight = game.animations.get("player-walk-right");
 
-	this.sword = new Splat.Entity(50, 50, 50, 50);
+	var swordRight = game.animations.get("player-sword-right");
+	this.sword = new Splat.AnimatedEntity(0, 0, swordRight.width, swordRight.height, swordRight, 0, 0);
 	this.sword.visible = false;
 	this.sword.draw = function(context) {
 		if (!this.visible) {
 			return;
 		}
-		context.fillStyle = "white";
-		context.fillRect(this.x, this.y, this.width, this.height);
+		Splat.AnimatedEntity.prototype.draw.call(this, context);
 	};
 	this.timers.sword = new Splat.Timer(function() {
 		if (this.time < this.expireMillis / 2 && game.keyboard.consumePressed("j")) {
@@ -126,6 +127,7 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 	movePlayer(this.player);
 	moveSword(this.player, this.sword, this.timers.sword);
 	this.player.move(elapsedMillis);
+	this.sword.move(elapsedMillis);
 }, function(context) {
 	// draw
 	context.fillStyle = "#000000";

@@ -25,6 +25,11 @@
 			"strip": "images/player-walk-right-f14.png",
 			"frames": 14,
 			"msPerFrame": 20
+		},
+		"player-sword-right": {
+			"strip": "images/player-sword-right-f15.png",
+			"frames": 15,
+			"msPerFrame": 20
 		}
 	}
 }
