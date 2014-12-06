@@ -19,6 +19,7 @@
 		"player-walk-left": {
 			"strip": "images/player-walk-left-f14.png",
 			"frames": 14,
+			"flip": "horizontal",
 			"msPerFrame": 20
 		},
 		"player-walk-right": {
