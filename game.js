@@ -76,18 +76,22 @@ function moveSword(player, sword, timer) {
 	if (player.swordDirection === "up") {
 		sword.x = player.x;
 		sword.y = player.y - sword.height;
+		sword.sprite = sword.up;
 	}
 	if (player.swordDirection === "down") {
 		sword.x = player.x;
 		sword.y = player.y + player.height;
+		sword.sprite = sword.down;
 	}
 	if (player.swordDirection === "left") {
 		sword.x = player.x - sword.width;
 		sword.y = player.y;
+		sword.sprite = sword.left;
 	}
 	if (player.swordDirection === "right") {
 		sword.x = player.x + player.width;
 		sword.y = player.y;
+		sword.sprite = sword.right;
 	}
 }
 
@@ -100,8 +104,12 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 	this.player.walkLeft = game.animations.get("player-walk-left");
 	this.player.walkRight = game.animations.get("player-walk-right");
 
-	var swordRight = game.animations.get("player-sword-right");
-	this.sword = new Splat.AnimatedEntity(0, 0, swordRight.width, swordRight.height, swordRight, 0, 0);
+	var swordDown = game.animations.get("player-sword-down");
+	this.sword = new Splat.AnimatedEntity(0, 0, swordDown.width, swordDown.height, swordDown, 0, 0);
+	this.sword.up = game.animations.get("player-sword-up");
+	this.sword.down = swordDown;
+	this.sword.left = game.animations.get("player-sword-left");
+	this.sword.right = game.animations.get("player-sword-right");
 	this.sword.visible = false;
 	this.sword.draw = function(context) {
 		if (!this.visible) {
@@ -109,16 +117,29 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 		}
 		Splat.AnimatedEntity.prototype.draw.call(this, context);
 	};
-	this.timers.sword = new Splat.Timer(function() {
+	var sword = this.sword;
+	this.timers.sword = new Splat.Timer(function(elapsedMillis) {
 		if (this.time < this.expireMillis / 2 && game.keyboard.consumePressed("j")) {
 			this.interrupted = true;
 		}
+		sword.up.move(elapsedMillis);
+		sword.down.move(elapsedMillis);
+		sword.left.move(elapsedMillis);
+		sword.right.move(elapsedMillis);
 		if (this.interrupted && this.time >= this.expireMillis / 2) {
 			this.reset();
 			this.interrupted = false;
+			sword.up.reset();
+			sword.down.reset();
+			sword.left.reset();
+			sword.right.reset();
 		}
 	}, 250, function() {
 		this.interrupted = false;
+		sword.up.reset();
+		sword.down.reset();
+		sword.left.reset();
+		sword.right.reset();
 	});
 	this.timers.sword.interrupted = false;
 }, function(elapsedMillis) {
@@ -127,7 +148,6 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 	movePlayer(this.player);
 	moveSword(this.player, this.sword, this.timers.sword);
 	this.player.move(elapsedMillis);
-	this.sword.move(elapsedMillis);
 }, function(context) {
 	// draw
 	context.fillStyle = "#000000";
