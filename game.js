@@ -88,12 +88,12 @@ function moveSword(player, sword, timer) {
 	}
 	if (player.direction === "left") {
 		sword.x = player.x - sword.width;
-		sword.y = player.y;
+		sword.y = player.y - (sword.height / 2);
 		sword.sprite = sword.left;
 	}
 	if (player.direction === "right") {
 		sword.x = player.x + player.width;
-		sword.y = player.y;
+		sword.y = player.y - (sword.height / 2);
 		sword.sprite = sword.right;
 	}
 }
@@ -211,9 +211,23 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 	for (var i = 0; i < this.solid.length; i++) {
 		this.solid[i].move(elapsedMillis);
 		if (this.timers.sword.time > 120 && this.sword.collides(this.solid[i]) && !this.solid[i].exploding) {
-			this.solid[i].exploding = true;
-			this.ghosts.push(this.solid.splice(i, 1)[0]);
+			var hit = this.solid.splice(i, 1)[0];
+			hit.exploding = true;
 			i--;
+			if (this.player.direction === "up") {
+				hit.vy -= 1;
+			}
+			if (this.player.direction === "down") {
+				hit.vy += 1;
+			}
+			if (this.player.direction === "left") {
+				hit.vx -= 1;
+			}
+			if (this.player.direction === "right") {
+				hit.vx += 1;
+			}
+			this.ghosts.push(hit);
+
 			game.sounds.play("pot-breaking");
 		}
 	}

@@ -41,24 +41,24 @@
 			"msPerFrame": 20
 		},
 		"player-sword-up": {
-			"strip": "images/player-sword-up-f15.png",
-			"frames": 15,
+			"strip": "images/rolling-pin-right-f9.png",
+			"frames": 9,
 			"msPerFrame": 20
 		},
 		"player-sword-down": {
-			"strip": "images/player-sword-down-f15.png",
-			"frames": 15,
+			"strip": "images/rolling-pin-right-f9.png",
+			"frames": 9,
 			"msPerFrame": 20
 		},
 		"player-sword-left": {
-			"strip": "images/player-sword-left-f15.png",
-			"frames": 15,
+			"strip": "images/rolling-pin-right-f9.png",
+			"frames": 9,
 			"flip": "horizontal",
 			"msPerFrame": 20
 		},
 		"player-sword-right": {
-			"strip": "images/player-sword-right-f15.png",
-			"frames": 15,
+			"strip": "images/rolling-pin-right-f9.png",
+			"frames": 9,
 			"msPerFrame": 20
 		},
 		"pot": {
