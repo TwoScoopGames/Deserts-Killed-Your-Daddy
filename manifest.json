@@ -19,14 +19,14 @@
 			"msPerFrame": 20
 		},
 		"player-walk-left": {
-			"strip": "images/player-walk-left-f15.png",
-			"frames": 15,
+			"strip": "images/player-walk-left-f30.png",
+			"frames": 30,
 			"flip": "horizontal",
 			"msPerFrame": 20
 		},
 		"player-walk-right": {
-			"strip": "images/player-walk-right-f15.png",
-			"frames": 15,
+			"strip": "images/player-walk-right-f30.png",
+			"frames": 30,
 			"msPerFrame": 20
 		},
 		"player-sword-up": {
