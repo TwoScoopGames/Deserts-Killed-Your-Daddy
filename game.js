@@ -132,7 +132,21 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 	context.fillRect(0, 0, canvas.width, canvas.height);
 
 	this.player.draw(context);
+	outline(context, this.player, "red");
 	this.sword.draw(context);
+	if (this.sword.visible) {
+		outline(context, this.sword, "green");
+	}
 }));
+
+var debug = true;
+
+function outline(context, entity, color) {
+	if (!debug) {
+		return;
+	}
+	context.strokeStyle = color;
+	context.strokeRect(entity.x, entity.y, entity.width, entity.height);
+}
 
 game.scenes.switchTo("loading");
