@@ -6,9 +6,24 @@
 	"fonts": {
 	},
 	"animations": {
+		"player-walk-up": {
+			"strip": "images/player-walk-up-f15.png",
+			"frames": 15,
+			"msPerFrame": 20
+		},
 		"player-walk-down": {
 			"strip": "images/player-walk-down-f15.png",
 			"frames": 15,
+			"msPerFrame": 20
+		},
+		"player-walk-left": {
+			"strip": "images/player-walk-left-f14.png",
+			"frames": 14,
+			"msPerFrame": 20
+		},
+		"player-walk-right": {
+			"strip": "images/player-walk-right-f14.png",
+			"frames": 14,
 			"msPerFrame": 20
 		}
 	}

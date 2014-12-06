@@ -17,12 +17,14 @@ function movePlayer(player) {
 		player.vy -= accel;
 		if (!xPressed) {
 			player.swordDirection = "up";
+			player.sprite = player.walkUp;
 		}
 	}
 	if (game.keyboard.isPressed("s")) {
 		player.vy += accel;
 		if (!xPressed) {
 			player.swordDirection = "down";
+			player.sprite = player.walkDown;
 		}
 	}
 	if (!yPressed) {
@@ -39,12 +41,14 @@ function movePlayer(player) {
 		player.vx -= accel;
 		if (!yPressed) {
 			player.swordDirection = "left";
+			player.sprite = player.walkLeft;
 		}
 	}
 	if (game.keyboard.isPressed("d")) {
 		player.vx += accel;
 		if (!yPressed) {
 			player.swordDirection = "right";
+			player.sprite = player.walkRight;
 		}
 	}
 	if (!xPressed) {
@@ -86,6 +90,11 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 	// initialization
 	var playerWalkDown = game.animations.get("player-walk-down");
 	this.player = new Splat.AnimatedEntity(100, 100, playerWalkDown.width, playerWalkDown.height, playerWalkDown, 0, 0);
+	this.player.walkUp = game.animations.get("player-walk-up");
+	this.player.walkDown = playerWalkDown;
+	this.player.walkLeft = game.animations.get("player-walk-left");
+	this.player.walkRight = game.animations.get("player-walk-right");
+
 	this.sword = new Splat.Entity(50, 50, 50, 50);
 	this.sword.visible = false;
 	this.sword.draw = function(context) {
