@@ -60,6 +60,10 @@ function movePlayer(player) {
 	}
 
 	player.vx = Math.min(maxV, Math.max(-maxV, player.vx));
+
+	if (player.vx === 0 && player.vy === 0) {
+		player.sprite.reset();
+	}
 }
 
 function moveSword(player, sword, timer) {
