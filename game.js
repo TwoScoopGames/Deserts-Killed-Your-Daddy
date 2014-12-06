@@ -252,11 +252,12 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 
 	for (var i = 0; i < this.solid.length; i++) {
 		this.solid[i].draw(context);
+		outline(context, this.solid[i], "yellow");
 	}
 	for (i = 0; i < this.ghosts.length; i++) {
 		this.ghosts[i].draw(context);
+		outline(context, this.ghosts[i], "gray");
 	}
-	outline(context, this.pot, "yellow");
 }));
 
 function outline(context, entity, color) {
