@@ -84,11 +84,8 @@ function moveSword(player, sword, timer) {
 
 game.scenes.add("title", new Splat.Scene(canvas, function() {
 	// initialization
-	this.player = new Splat.Entity(50, 50, 50, 50);
-	this.player.draw = function(context) {
-		context.fillStyle = "red";
-		context.fillRect(this.x, this.y, this.width, this.height);
-	};
+	var playerWalkDown = game.animations.get("player-walk-down");
+	this.player = new Splat.AnimatedEntity(100, 100, playerWalkDown.width, playerWalkDown.height, playerWalkDown, 0, 0);
 	this.sword = new Splat.Entity(50, 50, 50, 50);
 	this.sword.visible = false;
 	this.sword.draw = function(context) {

@@ -6,5 +6,10 @@
 	"fonts": {
 	},
 	"animations": {
+		"player-walk-down": {
+			"strip": "images/player-walk-down-f15.png",
+			"frames": 15,
+			"msPerFrame": 20
+		}
 	}
 }
