@@ -22,24 +22,24 @@
     <qtDefaultName>1</qtDefaultName>
     <rnwkDefaultName>1</rnwkDefaultName>
     <swcDefaultName>1</swcDefaultName>
-    <flashFileName>lollypop-worm.swf</flashFileName>
-    <projectorWinFileName>lollypop-worm.exe</projectorWinFileName>
-    <projectorMacFileName>lollypop-worm.app</projectorMacFileName>
-    <htmlFileName>lollypop-worm.html</htmlFileName>
-    <gifFileName>lollypop-worm.gif</gifFileName>
-    <jpegFileName>lollypop-worm.jpg</jpegFileName>
-    <pngFileName>lollypop-worm.png</pngFileName>
-    <qtFileName>lollypop-worm.mov</qtFileName>
-    <rnwkFileName>lollypop-worm.smil</rnwkFileName>
-    <swcFileName>lollypop-worm.swc</swcFileName>
+    <flashFileName>ginger.swf</flashFileName>
+    <projectorWinFileName>ginger.exe</projectorWinFileName>
+    <projectorMacFileName>ginger.app</projectorMacFileName>
+    <htmlFileName>ginger.html</htmlFileName>
+    <gifFileName>ginger.gif</gifFileName>
+    <jpegFileName>ginger.jpg</jpegFileName>
+    <pngFileName>ginger.png</pngFileName>
+    <qtFileName>ginger.mov</qtFileName>
+    <rnwkFileName>ginger.smil</rnwkFileName>
+    <swcFileName>ginger.swc</swcFileName>
   </PublishFormatProperties>
   <PublishHtmlProperties enabled="true">
     <VersionDetectionIfAvailable>0</VersionDetectionIfAvailable>
     <VersionInfo>12,0,0,0;11,2,0,0;11,1,0,0;10,3,0,0;10,2,153,0;10,1,52,0;9,0,124,0;8,0,24,0;7,0,14,0;6,0,79,0;5,0,58,0;4,0,32,0;3,0,8,0;2,0,1,12;1,0,0,1;</VersionInfo>
     <UsingDefaultContentFilename>1</UsingDefaultContentFilename>
     <UsingDefaultAlternateFilename>1</UsingDefaultAlternateFilename>
-    <ContentFilename>lollypop-worm.xfl_content.html</ContentFilename>
-    <AlternateFilename>lollypop-worm.xfl_alternate.html</AlternateFilename>
+    <ContentFilename>ginger.xfl_content.html</ContentFilename>
+    <AlternateFilename>ginger.xfl_alternate.html</AlternateFilename>
     <UsingOwnAlternateFile>0</UsingOwnAlternateFile>
     <OwnAlternateFilename></OwnAlternateFilename>
     <Width>1920</Width>
