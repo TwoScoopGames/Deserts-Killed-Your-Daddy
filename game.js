@@ -93,7 +93,7 @@ function moveSword(player, sword, timer) {
 game.scenes.add("title", new Splat.Scene(canvas, function() {
 	// initialization
 	var playerWalkDown = game.animations.get("player-walk-down");
-	this.player = new Splat.AnimatedEntity(100, 100, playerWalkDown.width, playerWalkDown.height, playerWalkDown, 0, 0);
+	this.player = new Splat.AnimatedEntity(300, 300, 74, 74, playerWalkDown, -13, -63);
 	this.player.walkUp = game.animations.get("player-walk-up");
 	this.player.walkDown = playerWalkDown;
 	this.player.walkLeft = game.animations.get("player-walk-left");
