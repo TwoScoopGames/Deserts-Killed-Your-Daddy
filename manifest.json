@@ -8,6 +8,17 @@
 	"fonts": {
 	},
 	"animations": {
+		"cake-turtle-left": {
+			"strip": "images/cake-turtle-left-f14.png",
+			"frames": 14,
+			"msPerFrame": 20
+		},
+		"cake-turtle-right": {
+			"strip": "images/cake-turtle-right-f14.png",
+			"frames": 14,
+			"flip": "horizontal",
+			"msPerFrame": 20
+		},
 		"player-walk-up": {
 			"strip": "images/player-walk-up-f15.png",
 			"frames": 15,

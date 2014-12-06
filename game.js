@@ -7,63 +7,65 @@ var manifest = require("./manifest.json");
 
 var game = new Splat.Game(canvas, manifest);
 
-function movePlayer(player) {
-	var accel = 0.03;
-	var maxV = 0.8;
-	var xPressed = game.keyboard.isPressed("a") || game.keyboard.isPressed("d");
-	var yPressed = game.keyboard.isPressed("w") || game.keyboard.isPressed("s");
+function moveEntity(entity, up, down, left, right, accel, maxV) {
+	var xPressed = left || right;
+	var yPressed = up || down;
 
-	if (game.keyboard.isPressed("w")) {
-		player.vy -= accel;
+	if (up) {
+		entity.vy -= accel;
 		if (!xPressed) {
-			player.swordDirection = "up";
-			player.sprite = player.walkUp;
+			entity.direction = "up";
+			entity.sprite = entity.walkUp;
 		}
 	}
-	if (game.keyboard.isPressed("s")) {
-		player.vy += accel;
+	if (down) {
+		entity.vy += accel;
 		if (!xPressed) {
-			player.swordDirection = "down";
-			player.sprite = player.walkDown;
+			entity.direction = "down";
+			entity.sprite = entity.walkDown;
 		}
 	}
 	if (!yPressed) {
-		if (player.vy < 0) {
-			player.vy = Math.min(player.vy + accel, 0);
-		} else if (player.vy > 0) {
-			player.vy = Math.max(player.vy - accel, 0);
+		if (entity.vy < 0) {
+			entity.vy = Math.min(entity.vy + accel, 0);
+		} else if (entity.vy > 0) {
+			entity.vy = Math.max(entity.vy - accel, 0);
 		}
 	}
 
-	player.vy = Math.min(maxV, Math.max(-maxV, player.vy));
+	entity.vy = Math.min(maxV, Math.max(-maxV, entity.vy));
 
-	if (game.keyboard.isPressed("a")) {
-		player.vx -= accel;
+	if (left) {
+		entity.vx -= accel;
 		if (!yPressed) {
-			player.swordDirection = "left";
-			player.sprite = player.walkLeft;
+			entity.direction = "left";
+			entity.sprite = entity.walkLeft;
 		}
 	}
-	if (game.keyboard.isPressed("d")) {
-		player.vx += accel;
+	if (right) {
+		entity.vx += accel;
 		if (!yPressed) {
-			player.swordDirection = "right";
-			player.sprite = player.walkRight;
+			entity.direction = "right";
+			entity.sprite = entity.walkRight;
 		}
 	}
 	if (!xPressed) {
-		if (player.vx < 0) {
-			player.vx = Math.min(player.vx + accel, 0);
-		} else if (player.vx > 0) {
-			player.vx = Math.max(player.vx - accel, 0);
+		if (entity.vx < 0) {
+			entity.vx = Math.min(entity.vx + accel, 0);
+		} else if (entity.vx > 0) {
+			entity.vx = Math.max(entity.vx - accel, 0);
 		}
 	}
 
-	player.vx = Math.min(maxV, Math.max(-maxV, player.vx));
+	entity.vx = Math.min(maxV, Math.max(-maxV, entity.vx));
 
-	if (player.vx === 0 && player.vy === 0) {
-		player.sprite.reset();
+	if (entity.vx === 0 && entity.vy === 0) {
+		entity.sprite.reset();
 	}
+}
+
+function movePlayer(player) {
+	moveEntity(player, game.keyboard.isPressed("w"), game.keyboard.isPressed("s"), game.keyboard.isPressed("a"), game.keyboard.isPressed("d"), 0.03, 0.8);
 }
 
 function moveSword(player, sword, timer) {
@@ -74,22 +76,22 @@ function moveSword(player, sword, timer) {
 		game.sounds.play("sword");
 	}
 	sword.visible = timer.running;
-	if (player.swordDirection === "up") {
+	if (player.direction === "up") {
 		sword.x = player.x;
 		sword.y = player.y - sword.height;
 		sword.sprite = sword.up;
 	}
-	if (player.swordDirection === "down") {
+	if (player.direction === "down") {
 		sword.x = player.x;
 		sword.y = player.y + player.height;
 		sword.sprite = sword.down;
 	}
-	if (player.swordDirection === "left") {
+	if (player.direction === "left") {
 		sword.x = player.x - sword.width;
 		sword.y = player.y;
 		sword.sprite = sword.left;
 	}
-	if (player.swordDirection === "right") {
+	if (player.direction === "right") {
 		sword.x = player.x + player.width;
 		sword.y = player.y;
 		sword.sprite = sword.right;
@@ -116,6 +118,28 @@ function makePot(x, y) {
 	return pot;
 }
 
+function makeTurtle(x, y) {
+	var anim = game.animations.get("cake-turtle-left").copy();
+	var turtle = new Splat.AnimatedEntity(x, y, 74, 74, anim, -25, -4);
+	turtle.walkLeft = anim;
+	turtle.walkRight = game.animations.get("cake-turtle-right").copy();
+	turtle.direction = "left";
+	turtle.move = function(elapsedMillis) {
+		if (this.direction === "left" && this.x < 200) {
+			this.direction = "right";
+		}
+		if (this.direction === "right" && this.x > 800) {
+			this.direction = "left";
+		}
+		moveEntity(this, false, false, this.direction === "left", this.direction === "right", 0.01, 0.6);
+		Splat.AnimatedEntity.prototype.move.call(this, elapsedMillis);
+		if (this.exploding) {
+			this.dead = true;
+		}
+	};
+	return turtle;
+}
+
 game.scenes.add("title", new Splat.Scene(canvas, function() {
 	// initialization
 	var playerWalkDown = game.animations.get("player-walk-down");
@@ -124,7 +148,7 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 	this.player.walkDown = playerWalkDown;
 	this.player.walkLeft = game.animations.get("player-walk-left");
 	this.player.walkRight = game.animations.get("player-walk-right");
-	this.player.swordDirection = "down";
+	this.player.direction = "down";
 
 	var swordDown = game.animations.get("player-sword-down");
 	this.sword = new Splat.AnimatedEntity(0, 0, swordDown.width, swordDown.height, swordDown, 0, 0);
@@ -171,6 +195,7 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 	this.solid.push(makePot(600, 300));
 	this.solid.push(makePot(100, 100));
 	this.solid.push(makePot(100, 400));
+	this.solid.push(makeTurtle(800, 100));
 	this.ghosts = [];
 }, function(elapsedMillis) {
 	// simulation
