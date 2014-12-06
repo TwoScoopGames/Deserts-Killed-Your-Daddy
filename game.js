@@ -98,6 +98,27 @@ function moveSword(player, sword, timer) {
 
 var debug = false;
 
+function makePot(x, y) {
+	var anim = game.animations.get("pot").copy();
+	var pot = new Splat.AnimatedEntity(x, y, 56, 56, anim, -28, -13);
+	pot.exploding = false;
+	pot.explodeTime = 0;
+	pot.move = function(elapsedMillis) {
+		if (!this.exploding) {
+			return;
+		}
+		this.explodeTime += elapsedMillis;
+		Splat.AnimatedEntity.prototype.move.call(this, elapsedMillis);
+		if (this.explodeTime > this.sprite.frames.length * this.sprite.frames[0].time) {
+			//done, time to be deleted.
+			this.sprite.reset();
+			this.exploding = false;
+			this.explodeTime = 0;
+		}
+	};
+	return pot;
+}
+
 game.scenes.add("title", new Splat.Scene(canvas, function() {
 	// initialization
 	var playerWalkDown = game.animations.get("player-walk-down");
@@ -148,23 +169,7 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 	});
 	this.timers.sword.interrupted = false;
 
-	var pot = game.animations.get("pot");
-	this.pot = new Splat.AnimatedEntity(600, 300, 56, 56, pot, -28, -13);
-	this.pot.exploding = false;
-	this.pot.explodeTime = 0;
-	this.pot.move = function(elapsedMillis) {
-		if (!this.exploding) {
-			return;
-		}
-		this.explodeTime += elapsedMillis;
-		Splat.AnimatedEntity.prototype.move.call(this, elapsedMillis);
-		if (this.explodeTime > this.sprite.frames.length * this.sprite.frames[0].time) {
-			//done, time to be deleted.
-			this.sprite.reset();
-			this.exploding = false;
-			this.explodeTime = 0;
-		}
-	};
+	this.pot = makePot(600, 300);
 }, function(elapsedMillis) {
 	// simulation
 
