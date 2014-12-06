@@ -149,15 +149,21 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 	this.timers.sword.interrupted = false;
 
 	var pot = game.animations.get("pot");
-	var potTimer = this.timers.pot = new Splat.Timer(undefined, pot.frames.length * pot.frames[0].time, function() {
-		pot.reset();
-	});
 	this.pot = new Splat.AnimatedEntity(600, 300, 56, 56, pot, -28, -13);
+	this.pot.exploding = false;
+	this.pot.explodeTime = 0;
 	this.pot.move = function(elapsedMillis) {
-		if (!potTimer.running) {
+		if (!this.exploding) {
 			return;
 		}
+		this.explodeTime += elapsedMillis;
 		Splat.AnimatedEntity.prototype.move.call(this, elapsedMillis);
+		if (this.explodeTime > this.sprite.frames.length * this.sprite.frames[0].time) {
+			//done, time to be deleted.
+			this.sprite.reset();
+			this.exploding = false;
+			this.explodeTime = 0;
+		}
 	};
 }, function(elapsedMillis) {
 	// simulation
@@ -168,11 +174,12 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 	movePlayer(this.player);
 	moveSword(this.player, this.sword, this.timers.sword);
 	this.player.move(elapsedMillis);
-	this.player.solveCollisions([this.pot], []);
+	if (!this.pot.exploding) {
+		this.player.solveCollisions([this.pot], []);
+	}
 	this.pot.move(elapsedMillis);
-	if (this.timers.sword.time > 120 && this.sword.collides(this.pot) && !this.timers.pot.running) {
-		this.timers.pot.reset();
-		this.timers.pot.start();
+	if (this.timers.sword.time > 120 && this.sword.collides(this.pot) && !this.pot.exploding) {
+		this.pot.exploding = true;
 		game.sounds.play("pot-breaking");
 	}
 }, function(context) {

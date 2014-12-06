@@ -53,6 +53,7 @@
 		"pot": {
 			"strip": "images/pot-f11.png",
 			"frames": 11,
+			"reapeatAt": 10,
 			"msPerFrame": 25
 		}
 	}
