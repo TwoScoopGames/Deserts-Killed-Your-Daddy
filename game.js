@@ -138,8 +138,8 @@ function makeCookie(player, x, y) {
 	var cookie = new Splat.AnimatedEntity(x, y, 74, 74, anim, -25, -4);
 	cookie.walkLeft = anim;
 	cookie.walkRight = game.animations.get("cookie-chip-right").copy();
-	cookie.painLeft = game.animations.get("cookie-chip-left").copy();
-	cookie.painRight = game.animations.get("cookie-chip-right").copy();
+	cookie.painLeft = game.animations.get("cookie-chip-pain-left").copy();
+	cookie.painRight = game.animations.get("cookie-chip-pain-right").copy();
 	cookie.direction = "left";
 	cookie.damage = 1;
 	cookie.hitSound = ["hurt", "hurt2"];
