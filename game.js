@@ -1,15 +1,15 @@
 "use strict";
 
+var entities = require("./lib/entities");
+var moveEntity = require("./lib/move-entity");
 var Splat = require("splatjs");
+var tile = require("./lib/tile");
+
 var canvas = document.getElementById("canvas");
 
 var manifest = require("./manifest.json");
 
 var game = new Splat.Game(canvas, manifest);
-
-var entities = require("./lib/entities");
-var moveEntity = require("./lib/move-entity");
-var random = require("./lib/random");
 
 function movePlayer(player) {
 	moveEntity(player, game.keyboard.isPressed("w"), game.keyboard.isPressed("s"), game.keyboard.isPressed("a"), game.keyboard.isPressed("d"), 0.03, 0.8);
@@ -196,7 +196,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	];
 
 	// sprite array, x, y, width, height
-	this.ground = entities.sort(tileArea(this.goundSprites, 0, 0, canvas.width, canvas.height));
+	this.ground = entities.sort(tile.fillAreaRandomly(this.goundSprites, 0, 0, canvas.width, canvas.height));
 
 }, function(elapsedMillis) {
 	// simulation
@@ -286,17 +286,6 @@ function outline(context, entity, color) {
 	}
 	context.strokeStyle = color;
 	context.strokeRect(entity.x, entity.y, entity.width, entity.height);
-}
-
-function tileArea(sprites, x, y, width, height) {
-	var array = [];
-	for (var w = x; w < width; w += sprites[0].width) {
-		for (var h = y; h < height; h += sprites[0].height) {
-			var thisSprite = sprites[random.pick(sprites)];
-			array.push(new Splat.AnimatedEntity(w, h, thisSprite.width, thisSprite.height, thisSprite, 0, 0));
-		}
-	}
-	return array;
 }
 
 function centerText(context, text, offsetX, offsetY) {
