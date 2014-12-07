@@ -55,6 +55,8 @@ function makeTurtle(x, y) {
 	var turtle = new Splat.AnimatedEntity(x, y, 74, 74, anim, -25, -4);
 	turtle.walkLeft = anim;
 	turtle.walkRight = game.animations.get("cake-turtle-right").copy();
+	turtle.painLeft = game.animations.get("cake-turtle-pain-left").copy();
+	turtle.painRight = game.animations.get("cake-turtle-pain-right").copy();
 	turtle.direction = "left";
 	turtle.hitTime = 0;
 	turtle.hp = 2;
@@ -66,8 +68,11 @@ function makeTurtle(x, y) {
 			this.direction = "left";
 		}
 		moveEntity(this, false, false, !this.exploding && this.direction === "left", !this.exploding && this.direction === "right", 0.01, 0.3);
-		Splat.AnimatedEntity.prototype.move.call(this, elapsedMillis);
 		if (this.exploding) {
+			this.sprite = this.direction === "left" ? this.painLeft : this.painRight;
+			if (this.hitTime === 0) {
+				this.sprite.reset();
+			}
 			this.hitTime += elapsedMillis;
 			if (this.hitTime > 400) {
 				this.hp--;
@@ -79,6 +84,7 @@ function makeTurtle(x, y) {
 				this.hitTime = 0;
 			}
 		}
+		Splat.AnimatedEntity.prototype.move.call(this, elapsedMillis);
 	};
 	return turtle;
 }
@@ -199,7 +205,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 		game.animations.get("bg-2"),
 		game.animations.get("bg-3"),
 		game.animations.get("bg-4"),
-		game.animations.get("bg-5")
+		// game.animations.get("bg-5")
 	];
 
 	// sprite array, x, y, width, height

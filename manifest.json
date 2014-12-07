@@ -48,6 +48,17 @@
 			"frames": 14,
 			"msPerFrame": 20
 		},
+		"cake-turtle-pain-left": {
+			"strip": "images/cake-turtle-pain-left-f10.png",
+			"frames": 10,
+			"msPerFrame": 20
+		},
+		"cake-turtle-pain-right": {
+			"strip": "images/cake-turtle-pain-left-f10.png",
+			"frames": 10,
+			"flip": "horizontal",
+			"msPerFrame": 20
+		},
 		"player-walk-up": {
 			"strip": "images/player-walk-up-f15.png",
 			"frames": 15,
