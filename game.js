@@ -97,6 +97,7 @@ function makeSwordDraw(player, direction) {
 			return;
 		}
 		Splat.AnimatedEntity.prototype.draw.call(this, context);
+		outline(context, this, "green");
 	};
 }
 game.scenes.add("title", new Splat.Scene(canvas, function() {
