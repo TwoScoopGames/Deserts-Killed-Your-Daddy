@@ -28,6 +28,11 @@
 			"frames": 1,
 			"msPerFrame": 20
 		},
+		"bg-5": {
+			"strip": "images/bg-5.png",
+			"frames": 1,
+			"msPerFrame": 20
+		},
 		"stove": {
 			"strip": "images/stove.png",
 			"frames": 1,

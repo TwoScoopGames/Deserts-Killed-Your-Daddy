@@ -198,7 +198,8 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 		game.animations.get("bg-1"),
 		game.animations.get("bg-2"),
 		game.animations.get("bg-3"),
-		game.animations.get("bg-4")
+		game.animations.get("bg-4"),
+		game.animations.get("bg-5")
 	];
 
 	// sprite array, x, y, width, height
