@@ -1,5 +1,7 @@
 {
-	"images": {},
+	"images": {
+		"heart": "images/heart-full.png"
+	},
 	"sounds": {
 		"music": "audio/music.mp3",
 		"pot-breaking": "audio/pot-breaking.wav",

@@ -192,6 +192,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	this.player.walkLeft = game.animations.get("player-walk-left");
 	this.player.walkRight = game.animations.get("player-walk-right");
 	this.player.direction = "down";
+	this.player.hp = 5;
 
 	var swordUp = game.animations.get("player-sword-up");
 	var swordDown = game.animations.get("player-sword-down");
@@ -367,6 +368,11 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	for (i = 0; i < this.ghosts.length; i++) {
 		this.ghosts[i].draw(context);
 		outline(context, this.ghosts[i], "gray");
+	}
+
+	var heart = game.images.get("heart");
+	for (i = 0; i < this.player.hp; i++) {
+		context.drawImage(heart, 30 + i * 50, 30);
 	}
 }));
 
