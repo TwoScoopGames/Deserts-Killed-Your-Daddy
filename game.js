@@ -97,6 +97,12 @@ function makePot(x, y) {
 	return pot;
 }
 
+function makeStove(x, y) {
+	var anim = game.animations.get("stove").copy();
+	var stove = new Splat.AnimatedEntity(x, y, 148, 148, anim, 0, 0);
+	return stove;
+}
+
 function makeTurtle(x, y) {
 	var anim = game.animations.get("cake-turtle-left").copy();
 	var turtle = new Splat.AnimatedEntity(x, y, 74, 74, anim, -25, -4);
@@ -135,8 +141,25 @@ function makeSwordDraw(player, direction) {
 		Splat.AnimatedEntity.prototype.draw.call(this, context);
 	};
 }
-
 game.scenes.add("title", new Splat.Scene(canvas, function() {
+	// initialization
+	this.timers.expire = new Splat.Timer(undefined, 2000, function() {
+		game.scenes.switchTo("main");
+	});
+	this.timers.expire.start();
+}, function() {
+	// simulation
+}, function(context) {
+	// draw
+	context.fillStyle = "black";
+	context.fillRect(0, 0, canvas.width, canvas.height);
+
+	context.fillStyle = "#fff";
+	context.font = "25px helvetica";
+	centerText(context, "DESSERTS KILLED YOUR DADDY", 0, canvas.height / 2 - 13);
+}));
+
+game.scenes.add("main", new Splat.Scene(canvas, function() {
 	// initialization
 	var playerWalkDown = game.animations.get("player-walk-down");
 	this.player = new Splat.AnimatedEntity(300, 300, 74, 74, playerWalkDown, -13, -63);
@@ -196,14 +219,25 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 	});
 	this.timers.sword.interrupted = false;
 
+	function makeRandomPots(array, qty) {
+		for (var i = 0; i < qty; i++) {
+			array.push(makePot(randomBetween(0, canvas.width), randomBetween(0, canvas.height)));
+		}
+	}
 	this.solid = [];
-	this.solid.push(makePot(600, 300));
-	this.solid.push(makePot(100, 100));
-	this.solid.push(makePot(100, 400));
-	this.solid.push(makePot(200, 300));
-	this.solid.push(makePot(300, 100));
-	this.solid.push(makePot(400, 400));
+	this.solid.push(makeStove(0, 0));
+	this.solid.push(makeStove(148, 0));
+	this.solid.push(makeStove((148 * 2), 0));
+	this.solid.push(makeStove((148 * 3), 0));
+	this.solid.push(makeStove((148 * 4), 0));
+	this.solid.push(makeStove((148 * 5), 0));
+	this.solid.push(makeStove((148 * 6), 0));
+	this.solid.push(makeStove((148 * 7), 0));
+	makeRandomPots(this.solid, 15);
+	this.solid.push(makePot(500, 500));
 	this.solid.push(makeTurtle(800, 100));
+	this.solid.push(makeTurtle(950, 300));
+	this.solid.push(makeTurtle(1050, 600));
 	this.ghosts = [];
 
 
@@ -317,11 +351,10 @@ function outline(context, entity, color) {
 	context.strokeRect(entity.x, entity.y, entity.width, entity.height);
 }
 
+function randomBetween(min, max) {
+	return Math.floor(Math.random() * max) + min;
+}
 
-
-/*
- * Fills a rectangle with sprites from an array
- */
 function tileArea(sprites, x, y, width, height) {
 	var array = [];
 	for (var w = x; w < width; w += sprites[0].width) {
@@ -346,11 +379,14 @@ function sortEntities(entities) {
 	});
 }
 
-/*
- * Pick a random index from an array, returns a number
- */
 function randomPick(array) {
 	return Math.floor(Math.random() * array.length);
 }
 
+function centerText(context, text, offsetX, offsetY) {
+	var w = context.measureText(text).width;
+	var x = offsetX + (canvas.width / 2) - (w / 2) | 0;
+	var y = offsetY | 0;
+	context.fillText(text, x, y);
+}
 game.scenes.switchTo("loading");
