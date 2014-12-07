@@ -1,15 +1,15 @@
-<DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" width="1920" height="1080" currentTimeline="1" xflVersion="2.2" creatorInfo="Adobe Flash Professional CS6" platform="Macintosh" versionInfo="Saved by Adobe Flash Macintosh 12.0 build 481" majorVersion="12" buildNumber="481" guidesSnapTo="false" snapAlign="false" objectsSnapTo="false" vanishingPoint3DX="960" vanishingPoint3DY="540" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false" autoSaveEnabled="true" autoSaveIntervalMinutes="1">
+<DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" backgroundColor="#009933" width="1920" height="1080" frameRate="10" currentTimeline="1" xflVersion="2.2" creatorInfo="Adobe Flash Professional CS6" platform="Macintosh" versionInfo="Saved by Adobe Flash Macintosh 12.0 build 481" majorVersion="12" buildNumber="481" guidesSnapTo="false" snapAlign="false" objectsSnapTo="false" vanishingPoint3DX="960" vanishingPoint3DY="540" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false" autoSaveEnabled="true" autoSaveIntervalMinutes="1">
      <symbols>
           <Include href="Symbol 1.xml" loadImmediate="false" itemID="5483a685-000005c6" lastModified="1417913989"/>
           <Include href="Symbol 2.xml" loadImmediate="false" itemID="5483a772-000005d4" lastModified="1417914226"/>
           <Include href="Symbol 3.xml" loadImmediate="false" itemID="54847f7a-00000326" lastModified="1417971278"/>
           <Include href="Symbol 4.xml" loadImmediate="false" itemID="54848242-00000336" lastModified="1417970409"/>
-          <Include href="Symbol 5.xml" loadImmediate="false" itemID="548484f2-0000034e" lastModified="1417971103"/>
+          <Include href="Symbol 5.xml" loadImmediate="false" itemID="548484f2-0000034e" lastModified="1417984269"/>
           <Include href="Tween 1.xml" itemIcon="1" loadImmediate="false" itemID="54847bd7-00000309" lastModified="1417968599"/>
           <Include href="Tween 2.xml" itemIcon="1" loadImmediate="false" itemID="54847bd7-0000030b" lastModified="1417969408"/>
      </symbols>
      <timelines>
-          <DOMTimeline name="Scene 1" currentFrame="29">
+          <DOMTimeline name="Scene 1" currentFrame="3">
                <layers>
                     <DOMLayer name="Layer 13" color="#4FFFFF">
                          <frames>
@@ -12216,7 +12216,7 @@
                               </DOMFrame>
                               <DOMFrame index="29" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="Symbol 5">
+                                        <DOMSymbolInstance libraryItemName="Symbol 5" selected="true">
                                              <matrix>
                                                   <Matrix tx="747.85" ty="329.05"/>
                                              </matrix>
@@ -14028,6 +14028,7 @@
                     <SolidSwatchItem color="#FFFFFF" brightness="240"/>
                     <SolidSwatchItem color="#575757" brightness="82"/>
                     <SolidSwatchItem color="#737373" brightness="108"/>
+                    <SolidSwatchItem color="#202020" alpha="0.470588235294118" brightness="30"/>
                </swatches>
           </swatchList>
      </swatchLists>
