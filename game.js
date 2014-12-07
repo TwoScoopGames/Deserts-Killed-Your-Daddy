@@ -141,7 +141,7 @@ function animationTotalTime(anim) {
 	return time;
 }
 
-function makeFallingEntity(x, y, entity, list) {
+function makeFallingEntity(x, y, entity, list, player) {
 	var fallingSpeed = 1;
 	var anim = game.animations.get(entity.width > 74 ? "shadow-big" : "shadow").copy();
 
@@ -159,6 +159,10 @@ function makeFallingEntity(x, y, entity, list) {
 			this.dead = true;
 			this.source.vy = 0;
 			list.push(this.source);
+			if (this.collides(player)) {
+				player.exploding = true;
+				game.sounds.play(random.pick(player.hitSound));
+			}
 		}
 	};
 	shadow.draw = function(context) {
@@ -228,7 +232,7 @@ function spawnRandom(scene, builder) {
 	var x = Math.floor(Math.random() * tilesWide) * 74;
 	var y = Math.floor(Math.random() * tilesTall) * 74;
 
-	scene.ghosts.push(makeFallingEntity(x, y, builder(0, 0), scene.solid));
+	scene.ghosts.push(makeFallingEntity(x, y, builder(0, 0), scene.solid, scene.player));
 	game.sounds.play("fall");
 }
 
@@ -359,8 +363,6 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	for (var i = 0; i < collided.length; i++) {
 		if (this.player.collides(collided[i])) {
 			resolveCollisionShortest(this.player, collided[i]);
-			this.player.hp--;
-			game.sounds.play(random.pick(this.player.hitSound));
 			continue;
 		}
 		if (!this.player.exploding && collided[i].damage) {
