@@ -224,9 +224,9 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	this.player.painDown = game.animations.get("player-pain-down");
 	this.player.painLeft = game.animations.get("player-pain-down");
 	this.player.painRight = game.animations.get("player-pain-down");
-
-	makeMoveDamageable(this.player, 5, 1000);
 	this.player.hitSound = ["pain", "pain2", "pain3"];
+	makeMoveDamageable(this.player, 5, 1000);
+
 	var swordUp = game.animations.get("player-sword-up");
 	var swordDown = game.animations.get("player-sword-down");
 	var swordLeft = game.animations.get("player-sword-left");
@@ -326,10 +326,12 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 		if (this.player.collides(collided[i])) {
 			resolveCollisionShortest(this.player, collided[i]);
 			this.player.hp--;
+			game.sounds.play(random.pick(this.player.hitSound));
 			continue;
 		}
-		if (collided[i].damage) {
+		if (!this.player.exploding && collided[i].damage) {
 			this.player.exploding = true;
+			game.sounds.play(random.pick(this.player.hitSound));
 		}
 	}
 
