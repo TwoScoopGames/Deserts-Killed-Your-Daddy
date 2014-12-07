@@ -1,0 +1,24 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="leg" itemID="548323f2-00000374" lastModified="1417966819">
+  <timeline>
+    <DOMTimeline name="leg">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Symbol 8" centerPoint3DX="20" centerPoint3DY="27.35">
+                  <transformationPoint>
+                    <Point x="20" y="27.35"/>
+                  </transformationPoint>
+                  <color>
+                    <Color tintMultiplier="0.3" tintColor="#F68800"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,37 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 3" itemID="548326ce-0000039c" lastModified="1417881294">
+  <timeline>
+    <DOMTimeline name="Symbol 3">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="!77 208S3[77 145 132 144!132 144[186 143 186 219!186 219[186 256 186 257!186 257[178 286 136 286!136 286[87 286 77 242!77 242|77 208"/>
+                    <Edge fillStyle1="1" edges="!156 1S2[216 -9 259 54!259 54[306 123 306 248!306 248[306 318 277 402!277 402[235 526 156 526!156 526[31 526 6 437!6 437[-2 409 1 373!1 373[6 342 6 339!6 339[6 188 53 94!53 94[94 12 156 1"/>
+                    <Edge cubics="!306 248(;306,288 279,526 156,526q306 248Q306 318q277 402Q235 526q156 526);"/>
+                    <Edge cubics="!156 526(;-44,526 6,351 6,339q156 526Q31 526q6 437Q-2 409q1 373Q6 342q6 339);"/>
+                    <Edge cubics="!6 339(;6,-91 306,-102 306,248q6 339Q6 188q53 94Q94 12q156 1Q216 -9q259 54Q306 123q306 248);"/>
+                    <Edge cubics="!186 219(;186,231 202,286 136,286q186 219Q186 256q186 257Q178 286q136 286);"/>
+                    <Edge cubics="!77 208(;77,128 186,113 186,219q77 208Q77 145q132 144Q186 143q186 219);"/>
+                    <Edge cubics="!77 242(;77,242 77,208 77,208q77 242 77 208);"/>
+                    <Edge cubics="!136 286(;103,286 84,271 77,242q136 286Q87 286q77 242);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>
