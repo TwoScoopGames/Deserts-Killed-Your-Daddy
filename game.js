@@ -49,6 +49,30 @@ function makePot(x, y) {
 	return pot;
 }
 
+function makeHeart(x, y) {
+	var anim = game.animations.get("heart-item").copy();
+	var heart = new Splat.AnimatedEntity(x, y, anim.width, anim.height, anim, 0, 0);
+	heart.heal = 1;
+	heart.time = 0;
+	heart.hitSound = ["heart"];
+	heart.move = function(elapsedMillis) {
+		Splat.AnimatedEntity.prototype.move.call(this, elapsedMillis);
+		this.time += elapsedMillis;
+		if (!this.fading && this.time > 4000) {
+			this.sprite = game.animations.get("heart-fade").copy();
+			this.fading = true;
+			console.log("exploding");
+			this.time = 0;
+		}
+		if (this.fading && this.time > 1000) {
+			this.exploding = true;
+			this.dead = true;
+			console.log("dead");
+		}
+	};
+	return heart;
+}
+
 function makeStove(x, y) {
 	var anim = game.animations.get("stove").copy();
 	var stove = new Splat.AnimatedEntity(x, y, anim.width, anim.height - 74, anim, 0, 74 - anim.height);
@@ -394,6 +418,12 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 
 	var collided = this.player.solveCollisions(this.solid);
 	for (var i = 0; i < collided.length; i++) {
+		if (collided[i].heal) {
+			this.player.hp += collided[i].heal;
+			collided[i].exploding = true;
+			collided[i].dead = true;
+			game.sounds.play("heart");
+		}
 		if (this.player.collides(collided[i])) {
 			resolveCollisionShortest(this.player, collided[i]);
 			continue;
@@ -407,42 +437,45 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	for (i = 0; i < this.solid.length; i++) {
 		this.solid[i].move(elapsedMillis);
 		keepOnScreen(this.solid[i]);
-		if (this.timers.sword.time < 120 || this.solid[i].exploding) {
-			continue;
+		var hit = this.solid[i];
+		if (this.timers.sword.time > 120) {
+			if (this.player.direction === "up" && this.swordUp.collides(this.solid[i])) {
+				hit.exploding = true;
+				hit.vy -= hit.blowback;
+				game.sounds.play(random.pick(hit.hitSound));
+				if (hit.heal) {
+					this.player.hp += hit.heal;
+				}
+			}
+			if (this.player.direction === "down" && this.swordDown.collides(this.solid[i])) {
+				hit.exploding = true;
+				hit.vy += hit.blowback;
+				game.sounds.play(random.pick(hit.hitSound));
+				if (hit.heal) {
+					this.player.hp += hit.heal;
+				}
+			}
+			if (this.player.direction === "left" && this.swordLeft.collides(this.solid[i])) {
+				hit.exploding = true;
+				hit.vx -= hit.blowback;
+				game.sounds.play(random.pick(hit.hitSound));
+				if (hit.heal) {
+					this.player.hp += hit.heal;
+				}
+			}
+			if (this.player.direction === "right" && this.swordRight.collides(this.solid[i])) {
+				hit.exploding = true;
+				hit.vx += hit.blowback;
+				game.sounds.play(random.pick(hit.hitSound));
+				if (hit.heal) {
+					this.player.hp += hit.heal;
+				}
+			}
 		}
-
-		var hit;
-		if (this.player.direction === "up" && this.swordUp.collides(this.solid[i])) {
-			hit = this.solid.splice(i, 1)[0];
-			hit.exploding = true;
+		if (hit.exploding) {
+			this.solid.splice(i, 1);
 			i--;
-			hit.vy -= hit.blowback;
 			this.ghosts.push(hit);
-			game.sounds.play(random.pick(hit.hitSound));
-		}
-		if (this.player.direction === "down" && this.swordDown.collides(this.solid[i])) {
-			hit = this.solid.splice(i, 1)[0];
-			hit.exploding = true;
-			i--;
-			hit.vy += hit.blowback;
-			this.ghosts.push(hit);
-			game.sounds.play(random.pick(hit.hitSound));
-		}
-		if (this.player.direction === "left" && this.swordLeft.collides(this.solid[i])) {
-			hit = this.solid.splice(i, 1)[0];
-			hit.exploding = true;
-			i--;
-			hit.vx -= hit.blowback;
-			this.ghosts.push(hit);
-			game.sounds.play(random.pick(hit.hitSound));
-		}
-		if (this.player.direction === "right" && this.swordRight.collides(this.solid[i])) {
-			hit = this.solid.splice(i, 1)[0];
-			hit.exploding = true;
-			i--;
-			hit.vx += hit.blowback;
-			this.ghosts.push(hit);
-			game.sounds.play(random.pick(hit.hitSound));
 		}
 	}
 	for (i = 0; i < this.ghosts.length; i++) {

@@ -5,6 +5,7 @@
 	"sounds": {
 		"clank": "audio/clank.mp3",
 		"fall": "audio/fall.mp3",
+		"heart": "audio/heart.mp3",
 		"hurt": "audio/hurt.mp3",
 		"hurt2": "audio/hurt2.mp3",
 		"music": "audio/music.mp3",
@@ -42,11 +43,6 @@
 		},
 		"bg-5": {
 			"strip": "images/bg-5.png",
-			"frames": 1,
-			"msPerFrame": 20
-		},
-		"stove": {
-			"strip": "images/stove.png",
 			"frames": 1,
 			"msPerFrame": 20
 		},
@@ -188,6 +184,16 @@
 			"frames": 4,
 			"msPerFrame": 100
 		},
+		"heart-item": {
+			"strip": "images/heart-item.png",
+			"frames": 1,
+			"msPerFrame": 100
+		},
+		"heart-fade": {
+			"strip": "images/heart-fade-f6.png",
+			"frames": 6,
+			"msPerFrame": 50
+		},
 		"player-pain-down": {
 			"strip": "images/player-pain-down-f4.png",
 			"frames": 4,
@@ -252,6 +258,11 @@
 			"frames": 15,
 			"repeatAt": 14,
 			"msPerFrame": 50
+		},
+		"stove": {
+			"strip": "images/stove.png",
+			"frames": 1,
+			"msPerFrame": 20
 		},
 	}
 }
