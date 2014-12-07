@@ -126,6 +126,7 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 
 game.scenes.add("main", new Splat.Scene(canvas, function() {
 	// initialization
+	game.sounds.play("music", true);
 	var playerWalkDown = game.animations.get("player-walk-down");
 	this.player = new Splat.AnimatedEntity(300, 300, 39, 51, playerWalkDown, -12, -19);
 	this.player.walkUp = game.animations.get("player-walk-up");
@@ -143,7 +144,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	this.swordUp.move = moveRelativeTo(this.player, -130, -swordUp.height + 31 + 25);
 	this.swordUp.draw = makeSwordDraw(this.player, "up");
 
-	this.swordDown = new Splat.AnimatedEntity(0, 0, swordDown.width - 27 - 39, swordDown.height -29 - 25, swordDown, -27, -29);
+	this.swordDown = new Splat.AnimatedEntity(0, 0, swordDown.width - 27 - 39, swordDown.height - 29 - 25, swordDown, -27, -29);
 	this.swordDown.move = moveRelativeTo(this.player, -130, this.player.height);
 	this.swordDown.draw = makeSwordDraw(this.player, "down");
 
@@ -237,7 +238,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 			i--;
 			hit.vy -= 1;
 			this.ghosts.push(hit);
-			game.sounds.play("pot-breaking");
+			game.sounds.play("hurt");
 		}
 		if (this.player.direction === "down" && this.swordDown.collides(this.solid[i])) {
 			hit = this.solid.splice(i, 1)[0];
@@ -245,7 +246,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 			i--;
 			hit.vy += 1;
 			this.ghosts.push(hit);
-			game.sounds.play("pot-breaking");
+			game.sounds.play("hurt");
 		}
 		if (this.player.direction === "left" && this.swordLeft.collides(this.solid[i])) {
 			hit = this.solid.splice(i, 1)[0];
@@ -253,7 +254,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 			i--;
 			hit.vx -= 1;
 			this.ghosts.push(hit);
-			game.sounds.play("pot-breaking");
+			game.sounds.play("hurt");
 		}
 		if (this.player.direction === "right" && this.swordRight.collides(this.solid[i])) {
 			hit = this.solid.splice(i, 1)[0];
@@ -261,7 +262,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 			i--;
 			hit.vx += 1;
 			this.ghosts.push(hit);
-			game.sounds.play("pot-breaking");
+			game.sounds.play("hurt");
 		}
 	}
 	for (i = 0; i < this.ghosts.length; i++) {

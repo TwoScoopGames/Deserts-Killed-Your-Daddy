@@ -1,12 +1,14 @@
 {
-	"images": {
-	},
+	"images": {},
 	"sounds": {
+		"music": "audio/music.mp3",
 		"pot-breaking": "audio/pot-breaking.wav",
+		"hurt": "audio/hurt.mp3",
+		"hurt2": "audio/hurt2.mp3",
+		"pop": "audio/pop.mp3",
 		"sword": "audio/sword.wav"
 	},
-	"fonts": {
-	},
+	"fonts": {},
 	"animations": {
 		"bg-1": {
 			"strip": "images/bg-1.png",
