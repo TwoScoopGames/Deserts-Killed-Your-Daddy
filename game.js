@@ -127,7 +127,7 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 game.scenes.add("main", new Splat.Scene(canvas, function() {
 	// initialization
 	var playerWalkDown = game.animations.get("player-walk-down");
-	this.player = new Splat.AnimatedEntity(300, 300, 74, 74, playerWalkDown, -13, -63);
+	this.player = new Splat.AnimatedEntity(300, 300, 39, 51, playerWalkDown, -12, -19);
 	this.player.walkUp = game.animations.get("player-walk-up");
 	this.player.walkDown = playerWalkDown;
 	this.player.walkLeft = game.animations.get("player-walk-left");
@@ -147,12 +147,12 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	this.swordDown.move = moveRelativeTo(this.player, -swordDown.width / 2, this.player.height);
 	this.swordDown.draw = makeSwordDraw(this.player, "down");
 
-	this.swordLeft = new Splat.AnimatedEntity(0, 0, swordLeft.width, swordLeft.height, swordLeft, 0, 0);
-	this.swordLeft.move = moveRelativeTo(this.player, -swordLeft.width, -swordLeft.height / 2);
+	this.swordLeft = new Splat.AnimatedEntity(0, 0, swordLeft.width - 40, swordLeft.height - 58, swordLeft, -30, -24);
+	this.swordLeft.move = moveRelativeTo(this.player, -swordLeft.width + 40, -140);
 	this.swordLeft.draw = makeSwordDraw(this.player, "left");
 
-	this.swordRight = new Splat.AnimatedEntity(0, 0, swordRight.width - 30, swordRight.height - 48, swordRight, 0, -24);
-	this.swordRight.move = moveRelativeTo(this.player, this.player.width, -swordLeft.height / 2);
+	this.swordRight = new Splat.AnimatedEntity(0, 0, swordRight.width - 40, swordRight.height - 58, swordRight, -10, -24);
+	this.swordRight.move = moveRelativeTo(this.player, this.player.width, -140);
 	this.swordRight.draw = makeSwordDraw(this.player, "right");
 
 	this.swordVisible = false;
@@ -285,12 +285,12 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 
 	entities.draw(context, this.ground);
 
-	this.player.draw(context);
-	outline(context, this.player, "red");
 	this.swordUp.draw(context);
-	this.swordDown.draw(context);
 	this.swordLeft.draw(context);
 	this.swordRight.draw(context);
+	this.player.draw(context);
+	outline(context, this.player, "red");
+	this.swordDown.draw(context);
 
 	for (var i = 0; i < this.solid.length; i++) {
 		this.solid[i].draw(context);
