@@ -38,6 +38,7 @@ function makePot(x, y) {
 	var pot = new Splat.AnimatedEntity(x, y, 56, 56, anim, -28, -13);
 	pot.painRight = anim;
 	pot.hitSound = ["pot-breaking"];
+	pot.blowback = 0;
 	pot.move = function(elapsedMillis) {
 		if (!this.exploding) {
 			return;
@@ -52,6 +53,9 @@ function makeStove(x, y) {
 	var anim = game.animations.get("stove").copy();
 	var stove = new Splat.AnimatedEntity(x, y, 148, 148, anim, 0, 0);
 	stove.hitSound = ["clank"];
+	stove.blowback = 0;
+	stove.painRight = anim;
+	makeMoveDamageable(stove, 5, 500);
 	return stove;
 }
 
@@ -102,6 +106,7 @@ function makeTurtle(x, y) {
 	turtle.direction = "left";
 	turtle.damage = 1;
 	turtle.hitSound = ["hurt", "hurt2"];
+	turtle.blowback = 1;
 	turtle.move = function(elapsedMillis) {
 		if (this.direction === "left" && this.x < 200) {
 			this.direction = "right";
@@ -339,7 +344,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 			hit = this.solid.splice(i, 1)[0];
 			hit.exploding = true;
 			i--;
-			hit.vy -= 1;
+			hit.vy -= hit.blowback;
 			this.ghosts.push(hit);
 			game.sounds.play(random.pick(hit.hitSound));
 		}
@@ -347,7 +352,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 			hit = this.solid.splice(i, 1)[0];
 			hit.exploding = true;
 			i--;
-			hit.vy += 1;
+			hit.vy += hit.blowback;
 			this.ghosts.push(hit);
 			game.sounds.play(random.pick(hit.hitSound));
 		}
@@ -355,7 +360,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 			hit = this.solid.splice(i, 1)[0];
 			hit.exploding = true;
 			i--;
-			hit.vx -= 1;
+			hit.vx -= hit.blowback;
 			this.ghosts.push(hit);
 			game.sounds.play(random.pick(hit.hitSound));
 		}
@@ -363,7 +368,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 			hit = this.solid.splice(i, 1)[0];
 			hit.exploding = true;
 			i--;
-			hit.vx += 1;
+			hit.vx += hit.blowback;
 			this.ghosts.push(hit);
 			game.sounds.play(random.pick(hit.hitSound));
 		}
