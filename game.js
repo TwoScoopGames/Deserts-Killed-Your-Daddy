@@ -133,7 +133,7 @@ function makeTurtle(x, y) {
 	return turtle;
 }
 
-function makeCookie(type, speed, player, x, y) {
+function makeCookie(type, speed, hp, player, x, y) {
 	var anim = game.animations.get("cookie-" + type + "-left").copy();
 	var cookie = new Splat.AnimatedEntity(x, y, 74, 74, anim, -25, -4);
 	cookie.walkLeft = anim;
@@ -154,7 +154,7 @@ function makeCookie(type, speed, player, x, y) {
 		moveEntity(this, player.wasAbove(this), player.wasBelow(this), !this.exploding && this.direction === "left", !this.exploding && this.direction === "right", 0.01, speed);
 		Splat.AnimatedEntity.prototype.move.call(this, elapsedMillis);
 	};
-	makeMoveDamageable(cookie, 2, 400);
+	makeMoveDamageable(cookie, hp, 400);
 	return cookie;
 }
 
@@ -365,10 +365,10 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 
 	this.ground = entities.sort(tile.fillAreaRandomly(this.goundSprites, 0, 0, canvas.width, canvas.height));
 
-	var makeChip = makeCookie.bind(undefined, "chip", 0.3, this.player);
-	var makeSnickerdoodle = makeCookie.bind(undefined, "snickerdoodle", 0.6, this.player);
-	var makeRaisin = makeCookie.bind(undefined, "raisin", 0.1, this.player);
-	var makePeanutButter = makeCookie.bind(undefined, "peanutbutter", 0.3, this.player);
+	var makeRaisin = makeCookie.bind(undefined, "raisin", 0.1, 3, this.player);
+	var makeChip = makeCookie.bind(undefined, "chip", 0.3, 2, this.player);
+	var makeSnickerdoodle = makeCookie.bind(undefined, "snickerdoodle", 0.6, 1, this.player);
+	var makePeanutButter = makeCookie.bind(undefined, "peanutbutter", 0.3, 2, this.player);
 
 	this.timers.spawn = new Splat.Timer(undefined, 1000, function() {
 		spawnRandom(scene, random.pick([makePot, makeTurtle, makeStove, makeChip, makeSnickerdoodle, makeRaisin, makePeanutButter]));
