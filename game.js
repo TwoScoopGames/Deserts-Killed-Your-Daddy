@@ -200,8 +200,24 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 	this.solid.push(makePot(600, 300));
 	this.solid.push(makePot(100, 100));
 	this.solid.push(makePot(100, 400));
+	this.solid.push(makePot(200, 300));
+	this.solid.push(makePot(300, 100));
+	this.solid.push(makePot(400, 400));
 	this.solid.push(makeTurtle(800, 100));
 	this.ghosts = [];
+
+
+	this.goundSprites = [
+		game.animations.get("bg-1"),
+		game.animations.get("bg-2"),
+		game.animations.get("bg-3"),
+		game.animations.get("bg-4")
+	];
+
+	// sprite array, x, y, width, height
+	this.ground = tileArea(this.goundSprites, 0, 0, canvas.width, canvas.height);
+
+
 }, function(elapsedMillis) {
 	// simulation
 
@@ -271,6 +287,8 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 	context.fillStyle = "#000000";
 	context.fillRect(0, 0, canvas.width, canvas.height);
 
+	sortAndDraw(context, this.ground);
+
 	this.player.draw(context);
 	outline(context, this.player, "red");
 	this.swordUp.draw(context);
@@ -297,6 +315,42 @@ function outline(context, entity, color) {
 	}
 	context.strokeStyle = color;
 	context.strokeRect(entity.x, entity.y, entity.width, entity.height);
+}
+
+
+
+/*
+ * Fills a rectangle with sprites from an array
+ */
+function tileArea(sprites, x, y, width, height) {
+	var array = [];
+	for (var w = x; w < width; w += sprites[0].width) {
+		for (var h = y; h < height; h += sprites[0].height) {
+			var thisSprite = sprites[randomPick(sprites)];
+			array.push(new Splat.AnimatedEntity(w, h, thisSprite.width, thisSprite.height, thisSprite, 0, 0));
+		}
+	}
+	return array;
+}
+
+function sortAndDraw(context, entities) {
+	var array = sortEntities(entities);
+	for (var i = 0; i < array.length; i++) {
+		array[i].draw(context);
+	}
+}
+
+function sortEntities(entities) {
+	return entities.sort(function(b, a) {
+		return (b.y + b.height) - (a.y + a.height);
+	});
+}
+
+/*
+ * Pick a random index from an array, returns a number
+ */
+function randomPick(array) {
+	return Math.floor(Math.random() * array.length);
 }
 
 game.scenes.switchTo("loading");

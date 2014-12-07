@@ -8,6 +8,31 @@
 	"fonts": {
 	},
 	"animations": {
+		"bg-1": {
+			"strip": "images/bg-1.png",
+			"frames": 1,
+			"msPerFrame": 20
+		},
+		"bg-2": {
+			"strip": "images/bg-2.png",
+			"frames": 1,
+			"msPerFrame": 20
+		},
+		"bg-3": {
+			"strip": "images/bg-3.png",
+			"frames": 1,
+			"msPerFrame": 20
+		},
+		"bg-4": {
+			"strip": "images/bg-4.png",
+			"frames": 1,
+			"msPerFrame": 20
+		},
+		"stove": {
+			"strip": "images/stove.png",
+			"frames": 1,
+			"msPerFrame": 20
+		},
 		"cake-turtle-left": {
 			"strip": "images/cake-turtle-left-f14.png",
 			"frames": 14,
@@ -16,7 +41,6 @@
 		"cake-turtle-right": {
 			"strip": "images/cake-turtle-right-f14.png",
 			"frames": 14,
-			"flip": "horizontal",
 			"msPerFrame": 20
 		},
 		"player-walk-up": {
