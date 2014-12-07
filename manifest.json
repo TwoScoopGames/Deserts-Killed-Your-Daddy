@@ -68,6 +68,17 @@
 			"flip": "horizontal",
 			"msPerFrame": 20
 		},
+		"cookie-chip-left": {
+			"strip": "images/cookie-chip-f34.png",
+			"frames": 34,
+			"msPerFrame": 20
+		},
+		"cookie-chip-right": {
+			"strip": "images/cookie-chip-f34.png",
+			"frames": 34,
+			"flip": "horizontal",
+			"msPerFrame": 20
+		},
 		"destructable-oven-1": {
 			"strip": "images/destructable-oven1-f6.png",
 			"frames": 6,

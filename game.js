@@ -133,6 +133,31 @@ function makeTurtle(x, y) {
 	return turtle;
 }
 
+function makeCookie(player, x, y) {
+	var anim = game.animations.get("cookie-chip-left").copy();
+	var cookie = new Splat.AnimatedEntity(x, y, 74, 74, anim, -25, -4);
+	cookie.walkLeft = anim;
+	cookie.walkRight = game.animations.get("cookie-chip-right").copy();
+	cookie.painLeft = game.animations.get("cookie-chip-left").copy();
+	cookie.painRight = game.animations.get("cookie-chip-right").copy();
+	cookie.direction = "left";
+	cookie.damage = 1;
+	cookie.hitSound = ["hurt", "hurt2"];
+	cookie.blowback = 1;
+	cookie.move = function(elapsedMillis) {
+		if (player.wasLeft(this)) {
+			this.direction = "left";
+		}
+		if (player.wasRight(this)) {
+			this.direction = "right";
+		}
+		moveEntity(this, player.wasAbove(this), player.wasBelow(this), !this.exploding && this.direction === "left", !this.exploding && this.direction === "right", 0.01, 0.3);
+		Splat.AnimatedEntity.prototype.move.call(this, elapsedMillis);
+	};
+	makeMoveDamageable(cookie, 2, 400);
+	return cookie;
+}
+
 function animationTotalTime(anim) {
 	var time = 0;
 	for (var i = 0; i < anim.frames.length; i++) {
@@ -341,7 +366,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	this.ground = entities.sort(tile.fillAreaRandomly(this.goundSprites, 0, 0, canvas.width, canvas.height));
 
 	this.timers.spawn = new Splat.Timer(undefined, 1000, function() {
-		spawnRandom(scene, random.pick([makePot, makeTurtle, makeStove]));
+		spawnRandom(scene, random.pick([makePot, makeTurtle, makeStove, makeCookie.bind(undefined, scene.player)]));
 		this.reset();
 		this.start();
 	});
@@ -353,7 +378,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 		debug = !debug;
 	}
 	if (game.keyboard.consumePressed("h")) {
-		spawnRandom(this, random.pick([makePot, makeTurtle, makeStove]));
+		spawnRandom(this, random.pick([makePot, makeTurtle, makeStove, makeCookie.bind(undefined, this.player)]));
 	}
 
 	movePlayer(this.player);
