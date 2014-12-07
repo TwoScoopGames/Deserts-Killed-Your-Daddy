@@ -4,6 +4,7 @@
 	},
 	"sounds": {
 		"clank": "audio/clank.mp3",
+		"fall": "audio/fall.mp3",
 		"hurt": "audio/hurt.mp3",
 		"hurt2": "audio/hurt2.mp3",
 		"music": "audio/music.mp3",

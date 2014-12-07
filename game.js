@@ -84,7 +84,7 @@ function makeMoveDamageable(entity, hp, invincibleTime) {
 
 			if (this.hitTime > invincibleTime) {
 				this.hp--;
-				if (this.hp === 0) {
+				if (this.hp <= 0) {
 					this.dead = true;
 				} else {
 					this.exploding = false;
@@ -215,8 +215,9 @@ var tilesTall = Math.floor(canvas.height / 74);
 function spawnRandom(scene, builder) {
 	var x = Math.floor(Math.random() * tilesWide) * 74;
 	var y = Math.floor(Math.random() * tilesTall) * 74;
-	
+
 	scene.ghosts.push(makeFallingEntity(x, y, builder(0, 0), scene.solid));
+	game.sounds.play("fall");
 }
 
 game.scenes.add("main", new Splat.Scene(canvas, function() {
