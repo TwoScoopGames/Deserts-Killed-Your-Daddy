@@ -1,0 +1,83 @@
+<DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" width="1920" height="1080" currentTimeline="1" xflVersion="2.2" creatorInfo="Adobe Flash Professional CS6" platform="Macintosh" versionInfo="Saved by Adobe Flash Macintosh 12.0 build 481" majorVersion="12" buildNumber="481" guidesSnapTo="false" snapAlign="false" objectsSnapTo="false" vanishingPoint3DX="960" vanishingPoint3DY="540" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false" autoSaveEnabled="true" autoSaveIntervalMinutes="1">
+     <symbols>
+          <Include href="Symbol 1.xml" loadImmediate="false" itemID="5483f0a6-0000076b" lastModified="1417932967"/>
+          <Include href="Symbol 2.xml" loadImmediate="false" itemID="5483f0b2-0000076f" lastModified="1417932978"/>
+          <Include href="Symbol 3.xml" loadImmediate="false" itemID="5483f0be-00000772" lastModified="1417932990"/>
+          <Include href="Symbol 4.xml" loadImmediate="false" itemID="5483f0ca-00000775" lastModified="1417933002"/>
+          <Include href="Symbol 5.xml" loadImmediate="false" itemID="5483f12d-00000778" lastModified="1417933101"/>
+          <Include href="Symbol 6.xml" loadImmediate="false" itemID="5483f131-0000077b" lastModified="1417933105"/>
+          <Include href="Symbol 8.xml" loadImmediate="false" itemID="54846269-00000254" lastModified="1417987198"/>
+     </symbols>
+     <timelines>
+          <DOMTimeline name="Scene 1">
+               <layers>
+                    <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="923.7" centerPoint3DY="558.6">
+                                             <matrix>
+                                                  <Matrix a="0.73175048828125" b="0.681564331054688" c="-0.681564331054688" d="0.73175048828125" tx="940.25" ty="529.55"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="8.7" y="9.7"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Symbol 2" centerPoint3DX="947.7" centerPoint3DY="580.7">
+                                             <matrix>
+                                                  <Matrix a="0.73175048828125" b="0.681564331054688" c="-0.681564331054688" d="0.73175048828125" tx="960.15" ty="554.85"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="9.05" y="8.55"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Symbol 3" centerPoint3DX="897.85" centerPoint3DY="595.4">
+                                             <matrix>
+                                                  <Matrix a="0.653793334960938" b="0.756668090820312" c="-0.756668090820312" d="0.653793334960938" tx="902.1" ty="571"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="3.45" y="1.4"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Symbol 4" centerPoint3DX="921.65" centerPoint3DY="615.5">
+                                             <matrix>
+                                                  <Matrix a="0.73175048828125" b="0.681564331054688" c="-0.681564331054688" d="0.73175048828125" tx="925.15" ty="593.85"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="5.4" y="2.95"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Symbol 5" centerPoint3DX="908.8" centerPoint3DY="633.8">
+                                             <matrix>
+                                                  <Matrix a="0.73175048828125" b="0.681564331054688" c="-0.681564331054688" d="0.73175048828125" tx="906.85" ty="621.15"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="15.15" y="1.1"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Symbol 6" centerPoint3DX="886.25" centerPoint3DY="613.95">
+                                             <matrix>
+                                                  <Matrix a="0.73175048828125" b="0.681564331054688" c="-0.681564331054688" d="0.73175048828125" tx="885.65" ty="603.7"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="10.4" y="1.1"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Symbol 8" centerPoint3DX="983.4" centerPoint3DY="514.55">
+                                             <matrix>
+                                                  <Matrix a="0.961135864257812" b="0.276016235351562" c="-0.276016235351562" d="0.961135864257812" tx="930.1" ty="418.95"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="78.05" y="76.65"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+               </layers>
+          </DOMTimeline>
+     </timelines>
+     <PrinterSettings platform="macintosh"/>
+     <publishHistory/>
+</DOMDocument>
