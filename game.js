@@ -49,7 +49,7 @@ function makePot(x, y) {
 function makeStove(x, y) {
 	var anim = game.animations.get("stove").copy();
 	var stove = new Splat.AnimatedEntity(x, y, 148, 148, anim, 0, 0);
-	stove.hitSound = ["pot-breaking"];
+	stove.hitSound = ["clank"];
 	return stove;
 }
 

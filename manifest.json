@@ -4,11 +4,15 @@
 	},
 	"sounds": {
 		"music": "audio/music.mp3",
-		"pot-breaking": "audio/pot-breaking.wav",
+		"pot-breaking": "audio/pot-breaking.mp3",
 		"hurt": "audio/hurt.mp3",
 		"hurt2": "audio/hurt2.mp3",
 		"pop": "audio/pop.mp3",
-		"sword": "audio/sword.wav"
+		"clank": "audio/clank.mp3",
+		"sword": "audio/sword.wav",
+		"pain": "audio/player-pain.mpg",
+		"pain2": "audio/player-pain2.mpg",
+		"pain3": "audio/player-pain3.mpg"
 	},
 	"fonts": {},
 	"animations": {
