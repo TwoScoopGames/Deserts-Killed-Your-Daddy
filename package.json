@@ -12,7 +12,7 @@
     "jshint": "^2.5.1"
   },
   "scripts": {
-    "lint-js": "bash -c \"jshint game.js\"",
+    "lint-js": "bash -c \"jshint game.js\" lib/*.js",
     "build-js": "browserify game.js -o index.js",
     "build": "npm run lint-js && npm run build-js"
   },
