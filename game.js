@@ -177,11 +177,6 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	});
 	this.timers.sword.interrupted = false;
 
-	function makeRandomPots(array, qty) {
-		for (var i = 0; i < qty; i++) {
-			array.push(makePot(randomBetween(0, canvas.width), randomBetween(0, canvas.height)));
-		}
-	}
 	this.solid = [];
 	this.solid.push(makeStove(0, 0));
 	this.solid.push(makeStove(148, 0));
@@ -191,7 +186,6 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	this.solid.push(makeStove((148 * 5), 0));
 	this.solid.push(makeStove((148 * 6), 0));
 	this.solid.push(makeStove((148 * 7), 0));
-	makeRandomPots(this.solid, 15);
 	this.solid.push(makePot(500, 500));
 	this.solid.push(makeTurtle(800, 100));
 	this.solid.push(makeTurtle(950, 300));
