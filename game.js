@@ -257,12 +257,14 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 	context.fillStyle = "black";
 	context.fillRect(0, 0, canvas.width, canvas.height);
 
-	context.fillStyle = "#fff";
-	context.font = "25px helvetica";
+	context.fillStyle = "red";
+	context.font = "40px helvetica";
 	centerText(context, "DESSERTS KILLED YOUR DADDY", 0, canvas.height / 2 - 13);
 
+	context.fillStyle = "#fff";
+	context.font = "25px helvetica";
 	centerText(context, "WASD, ARROWS = MOVE", 0, canvas.height / 2 + 40);
-	centerText(context, "J, SPACE = ATTACK", 0, canvas.height / 2 + 70);
+	centerText(context, "J, SPACE = ATTACK", 0, canvas.height / 2 + 90);
 }));
 
 function resolveCollisionShortest(player, entity) {
