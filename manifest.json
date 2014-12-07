@@ -90,6 +90,28 @@
 			"flip": "horizontal",
 			"msPerFrame": 20
 		},
+		"cookie-peanutbutter-left": {
+			"strip": "images/cookie-peanutbutter-f34.png",
+			"frames": 34,
+			"msPerFrame": 20
+		},
+		"cookie-peanutbutter-right": {
+			"strip": "images/cookie-peanutbutter-f34.png",
+			"frames": 34,
+			"flip": "horizontal",
+			"msPerFrame": 20
+		},
+		"cookie-peanutbutter-pain-left": {
+			"strip": "images/cookie-peanutbutter-pain-f4.png",
+			"frames": 4,
+			"msPerFrame": 20
+		},
+		"cookie-peanutbutter-pain-right": {
+			"strip": "images/cookie-peanutbutter-pain-f4.png",
+			"frames": 4,
+			"flip": "horizontal",
+			"msPerFrame": 20
+		},
 		"cookie-raisin-left": {
 			"strip": "images/cookie-raisin-f34.png",
 			"frames": 34,
