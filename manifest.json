@@ -3,16 +3,16 @@
 		"heart": "images/heart-full.png"
 	},
 	"sounds": {
-		"music": "audio/music.mp3",
-		"pot-breaking": "audio/pot-breaking.mp3",
+		"clank": "audio/clank.mp3",
 		"hurt": "audio/hurt.mp3",
 		"hurt2": "audio/hurt2.mp3",
-		"pop": "audio/pop.mp3",
-		"clank": "audio/clank.mp3",
-		"sword": "audio/sword.wav",
+		"music": "audio/music.mp3",
 		"pain": "audio/player-pain.mp3",
 		"pain2": "audio/player-pain2.mp3",
-		"pain3": "audio/player-pain3.mp3"
+		"pain3": "audio/player-pain3.mp3",
+		"pop": "audio/pop.mp3",
+		"pot-breaking": "audio/pot-breaking.mp3",
+		"sword": "audio/sword.wav",
 	},
 	"fonts": {},
 	"animations": {
