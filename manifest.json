@@ -72,25 +72,30 @@
 			"strip": "images/destructable-oven1-f6.png",
 			"frames": 6,
 			"repeatAt": 5,
-			"msPerFrame": 50
+			"msPerFrame": 100
 		},
 		"destructable-oven-2": {
 			"strip": "images/destructable-oven2-f5.png",
 			"frames": 5,
 			"repeatAt": 4,
-			"msPerFrame": 50
+			"msPerFrame": 100
 		},
 		"destructable-oven-3": {
 			"strip": "images/destructable-oven3-f7.png",
 			"frames": 7,
 			"repeatAt": 6,
-			"msPerFrame": 50
+			"msPerFrame": 100
 		},
 		"destructable-oven-4": {
-			"strip": "images/destructable-oven4-f10.png",
-			"frames": 10,
-			"repeatAt": 9,
-			"msPerFrame": 50
+			"strip": "images/destructable-oven4-f6.png",
+			"frames": 6,
+			"repeatAt": 5,
+			"msPerFrame": 100
+		},
+		"destructable-oven-5": {
+			"strip": "images/destructable-oven5-f4.png",
+			"frames": 4,
+			"msPerFrame": 100
 		},
 		"player-pain-down": {
 			"strip": "images/player-pain-down-f4.png",
