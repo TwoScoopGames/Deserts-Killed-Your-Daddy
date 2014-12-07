@@ -13,7 +13,13 @@ var manifest = require("./manifest.json");
 var game = new Splat.Game(canvas, manifest);
 
 function movePlayer(player) {
-	moveEntity(player, game.keyboard.isPressed("w"), game.keyboard.isPressed("s"), game.keyboard.isPressed("a"), game.keyboard.isPressed("d"), 0.03, 0.8);
+	moveEntity(player,
+			   game.keyboard.isPressed("w") || game.keyboard.isPressed("up"),
+			   game.keyboard.isPressed("s") || game.keyboard.isPressed("down"),
+			   game.keyboard.isPressed("a") || game.keyboard.isPressed("left"),
+			   game.keyboard.isPressed("d") || game.keyboard.isPressed("right"),
+			   0.03,
+			   0.8);
 }
 
 function moveSword(player, timer) {
