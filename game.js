@@ -54,8 +54,19 @@ function makeStove(x, y) {
 	var stove = new Splat.AnimatedEntity(x, y, anim.width, anim.height - 74, anim, 0, 74 - anim.height);
 	stove.hitSound = ["clank"];
 	stove.blowback = 0;
-	stove.painRight = anim;
+	stove.painAnims = [
+		game.animations.get("destructable-oven-4").copy(),
+		game.animations.get("destructable-oven-4").copy(),
+		game.animations.get("destructable-oven-3").copy(),
+		game.animations.get("destructable-oven-2").copy(),
+		game.animations.get("destructable-oven-1").copy()
+	];
 	makeMoveDamageable(stove, 5, 500);
+	var oldMove = stove.move;
+	stove.move = function(elapsedMillis) {
+		this.painRight = this.painAnims[this.hp - 1];
+		oldMove.call(this, elapsedMillis);
+	};
 	return stove;
 }
 
