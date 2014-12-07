@@ -507,6 +507,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 		if (this.ghosts[i].dead) {
 			if (this.ghosts[i].score) {
 				score += this.ghosts[i].score;
+				game.sounds.play("pop");
 			}
 			this.ghosts.splice(i, 1);
 			i--;
