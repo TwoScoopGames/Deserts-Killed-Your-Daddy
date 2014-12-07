@@ -57,7 +57,7 @@ function makeTurtle(x, y) {
 	turtle.walkRight = game.animations.get("cake-turtle-right").copy();
 	turtle.direction = "left";
 	turtle.hitTime = 0;
-	turtle.hp = 3;
+	turtle.hp = 2;
 	turtle.move = function(elapsedMillis) {
 		if (this.direction === "left" && this.x < 200) {
 			this.direction = "right";
@@ -65,7 +65,7 @@ function makeTurtle(x, y) {
 		if (this.direction === "right" && this.x > 800) {
 			this.direction = "left";
 		}
-		moveEntity(this, false, false, this.direction === "left", this.direction === "right", 0.01, 0.6);
+		moveEntity(this, false, false, !this.exploding && this.direction === "left", !this.exploding && this.direction === "right", 0.01, 0.3);
 		Splat.AnimatedEntity.prototype.move.call(this, elapsedMillis);
 		if (this.exploding) {
 			this.hitTime += elapsedMillis;
@@ -261,7 +261,9 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 		this.ghosts[i].move(elapsedMillis);
 		if (!this.ghosts[i].exploding) {
 			this.solid.push(this.ghosts.splice(i, 1)[0]);
-			i--;
+			if (i > 0) {
+				i--;
+			}
 			if (this.ghosts.length === 0) {
 				break;
 			}
