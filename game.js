@@ -89,6 +89,42 @@ function makeTurtle(x, y) {
 	return turtle;
 }
 
+function animationTotalTime(anim) {
+	var time = 0;
+	for (var i = 0; i < anim.frames.length; i++) {
+		time += anim.frames[i].time;
+	}
+	return time;
+}
+
+function makeFallingEntity(x, y, entity, list) {
+	var fallingSpeed = 1;
+	var anim = game.animations.get("shadow");
+
+	entity.x = x + ((anim.width - entity.width) / 2);
+	entity.y = y - (fallingSpeed * animationTotalTime(anim));
+	entity.vy = fallingSpeed;
+
+	var shadow = new Splat.AnimatedEntity(x, y, 74, 74, anim, 0, 40);
+	shadow.exploding = true;
+	shadow.source = entity;
+	shadow.move = function(elapsedMillis) {
+		Splat.AnimatedEntity.prototype.move.call(this, elapsedMillis);
+		Splat.Entity.prototype.move.call(this.source, elapsedMillis);
+		if (this.source.y === this.y) {
+			this.dead = true;
+			this.source.vy = 0;
+			list.push(this.source);
+		}
+	};
+	shadow.draw = function(context) {
+		Splat.AnimatedEntity.prototype.draw.call(this, context);
+		Splat.AnimatedEntity.prototype.draw.call(this.source, context);
+	};
+
+	return shadow;
+}
+
 function moveRelativeTo(target, xOffset, yOffset) {
 	return function(elapsedMillis) {
 		this.x = target.x + xOffset;
@@ -199,7 +235,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	this.solid.push(makeTurtle(950, 300));
 	this.solid.push(makeTurtle(1050, 600));
 	this.ghosts = [];
-
+	this.ghosts.push(makeFallingEntity(74 * 5, 74 * 5, makePot(0, 0), this.solid));
 
 	this.goundSprites = [
 		game.animations.get("bg-1"),

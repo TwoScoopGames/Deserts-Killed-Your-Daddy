@@ -108,6 +108,12 @@
 			"frames": 11,
 			"reapeatAt": 10,
 			"msPerFrame": 25
-		}
+		},
+		"shadow": {
+			"strip": "images/shadow-f15.png",
+			"frames": 15,
+			"repeatAt": 14,
+			"msPerFrame": 50
+		},
 	}
 }
