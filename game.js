@@ -340,6 +340,12 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 
 	this.ground = entities.sort(tile.fillAreaRandomly(this.goundSprites, 0, 0, canvas.width, canvas.height));
 
+	this.timers.spawn = new Splat.Timer(undefined, 1000, function() {
+		spawnRandom(scene, random.pick([makePot, makeTurtle, makeStove]));
+		this.reset();
+		this.start();
+	});
+	this.timers.spawn.start();
 }, function(elapsedMillis) {
 	// simulation
 
