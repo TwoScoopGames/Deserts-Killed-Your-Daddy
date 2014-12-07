@@ -220,6 +220,21 @@ function spawnRandom(scene, builder) {
 	game.sounds.play("fall");
 }
 
+function keepOnScreen(entity) {
+	if (entity.x < 0) {
+		entity.x = 0;
+	}
+	if (entity.x + entity.width > canvas.width) {
+		entity.x = canvas.width - entity.width;
+	}
+	if (entity.y < 0) {
+		entity.y = 0;
+	}
+	if (entity.y + entity.height > canvas.height) {
+		entity.y = canvas.height - entity.height;
+	}
+}
+
 game.scenes.add("main", new Splat.Scene(canvas, function() {
 	// initialization
 	game.sounds.play("music", true);
@@ -320,6 +335,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	}
 
 	movePlayer(this.player);
+	keepOnScreen(this.player);
 	moveSword(this.player, this.timers.sword);
 
 	this.player.move(elapsedMillis);
@@ -343,6 +359,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 
 	for (i = 0; i < this.solid.length; i++) {
 		this.solid[i].move(elapsedMillis);
+		keepOnScreen(this.solid[i]);
 		if (this.timers.sword.time < 120 || this.solid[i].exploding) {
 			continue;
 		}
@@ -383,6 +400,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	}
 	for (i = 0; i < this.ghosts.length; i++) {
 		this.ghosts[i].move(elapsedMillis);
+		keepOnScreen(this.ghosts[i]);
 		if (!this.ghosts[i].exploding) {
 			this.solid.push(this.ghosts.splice(i, 1)[0]);
 			if (i > 0) {
