@@ -246,7 +246,7 @@ function makeSwordDraw(player, direction) {
 }
 game.scenes.add("title", new Splat.Scene(canvas, function() {
 	// initialization
-	this.timers.expire = new Splat.Timer(undefined, 2000, function() {
+	this.timers.expire = new Splat.Timer(undefined, 3000, function() {
 		game.scenes.switchTo("main");
 	});
 	this.timers.expire.start();
@@ -260,6 +260,9 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 	context.fillStyle = "#fff";
 	context.font = "25px helvetica";
 	centerText(context, "DESSERTS KILLED YOUR DADDY", 0, canvas.height / 2 - 13);
+
+	centerText(context, "WASD, ARROWS = MOVE", 0, canvas.height / 2 + 40);
+	centerText(context, "J, SPACE = ATTACK", 0, canvas.height / 2 + 70);
 }));
 
 function resolveCollisionShortest(player, entity) {
