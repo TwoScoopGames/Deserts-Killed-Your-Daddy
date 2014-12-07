@@ -2,6 +2,7 @@
 
 var entities = require("./lib/entities");
 var moveEntity = require("./lib/move-entity");
+var random = require("./lib/random");
 var Splat = require("splatjs");
 var tile = require("./lib/tile");
 
@@ -31,6 +32,7 @@ function makePot(x, y) {
 	var pot = new Splat.AnimatedEntity(x, y, 56, 56, anim, -28, -13);
 	pot.exploding = false;
 	pot.explodeTime = 0;
+	pot.hitSound = ["pot-breaking"];
 	pot.move = function(elapsedMillis) {
 		if (!this.exploding) {
 			return;
@@ -47,6 +49,7 @@ function makePot(x, y) {
 function makeStove(x, y) {
 	var anim = game.animations.get("stove").copy();
 	var stove = new Splat.AnimatedEntity(x, y, 148, 148, anim, 0, 0);
+	stove.hitSound = ["pot-breaking"];
 	return stove;
 }
 
@@ -60,6 +63,7 @@ function makeTurtle(x, y) {
 	turtle.direction = "left";
 	turtle.hitTime = 0;
 	turtle.hp = 2;
+	turtle.hitSound = ["hurt", "hurt2"];
 	turtle.move = function(elapsedMillis) {
 		if (this.direction === "left" && this.x < 200) {
 			this.direction = "right";
@@ -301,7 +305,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 			i--;
 			hit.vy -= 1;
 			this.ghosts.push(hit);
-			game.sounds.play("hurt");
+			game.sounds.play(random.pick(hit.hitSound));
 		}
 		if (this.player.direction === "down" && this.swordDown.collides(this.solid[i])) {
 			hit = this.solid.splice(i, 1)[0];
@@ -309,7 +313,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 			i--;
 			hit.vy += 1;
 			this.ghosts.push(hit);
-			game.sounds.play("hurt");
+			game.sounds.play(random.pick(hit.hitSound));
 		}
 		if (this.player.direction === "left" && this.swordLeft.collides(this.solid[i])) {
 			hit = this.solid.splice(i, 1)[0];
@@ -317,7 +321,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 			i--;
 			hit.vx -= 1;
 			this.ghosts.push(hit);
-			game.sounds.play("hurt");
+			game.sounds.play(random.pick(hit.hitSound));
 		}
 		if (this.player.direction === "right" && this.swordRight.collides(this.solid[i])) {
 			hit = this.solid.splice(i, 1)[0];
@@ -325,7 +329,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 			i--;
 			hit.vx += 1;
 			this.ghosts.push(hit);
-			game.sounds.play("hurt");
+			game.sounds.play(random.pick(hit.hitSound));
 		}
 	}
 	for (i = 0; i < this.ghosts.length; i++) {
