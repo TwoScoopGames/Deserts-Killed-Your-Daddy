@@ -139,12 +139,12 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	var swordLeft = game.animations.get("player-sword-left");
 	var swordRight = game.animations.get("player-sword-right");
 
-	this.swordUp = new Splat.AnimatedEntity(0, 0, swordUp.width, swordUp.height, swordUp, 0, 0);
-	this.swordUp.move = moveRelativeTo(this.player, -swordUp.width / 2, -swordUp.height);
+	this.swordUp = new Splat.AnimatedEntity(0, 0, swordUp.width - 20 - 20, swordUp.height - 31 - 25, swordUp, -20, -31);
+	this.swordUp.move = moveRelativeTo(this.player, -130, -swordUp.height + 31 + 25);
 	this.swordUp.draw = makeSwordDraw(this.player, "up");
 
-	this.swordDown = new Splat.AnimatedEntity(0, 0, swordDown.width, swordDown.height, swordDown, 0, 0);
-	this.swordDown.move = moveRelativeTo(this.player, -swordDown.width / 2, this.player.height);
+	this.swordDown = new Splat.AnimatedEntity(0, 0, swordDown.width - 27 - 39, swordDown.height -29 - 25, swordDown, -27, -29);
+	this.swordDown.move = moveRelativeTo(this.player, -130, this.player.height);
 	this.swordDown.draw = makeSwordDraw(this.player, "down");
 
 	this.swordLeft = new Splat.AnimatedEntity(0, 0, swordLeft.width - 40, swordLeft.height - 58, swordLeft, -30, -24);
