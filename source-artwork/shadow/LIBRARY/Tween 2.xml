@@ -1,0 +1,38 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Tween 2" itemID="5483e69f-00000745" symbolType="graphic" lastModified="1417930399">
+  <timeline>
+    <DOMTimeline name="Tween 2">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape selected="true" isFloating="true">
+                  <matrix>
+                    <Matrix tx="-960.45" ty="-539.95"/>
+                  </matrix>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor alpha="0.501960784313725"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!17846 11376S2[17282 11137 17282 10799!17282 10799[17282 10461 17846 10222!17846 10222[18411 9983 19209 9983!19209 9983[20007 9983 20571 10222!20571 10222[21136 10461 21136 10799!21136 10799[21136 11137 20571 11376!20571 11376[20007 11615
+ 19209 11615!19209 11615[18411 11615 17846 11376"/>
+                    <Edge cubics="!21136 10799(;21136,11024 20948,11217 20571,11376q21136 10799Q21136 11137q20571 11376);"/>
+                    <Edge cubics="!20571 10222(;20948,10381 21136,10574 21136,10799q20571 10222Q21136 10461q21136 10799);"/>
+                    <Edge cubics="!17846 10222(;18223,10063 18677,9983 19209,9983q17846 10222Q18411 9983q19209 9983);"/>
+                    <Edge cubics="!17846 11376(;17470,11217 17282,11024 17282,10799q17846 11376Q17282 11137q17282 10799);"/>
+                    <Edge cubics="!19209 11615(;18677,11615 18223,11535 17846,11376q19209 11615Q18411 11615q17846 11376);"/>
+                    <Edge cubics="!17282 10799(;17282,10574 17470,10381 17846,10222q17282 10799Q17282 10461q17846 10222);"/>
+                    <Edge cubics="!19209 9983(;19741,9983 20195,10063 20571,10222q19209 9983Q20007 9983q20571 10222);"/>
+                    <Edge cubics="!20571 11376(;20195,11535 19741,11615 19209,11615q20571 11376Q20007 11615q19209 11615);"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>
