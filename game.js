@@ -131,7 +131,7 @@ function animationTotalTime(anim) {
 
 function makeFallingEntity(x, y, entity, list) {
 	var fallingSpeed = 1;
-	var anim = game.animations.get("shadow");
+	var anim = game.animations.get("shadow").copy();
 
 	entity.x = x + ((anim.width - entity.width) / 2);
 	entity.y = y - (fallingSpeed * animationTotalTime(anim));
@@ -210,6 +210,15 @@ function resolveCollisionShortest(player, entity) {
 	player.vy += smallest[3];
 }
 
+var tilesWide = Math.floor(canvas.width / 74);
+var tilesTall = Math.floor(canvas.height / 74);
+function spawnRandom(scene, builder) {
+	var x = Math.floor(Math.random() * tilesWide) * 74;
+	var y = Math.floor(Math.random() * tilesTall) * 74;
+	
+	scene.ghosts.push(makeFallingEntity(x, y, builder(0, 0), scene.solid));
+}
+
 game.scenes.add("main", new Splat.Scene(canvas, function() {
 	// initialization
 	game.sounds.play("music", true);
@@ -278,20 +287,16 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	this.timers.sword.interrupted = false;
 
 	this.solid = [];
-	this.solid.push(makeStove(0, 0));
-	this.solid.push(makeStove(148, 0));
-	this.solid.push(makeStove((148 * 2), 0));
-	this.solid.push(makeStove((148 * 3), 0));
-	this.solid.push(makeStove((148 * 4), 0));
-	this.solid.push(makeStove((148 * 5), 0));
-	this.solid.push(makeStove((148 * 6), 0));
-	this.solid.push(makeStove((148 * 7), 0));
-	this.solid.push(makePot(500, 500));
-	this.solid.push(makeTurtle(800, 100));
-	this.solid.push(makeTurtle(950, 300));
-	this.solid.push(makeTurtle(1050, 600));
 	this.ghosts = [];
-	this.ghosts.push(makeFallingEntity(74 * 5, 74 * 5, makePot(0, 0), this.solid));
+
+	spawnRandom(this, makePot);
+	spawnRandom(this, makePot);
+	spawnRandom(this, makePot);
+	spawnRandom(this, makePot);
+	spawnRandom(this, makePot);
+	spawnRandom(this, makeTurtle);
+	spawnRandom(this, makeTurtle);
+	spawnRandom(this, makeStove);
 
 	this.goundSprites = [
 		game.animations.get("bg-1"),
@@ -310,7 +315,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 		debug = !debug;
 	}
 	if (game.keyboard.consumePressed("h")) {
-		this.ghosts.push(makeFallingEntity(74 * 5, 74 * 5, makePot(0, 0), this.solid));
+		spawnRandom(this, random.pick([makePot, makeTurtle, makeStove]));
 	}
 
 	movePlayer(this.player);
