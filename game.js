@@ -305,6 +305,9 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	moveSword(this.player, this.timers.sword);
 
 	this.player.move(elapsedMillis);
+	if (this.player.dead) {
+		game.scenes.switchTo("gameover");
+	}
 
 	var collided = this.player.solveCollisions(this.solid);
 	for (var i = 0; i < collided.length; i++) {
@@ -415,4 +418,23 @@ function centerText(context, text, offsetX, offsetY) {
 	var y = offsetY | 0;
 	context.fillText(text, x, y);
 }
+
+game.scenes.add("gameover", new Splat.Scene(canvas, function() {
+	// initialization
+}, function() {
+	// simulation
+	if (game.keyboard.consumePressed("space")) {
+		game.scenes.switchTo("main");
+	}
+}, function(context) {
+	// draw
+	context.fillStyle = "black";
+	context.fillRect(0, 0, canvas.width, canvas.height);
+
+	context.fillStyle = "#fff";
+	context.font = "25px helvetica";
+	centerText(context, "GAME OVER", 0, canvas.height / 2 - 13);
+	centerText(context, "PRESS SPACE TO RESTART", 0, canvas.height / 2 + 100);
+}));
+
 game.scenes.switchTo("loading");
