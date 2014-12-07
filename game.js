@@ -53,32 +53,30 @@ function makeStove(x, y) {
 	return stove;
 }
 
-function makeTurtle(x, y) {
-	var anim = game.animations.get("cake-turtle-left").copy();
-	var turtle = new Splat.AnimatedEntity(x, y, 74, 74, anim, -25, -4);
-	turtle.walkLeft = anim;
-	turtle.walkRight = game.animations.get("cake-turtle-right").copy();
-	turtle.painLeft = game.animations.get("cake-turtle-pain-left").copy();
-	turtle.painRight = game.animations.get("cake-turtle-pain-right").copy();
-	turtle.direction = "left";
-	turtle.hitTime = 0;
-	turtle.hp = 2;
-	turtle.hitSound = ["hurt", "hurt2"];
-	turtle.move = function(elapsedMillis) {
-		if (this.direction === "left" && this.x < 200) {
-			this.direction = "right";
-		}
-		if (this.direction === "right" && this.x > 800) {
-			this.direction = "left";
-		}
-		moveEntity(this, false, false, !this.exploding && this.direction === "left", !this.exploding && this.direction === "right", 0.01, 0.3);
+function makeMoveDamageable(entity, hp, invincibleTime) {
+	entity.hitTime = 0;
+	entity.hp = hp;
+	var origMove = entity.move;
+
+	entity.move = function(elapsedMillis) {
 		if (this.exploding) {
-			this.sprite = this.direction === "left" ? this.painLeft : this.painRight;
+			this.sprite = this.painRight;
+			if (this.direction === "left") {
+				this.sprite = this.painLeft;
+			}
+			if (this.direction === "up") {
+				this.sprite = this.painUp;
+			}
+			if (this.direction === "down") {
+				this.sprite = this.painDown;
+			}
+
 			if (this.hitTime === 0) {
 				this.sprite.reset();
 			}
 			this.hitTime += elapsedMillis;
-			if (this.hitTime > 400) {
+
+			if (this.hitTime > invincibleTime) {
 				this.hp--;
 				if (this.hp === 0) {
 					this.dead = true;
@@ -88,8 +86,31 @@ function makeTurtle(x, y) {
 				this.hitTime = 0;
 			}
 		}
+		origMove.call(this, elapsedMillis);
+	};
+}
+
+function makeTurtle(x, y) {
+	var anim = game.animations.get("cake-turtle-left").copy();
+	var turtle = new Splat.AnimatedEntity(x, y, 74, 74, anim, -25, -4);
+	turtle.walkLeft = anim;
+	turtle.walkRight = game.animations.get("cake-turtle-right").copy();
+	turtle.painLeft = game.animations.get("cake-turtle-pain-left").copy();
+	turtle.painRight = game.animations.get("cake-turtle-pain-right").copy();
+	turtle.direction = "left";
+	turtle.damage = 1;
+	turtle.hitSound = ["hurt", "hurt2"];
+	turtle.move = function(elapsedMillis) {
+		if (this.direction === "left" && this.x < 200) {
+			this.direction = "right";
+		}
+		if (this.direction === "right" && this.x > 800) {
+			this.direction = "left";
+		}
+		moveEntity(this, false, false, !this.exploding && this.direction === "left", !this.exploding && this.direction === "right", 0.01, 0.3);
 		Splat.AnimatedEntity.prototype.move.call(this, elapsedMillis);
 	};
+	makeMoveDamageable(turtle, 2, 400);
 	return turtle;
 }
 
@@ -290,6 +311,11 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	for (var i = 0; i < collided.length; i++) {
 		if (this.player.collides(collided[i])) {
 			resolveCollisionShortest(this.player, collided[i]);
+			this.player.hp--;
+			continue;
+		}
+		if (collided[i].damage) {
+			this.player.hp--;
 		}
 	}
 
