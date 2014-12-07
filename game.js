@@ -33,7 +33,7 @@ function moveSword(player, timer) {
 
 var debug = false;
 
-function makePot(x, y) {
+function makePot(list, x, y) {
 	var anim = game.animations.get("pot").copy();
 	var pot = new Splat.AnimatedEntity(x, y, 56, 56, anim, -28, -13);
 	pot.painRight = anim;
@@ -45,7 +45,7 @@ function makePot(x, y) {
 		}
 		Splat.AnimatedEntity.prototype.move.call(this, elapsedMillis);
 	};
-	makeMoveDamageable(pot, 1, animationTotalTime(anim));
+	makeMoveDamageable(pot, 1, animationTotalTime(anim), 0.1, list);
 	return pot;
 }
 
@@ -61,13 +61,11 @@ function makeHeart(x, y) {
 		if (!this.fading && this.time > 4000) {
 			this.sprite = game.animations.get("heart-fade").copy();
 			this.fading = true;
-			console.log("exploding");
 			this.time = 0;
 		}
 		if (this.fading && this.time > 1000) {
 			this.exploding = true;
 			this.dead = true;
-			console.log("dead");
 		}
 	};
 	return heart;
@@ -86,7 +84,7 @@ function makeStove(x, y) {
 		game.animations.get("destructable-oven-2").copy(),
 		game.animations.get("destructable-oven-1").copy()
 	];
-	makeMoveDamageable(stove, 6, 500);
+	makeMoveDamageable(stove, 6, 500, 0, []);
 	var oldMove = stove.move;
 	stove.move = function(elapsedMillis) {
 		this.painRight = this.painAnims[this.hp - 1];
@@ -95,13 +93,18 @@ function makeStove(x, y) {
 	return stove;
 }
 
-function makeMoveDamageable(entity, hp, invincibleTime) {
+function makeMoveDamageable(entity, hp, invincibleTime, heartChance, list) {
 	entity.hitTime = 0;
 	entity.hp = hp;
+	entity.heartChance = heartChance;
 	var origMove = entity.move;
 
 	entity.move = function(elapsedMillis) {
 		if (this.exploding) {
+			if (Math.random() < entity.heartChance) {
+				list.push(makeHeart(entity.x, entity.y));
+			}
+			entity.heartChance = 0;
 			this.sprite = this.painRight;
 			if (this.direction === "left") {
 				this.sprite = this.painLeft;
@@ -153,7 +156,7 @@ function makeTurtle(x, y) {
 		moveEntity(this, false, false, !this.exploding && this.direction === "left", !this.exploding && this.direction === "right", 0.01, 0.3);
 		Splat.AnimatedEntity.prototype.move.call(this, elapsedMillis);
 	};
-	makeMoveDamageable(turtle, 2, 400);
+	makeMoveDamageable(turtle, 2, 400, 0, []);
 	return turtle;
 }
 
@@ -178,7 +181,7 @@ function makeCookie(type, speed, hp, player, x, y) {
 		moveEntity(this, player.wasAbove(this), player.wasBelow(this), !this.exploding && this.direction === "left", !this.exploding && this.direction === "right", 0.01, speed);
 		Splat.AnimatedEntity.prototype.move.call(this, elapsedMillis);
 	};
-	makeMoveDamageable(cookie, hp, 400);
+	makeMoveDamageable(cookie, hp, 400, 0, []);
 	return cookie;
 }
 
@@ -315,7 +318,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	this.player.painLeft = game.animations.get("player-pain-down");
 	this.player.painRight = game.animations.get("player-pain-down");
 	this.player.hitSound = ["pain", "pain2", "pain3"];
-	makeMoveDamageable(this.player, 5, 1000);
+	makeMoveDamageable(this.player, 5, 1000, 0, []);
 
 	var swordUp = game.animations.get("player-sword-up");
 	var swordDown = game.animations.get("player-sword-down");
@@ -370,11 +373,12 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	this.solid = [];
 	this.ghosts = [];
 
-	spawnRandom(this, makePot);
-	spawnRandom(this, makePot);
-	spawnRandom(this, makePot);
-	spawnRandom(this, makePot);
-	spawnRandom(this, makePot);
+	var mkPot = makePot.bind(undefined, this.solid);
+	spawnRandom(this, mkPot);
+	spawnRandom(this, mkPot);
+	spawnRandom(this, mkPot);
+	spawnRandom(this, mkPot);
+	spawnRandom(this, mkPot);
 	spawnRandom(this, makeTurtle);
 	spawnRandom(this, makeTurtle);
 	spawnRandom(this, makeStove);
@@ -395,7 +399,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	var makePeanutButter = makeCookie.bind(undefined, "peanutbutter", 0.3, 2, this.player);
 
 	this.timers.spawn = new Splat.Timer(undefined, 1000, function() {
-		spawnRandom(scene, random.pick([makePot, makeTurtle, makeStove, makeChip, makeSnickerdoodle, makeRaisin, makePeanutButter]));
+		spawnRandom(scene, random.pick([mkPot, makeTurtle, makeStove, makeChip, makeSnickerdoodle, makeRaisin, makePeanutButter]));
 		this.reset();
 		this.start();
 	});
