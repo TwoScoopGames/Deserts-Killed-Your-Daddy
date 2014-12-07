@@ -79,6 +79,28 @@
 			"flip": "horizontal",
 			"msPerFrame": 20
 		},
+		"cake-turtle-choc-left": {
+			"strip": "images/cake-turtle-choc-left-f14.png",
+			"frames": 14,
+			"msPerFrame": 20
+		},
+		"cake-turtle-choc-right": {
+			"strip": "images/cake-turtle-choc-left-f14.png",
+			"frames": 14,
+			"flip": "horizontal",
+			"msPerFrame": 20
+		},
+		"cake-turtle-choc-pain-left": {
+			"strip": "images/cake-turtle-choc-left-pain-f10.png",
+			"frames": 10,
+			"msPerFrame": 20
+		},
+		"cake-turtle-choc-pain-right": {
+			"strip": "images/cake-turtle-choc-left-pain-f10.png",
+			"frames": 10,
+			"flip": "horizontal",
+			"msPerFrame": 20
+		},
 		"cookie-chip-left": {
 			"strip": "images/cookie-chip-f34.png",
 			"frames": 34,

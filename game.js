@@ -135,13 +135,13 @@ function makeMoveDamageable(entity, hp, invincibleTime, heartChance, list) {
 	};
 }
 
-function makeTurtle(x, y) {
-	var anim = game.animations.get("cake-turtle-left").copy();
+function makeTurtle(type, x, y) {
+	var anim = game.animations.get("cake-turtle-" + type + "left").copy();
 	var turtle = new Splat.AnimatedEntity(x, y, 74, 74, anim, -25, -4);
 	turtle.walkLeft = anim;
-	turtle.walkRight = game.animations.get("cake-turtle-right").copy();
-	turtle.painLeft = game.animations.get("cake-turtle-pain-left").copy();
-	turtle.painRight = game.animations.get("cake-turtle-pain-right").copy();
+	turtle.walkRight = game.animations.get("cake-turtle-" + type + "right").copy();
+	turtle.painLeft = game.animations.get("cake-turtle-" + type + "pain-left").copy();
+	turtle.painRight = game.animations.get("cake-turtle-" + type + "pain-right").copy();
 	turtle.direction = "left";
 	turtle.damage = 1;
 	turtle.hitSound = ["hurt", "hurt2"];
@@ -384,13 +384,15 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	this.ghosts = [];
 
 	var mkPot = makePot.bind(undefined, this.solid);
+	var mkTurtle = makeTurtle.bind(undefined, "");
+	var mkChocTurtle = makeTurtle.bind(undefined, "choc-");
 	spawnRandom(this, mkPot);
 	spawnRandom(this, mkPot);
 	spawnRandom(this, mkPot);
 	spawnRandom(this, mkPot);
 	spawnRandom(this, mkPot);
-	spawnRandom(this, makeTurtle);
-	spawnRandom(this, makeTurtle);
+	spawnRandom(this, mkTurtle);
+	spawnRandom(this, mkChocTurtle);
 	spawnRandom(this, makeStove);
 
 	this.goundSprites = [
@@ -409,7 +411,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	var makePeanutButter = makeCookie.bind(undefined, "peanutbutter", 0.3, 2, this.player);
 
 	this.timers.spawn = new Splat.Timer(undefined, 1000, function() {
-		spawnRandom(scene, random.pick([mkPot, makeTurtle, makeStove, makeChip, makeSnickerdoodle, makeRaisin, makePeanutButter]));
+		spawnRandom(scene, random.pick([mkPot, mkTurtle, mkChocTurtle, makeStove, makeChip, makeSnickerdoodle, makeRaisin, makePeanutButter]));
 		this.reset();
 		this.start();
 	});
