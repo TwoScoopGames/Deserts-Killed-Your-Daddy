@@ -116,7 +116,7 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Symbol 9" color="#9933CC" autoNamed="false">
+                    <DOMLayer name="Symbol 9" color="#9933CC" current="true" isSelected="true" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
@@ -204,7 +204,7 @@
                               </DOMFrame>
                               <DOMFrame index="33" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="Symbol 9" centerPoint3DX="1048.25" centerPoint3DY="423.6">
+                                        <DOMSymbolInstance libraryItemName="Symbol 9" selected="true" centerPoint3DX="1048.25" centerPoint3DY="423.6">
                                              <matrix>
                                                   <Matrix tx="969.5" ty="348.95"/>
                                              </matrix>
@@ -416,7 +416,7 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Layer 6" color="#808080" current="true" isSelected="true">
+                    <DOMLayer name="Layer 6" color="#808080">
                          <frames>
                               <DOMFrame index="0" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
@@ -504,7 +504,7 @@
                               </DOMFrame>
                               <DOMFrame index="33" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="Tween 2" symbolType="graphic" loop="loop">
+                                        <DOMSymbolInstance libraryItemName="Tween 2" selected="true" symbolType="graphic" loop="loop">
                                              <matrix>
                                                   <Matrix tx="938.4" ty="392.3"/>
                                              </matrix>
@@ -516,7 +516,7 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Symbol 6" color="#4FFFFF" locked="true" autoNamed="false">
+                    <DOMLayer name="Symbol 6" color="#4FFFFF" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
@@ -616,7 +616,7 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Symbol 5" color="#808080" locked="true" autoNamed="false">
+                    <DOMLayer name="Symbol 5" color="#808080" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
@@ -716,7 +716,7 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Symbol 4" color="#4F80FF" locked="true" autoNamed="false">
+                    <DOMLayer name="Symbol 4" color="#4F80FF" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
@@ -816,7 +816,7 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Symbol 3" color="#FF4F4F" locked="true" autoNamed="false">
+                    <DOMLayer name="Symbol 3" color="#FF4F4F" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
@@ -916,7 +916,7 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Symbol 2" color="#4FFF4F" locked="true" autoNamed="false">
+                    <DOMLayer name="Symbol 2" color="#4FFF4F" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
@@ -1016,7 +1016,7 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Symbol 1" color="#9933CC" locked="true" autoNamed="false">
+                    <DOMLayer name="Symbol 1" color="#9933CC" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
@@ -1116,7 +1116,7 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Symbol 6" color="#FF800A" locked="true" autoNamed="false">
+                    <DOMLayer name="Symbol 6" color="#FF800A" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
@@ -1216,7 +1216,7 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Symbol 5" color="#FF4FFF" locked="true" autoNamed="false">
+                    <DOMLayer name="Symbol 5" color="#FF4FFF" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
@@ -1316,7 +1316,7 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Symbol 4" color="#4FFFFF" locked="true" autoNamed="false">
+                    <DOMLayer name="Symbol 4" color="#4FFFFF" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
@@ -1416,7 +1416,7 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Symbol 3" color="#808080" locked="true" autoNamed="false">
+                    <DOMLayer name="Symbol 3" color="#808080" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
@@ -1516,7 +1516,7 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Symbol 2" color="#4F80FF" locked="true" autoNamed="false">
+                    <DOMLayer name="Symbol 2" color="#4F80FF" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
@@ -1616,7 +1616,7 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Symbol 1" color="#FF4F4F" locked="true" autoNamed="false">
+                    <DOMLayer name="Symbol 1" color="#FF4F4F" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
@@ -1716,7 +1716,7 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Symbol 6" color="#4FFF4F" locked="true" autoNamed="false">
+                    <DOMLayer name="Symbol 6" color="#4FFF4F" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
@@ -1804,7 +1804,7 @@
                               </DOMFrame>
                               <DOMFrame index="33" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="Symbol 6" centerPoint3DX="1045.8" centerPoint3DY="567.25">
+                                        <DOMSymbolInstance libraryItemName="Symbol 6" selected="true" centerPoint3DX="1045.8" centerPoint3DY="567.25">
                                              <matrix>
                                                   <Matrix tx="1037.3" ty="559.95"/>
                                              </matrix>
@@ -1816,7 +1816,7 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Symbol 5" color="#9933CC" locked="true" autoNamed="false">
+                    <DOMLayer name="Symbol 5" color="#9933CC" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
@@ -1904,7 +1904,7 @@
                               </DOMFrame>
                               <DOMFrame index="33" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="Symbol 5" centerPoint3DX="1074.9" centerPoint3DY="566.2">
+                                        <DOMSymbolInstance libraryItemName="Symbol 5" selected="true" centerPoint3DX="1074.9" centerPoint3DY="566.2">
                                              <matrix>
                                                   <Matrix tx="1064.65" ty="558.25"/>
                                              </matrix>
@@ -1916,7 +1916,7 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Symbol 4" color="#FF800A" locked="true" autoNamed="false">
+                    <DOMLayer name="Symbol 4" color="#FF800A" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
@@ -2004,7 +2004,7 @@
                               </DOMFrame>
                               <DOMFrame index="33" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="Symbol 4" centerPoint3DX="1072.35" centerPoint3DY="544.2">
+                                        <DOMSymbolInstance libraryItemName="Symbol 4" selected="true" centerPoint3DX="1072.35" centerPoint3DY="544.2">
                                              <matrix>
                                                   <Matrix tx="1059.5" ty="525.85"/>
                                              </matrix>
@@ -2016,7 +2016,7 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Symbol 3" color="#FF4FFF" locked="true" autoNamed="false">
+                    <DOMLayer name="Symbol 3" color="#FF4FFF" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
@@ -2104,7 +2104,7 @@
                               </DOMFrame>
                               <DOMFrame index="33" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="Symbol 3" centerPoint3DX="1040.8" centerPoint3DY="545.9">
+                                        <DOMSymbolInstance libraryItemName="Symbol 3" selected="true" centerPoint3DX="1040.8" centerPoint3DY="545.9">
                                              <matrix>
                                                   <Matrix a="0.994140625" b="0.10809326171875" c="-0.10809326171875" d="0.994140625" tx="1027.05" ty="524.8"/>
                                              </matrix>
@@ -2116,7 +2116,7 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Symbol 2" color="#4FFFFF" locked="true" autoNamed="false">
+                    <DOMLayer name="Symbol 2" color="#4FFFFF" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
@@ -2204,7 +2204,7 @@
                               </DOMFrame>
                               <DOMFrame index="33" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="Symbol 2" centerPoint3DX="1067.55" centerPoint3DY="501.15">
+                                        <DOMSymbolInstance libraryItemName="Symbol 2" selected="true" centerPoint3DX="1067.55" centerPoint3DY="501.15">
                                              <matrix>
                                                   <Matrix tx="1058.55" ty="473.45"/>
                                              </matrix>
@@ -2216,7 +2216,7 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Symbol 1" color="#808080" locked="true" autoNamed="false">
+                    <DOMLayer name="Symbol 1" color="#808080" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
@@ -2304,7 +2304,7 @@
                               </DOMFrame>
                               <DOMFrame index="33" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="1034.75" centerPoint3DY="501.1">
+                                        <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="1034.75" centerPoint3DY="501.1">
                                              <matrix>
                                                   <Matrix tx="1026.7" ty="468.5"/>
                                              </matrix>
@@ -2316,7 +2316,7 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Symbol 6" color="#4F80FF" locked="true" autoNamed="false">
+                    <DOMLayer name="Symbol 6" color="#4F80FF" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
@@ -2416,7 +2416,7 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Symbol 5" color="#FF4F4F" locked="true" autoNamed="false">
+                    <DOMLayer name="Symbol 5" color="#FF4F4F" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
@@ -2516,7 +2516,7 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Symbol 4" color="#4FFF4F" locked="true" autoNamed="false">
+                    <DOMLayer name="Symbol 4" color="#4FFF4F" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
@@ -2616,7 +2616,7 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Symbol 3" color="#9933CC" locked="true" autoNamed="false">
+                    <DOMLayer name="Symbol 3" color="#9933CC" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
@@ -2716,7 +2716,7 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Symbol 2" color="#FF800A" locked="true" autoNamed="false">
+                    <DOMLayer name="Symbol 2" color="#FF800A" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
@@ -2816,7 +2816,7 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Symbol 1" color="#FF4FFF" locked="true" autoNamed="false">
+                    <DOMLayer name="Symbol 1" color="#FF4FFF" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" duration="4" tweenType="motion" motionTweenSnap="true" keyMode="22017">
                                    <elements>
