@@ -16,7 +16,7 @@ function movePlayer(player) {
 }
 
 function moveSword(player, timer) {
-	if (game.keyboard.consumePressed("j")) {
+	if (game.keyboard.consumePressed("j") || game.keyboard.consumePressed("space")) {
 		timer.reset();
 		timer.start();
 		game.sounds.play("sword");
@@ -158,7 +158,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	this.swordVisible = false;
 	var scene = this;
 	this.timers.sword = new Splat.Timer(function(elapsedMillis) {
-		if (this.time < this.expireMillis / 2 && game.keyboard.consumePressed("j")) {
+		if (this.time < this.expireMillis / 2 && (game.keyboard.consumePressed("j") || (game.keyboard.consumePressed("space")))) {
 			this.interrupted = true;
 		}
 		scene.swordUp.move(elapsedMillis);
