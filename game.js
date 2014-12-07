@@ -14,12 +14,12 @@ var game = new Splat.Game(canvas, manifest);
 
 function movePlayer(player) {
 	moveEntity(player,
-			   game.keyboard.isPressed("w") || game.keyboard.isPressed("up"),
-			   game.keyboard.isPressed("s") || game.keyboard.isPressed("down"),
-			   game.keyboard.isPressed("a") || game.keyboard.isPressed("left"),
-			   game.keyboard.isPressed("d") || game.keyboard.isPressed("right"),
-			   0.03,
-			   0.8);
+		game.keyboard.isPressed("w") || game.keyboard.isPressed("up"),
+		game.keyboard.isPressed("s") || game.keyboard.isPressed("down"),
+		game.keyboard.isPressed("a") || game.keyboard.isPressed("left"),
+		game.keyboard.isPressed("d") || game.keyboard.isPressed("right"),
+		0.03,
+		0.8);
 }
 
 function moveSword(player, timer) {
@@ -219,8 +219,9 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	this.player.painDown = game.animations.get("player-pain-down");
 	this.player.painLeft = game.animations.get("player-pain-down");
 	this.player.painRight = game.animations.get("player-pain-down");
-	makeMoveDamageable(this.player, 5, 1000);
 
+	makeMoveDamageable(this.player, 5, 1000);
+	this.player.hitSound = ["pain", "pain2", "pain3"];
 	var swordUp = game.animations.get("player-sword-up");
 	var swordDown = game.animations.get("player-sword-down");
 	var swordLeft = game.animations.get("player-sword-left");
