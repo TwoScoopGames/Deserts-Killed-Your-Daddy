@@ -10,9 +10,9 @@
 		"pop": "audio/pop.mp3",
 		"clank": "audio/clank.mp3",
 		"sword": "audio/sword.wav",
-		"pain": "audio/player-pain.mpg",
-		"pain2": "audio/player-pain2.mpg",
-		"pain3": "audio/player-pain3.mpg"
+		"pain": "audio/player-pain.mp3",
+		"pain2": "audio/player-pain2.mp3",
+		"pain3": "audio/player-pain3.mp3"
 	},
 	"fonts": {},
 	"animations": {
