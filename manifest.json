@@ -127,5 +127,11 @@
 			"repeatAt": 14,
 			"msPerFrame": 50
 		},
+		"shadow-big": {
+			"strip": "images/shadow-big-f15.png",
+			"frames": 15,
+			"repeatAt": 14,
+			"msPerFrame": 50
+		},
 	}
 }

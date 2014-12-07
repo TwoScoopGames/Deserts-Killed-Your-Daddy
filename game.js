@@ -51,7 +51,7 @@ function makePot(x, y) {
 
 function makeStove(x, y) {
 	var anim = game.animations.get("stove").copy();
-	var stove = new Splat.AnimatedEntity(x, y, 148, 148, anim, 0, 0);
+	var stove = new Splat.AnimatedEntity(x, y, anim.width, anim.height - 74, anim, 0, 74 - anim.height);
 	stove.hitSound = ["clank"];
 	stove.blowback = 0;
 	stove.painRight = anim;
@@ -131,7 +131,7 @@ function animationTotalTime(anim) {
 
 function makeFallingEntity(x, y, entity, list) {
 	var fallingSpeed = 1;
-	var anim = game.animations.get("shadow").copy();
+	var anim = game.animations.get(entity.width > 74 ? "shadow-big" : "shadow").copy();
 
 	entity.x = x + ((anim.width - entity.width) / 2);
 	entity.y = y - (fallingSpeed * animationTotalTime(anim));
