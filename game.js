@@ -367,9 +367,10 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 
 	var makeChip = makeCookie.bind(undefined, "chip", 0.3, this.player);
 	var makeSnickerdoodle = makeCookie.bind(undefined, "snickerdoodle", 0.6, this.player);
+	var makeRaisin = makeCookie.bind(undefined, "raisin", 0.1, this.player);
 
 	this.timers.spawn = new Splat.Timer(undefined, 1000, function() {
-		spawnRandom(scene, random.pick([makePot, makeTurtle, makeStove, makeChip, makeSnickerdoodle]));
+		spawnRandom(scene, random.pick([makePot, makeTurtle, makeStove, makeChip, makeSnickerdoodle, makeRaisin]));
 		this.reset();
 		this.start();
 	});
@@ -379,9 +380,6 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 
 	if (game.keyboard.consumePressed("f2")) {
 		debug = !debug;
-	}
-	if (game.keyboard.consumePressed("h")) {
-		spawnRandom(this, random.pick([makePot, makeTurtle, makeStove, makeCookie.bind(undefined, this.player)]));
 	}
 
 	movePlayer(this.player);

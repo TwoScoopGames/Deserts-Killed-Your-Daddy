@@ -90,6 +90,28 @@
 			"flip": "horizontal",
 			"msPerFrame": 20
 		},
+		"cookie-raisin-left": {
+			"strip": "images/cookie-raisin-f34.png",
+			"frames": 34,
+			"msPerFrame": 20
+		},
+		"cookie-raisin-right": {
+			"strip": "images/cookie-raisin-f34.png",
+			"frames": 34,
+			"flip": "horizontal",
+			"msPerFrame": 20
+		},
+		"cookie-raisin-pain-left": {
+			"strip": "images/cookie-raisin-pain-f4.png",
+			"frames": 4,
+			"msPerFrame": 20
+		},
+		"cookie-raisin-pain-right": {
+			"strip": "images/cookie-raisin-pain-f4.png",
+			"frames": 4,
+			"flip": "horizontal",
+			"msPerFrame": 20
+		},
 		"cookie-snickerdoodle-left": {
 			"strip": "images/cookie-snickerdoodle-f34.png",
 			"frames": 34,
