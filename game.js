@@ -160,6 +160,24 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 	centerText(context, "DESSERTS KILLED YOUR DADDY", 0, canvas.height / 2 - 13);
 }));
 
+function resolveCollisionShortest(player, entity) {
+	var bottom = [0, entity.y + entity.height - player.y, 0, 0.5];
+	var top = [0, entity.y - player.height - player.y, 0, -0.5];
+	var right = [entity.x + entity.width - player.x, 0, 0.5, 0];
+	var left = [entity.x - player.width - player.x, 0, -0.5, 0];
+
+	var smallest = [bottom, top, right, left].reduce(function(prev, curr) {
+		if (Math.abs(curr[0] + curr[1]) < Math.abs(prev[0] + prev[1])) {
+			return curr;
+		}
+		return prev;
+	});
+	player.x += smallest[0];
+	player.y += smallest[1];
+	player.vx += smallest[2];
+	player.vy += smallest[3];
+}
+
 game.scenes.add("main", new Splat.Scene(canvas, function() {
 	// initialization
 	game.sounds.play("music", true);
@@ -254,14 +272,23 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	if (game.keyboard.consumePressed("f2")) {
 		debug = !debug;
 	}
+	if (game.keyboard.consumePressed("h")) {
+		this.ghosts.push(makeFallingEntity(74 * 5, 74 * 5, makePot(0, 0), this.solid));
+	}
 
 	movePlayer(this.player);
 	moveSword(this.player, this.timers.sword);
 
 	this.player.move(elapsedMillis);
-	this.player.solveCollisions(this.solid, []);
 
-	for (var i = 0; i < this.solid.length; i++) {
+	var collided = this.player.solveCollisions(this.solid);
+	for (var i = 0; i < collided.length; i++) {
+		if (this.player.collides(collided[i])) {
+			resolveCollisionShortest(this.player, collided[i]);
+		}
+	}
+
+	for (i = 0; i < this.solid.length; i++) {
 		this.solid[i].move(elapsedMillis);
 		if (this.timers.sword.time < 120 || this.solid[i].exploding) {
 			continue;
