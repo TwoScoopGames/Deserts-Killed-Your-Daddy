@@ -30,19 +30,15 @@ var debug = false;
 function makePot(x, y) {
 	var anim = game.animations.get("pot").copy();
 	var pot = new Splat.AnimatedEntity(x, y, 56, 56, anim, -28, -13);
-	pot.exploding = false;
-	pot.explodeTime = 0;
+	pot.painRight = anim;
 	pot.hitSound = ["pot-breaking"];
 	pot.move = function(elapsedMillis) {
 		if (!this.exploding) {
 			return;
 		}
-		this.explodeTime += elapsedMillis;
 		Splat.AnimatedEntity.prototype.move.call(this, elapsedMillis);
-		if (this.explodeTime > this.sprite.frames.length * this.sprite.frames[0].time) {
-			this.dead = true;
-		}
 	};
+	makeMoveDamageable(pot, 1, animationTotalTime(anim));
 	return pot;
 }
 
