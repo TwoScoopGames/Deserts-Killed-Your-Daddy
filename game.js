@@ -146,6 +146,7 @@ function makeTurtle(x, y) {
 	turtle.damage = 1;
 	turtle.hitSound = ["hurt", "hurt2"];
 	turtle.blowback = 1;
+	turtle.score = 1;
 	turtle.move = function(elapsedMillis) {
 		if (this.direction === "left" && this.x < 200) {
 			this.direction = "right";
@@ -171,6 +172,7 @@ function makeCookie(type, speed, hp, player, x, y) {
 	cookie.damage = 1;
 	cookie.hitSound = ["cookie-" + type + "-pain", "cookie-" + type + "-pain2", "cookie-" + type + "-pain3"];
 	cookie.blowback = 1;
+	cookie.score = 1;
 	cookie.move = function(elapsedMillis) {
 		if (player.wasLeft(this)) {
 			this.direction = "left";
@@ -303,9 +305,12 @@ function keepOnScreen(entity) {
 	}
 }
 
+var score = 0;
 game.scenes.add("main", new Splat.Scene(canvas, function() {
 	// initialization
 	game.sounds.play("music", true);
+	score = 0;
+
 	var playerWalkDown = game.animations.get("player-walk-down");
 	this.player = new Splat.AnimatedEntity(300, 300, 39, 51, playerWalkDown, -12, -19);
 	this.player.walkUp = game.animations.get("player-walk-up");
@@ -495,6 +500,9 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 			}
 		}
 		if (this.ghosts[i].dead) {
+			if (this.ghosts[i].score) {
+				score += this.ghosts[i].score;
+			}
 			this.ghosts.splice(i, 1);
 			i--;
 		}
@@ -521,6 +529,9 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	for (i = 0; i < this.player.hp; i++) {
 		context.drawImage(heart, 30 + i * 50, 30);
 	}
+
+	context.font = "25px helvetica";
+	context.fillText(score, 800, 50);
 }));
 
 function outline(context, entity, color) {
@@ -553,6 +564,7 @@ game.scenes.add("gameover", new Splat.Scene(canvas, function() {
 	context.fillStyle = "#fff";
 	context.font = "25px helvetica";
 	centerText(context, "GAME OVER", 0, canvas.height / 2 - 13);
+	centerText(context, score + " PTS", 0, canvas.height / 2 + 30);
 	centerText(context, "PRESS SPACE TO RESTART", 0, canvas.height / 2 + 100);
 }));
 
