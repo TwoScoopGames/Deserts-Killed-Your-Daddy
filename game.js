@@ -169,7 +169,7 @@ function makeCookie(type, speed, hp, player, x, y) {
 	cookie.painRight = game.animations.get("cookie-" + type + "-pain-right").copy();
 	cookie.direction = "left";
 	cookie.damage = 1;
-	cookie.hitSound = ["hurt", "hurt2"];
+	cookie.hitSound = ["cookie-" + type + "-pain", "cookie-" + type + "-pain2", "cookie-" + type + "-pain3"];
 	cookie.blowback = 1;
 	cookie.move = function(elapsedMillis) {
 		if (player.wasLeft(this)) {
