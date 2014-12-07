@@ -52,7 +52,7 @@ function makePot(x, y) {
 function makeStove(x, y) {
 	var anim = game.animations.get("stove").copy();
 	var stove = new Splat.AnimatedEntity(x, y, anim.width, anim.height - 74, anim, 0, 74 - anim.height);
-	stove.hitSound = ["clank"];
+	stove.hitSound = ["stove-hit-1", "stove-hit-2", "stove-hit-3"];
 	stove.blowback = 0;
 	stove.painAnims = [
 		game.animations.get("destructable-oven-5").copy(),
