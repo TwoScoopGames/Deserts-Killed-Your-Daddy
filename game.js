@@ -133,13 +133,13 @@ function makeTurtle(x, y) {
 	return turtle;
 }
 
-function makeCookie(player, x, y) {
-	var anim = game.animations.get("cookie-chip-left").copy();
+function makeCookie(type, speed, player, x, y) {
+	var anim = game.animations.get("cookie-" + type + "-left").copy();
 	var cookie = new Splat.AnimatedEntity(x, y, 74, 74, anim, -25, -4);
 	cookie.walkLeft = anim;
-	cookie.walkRight = game.animations.get("cookie-chip-right").copy();
-	cookie.painLeft = game.animations.get("cookie-chip-pain-left").copy();
-	cookie.painRight = game.animations.get("cookie-chip-pain-right").copy();
+	cookie.walkRight = game.animations.get("cookie-" + type + "-right").copy();
+	cookie.painLeft = game.animations.get("cookie-" + type + "-pain-left").copy();
+	cookie.painRight = game.animations.get("cookie-" + type + "-pain-right").copy();
 	cookie.direction = "left";
 	cookie.damage = 1;
 	cookie.hitSound = ["hurt", "hurt2"];
@@ -151,7 +151,7 @@ function makeCookie(player, x, y) {
 		if (player.wasRight(this)) {
 			this.direction = "right";
 		}
-		moveEntity(this, player.wasAbove(this), player.wasBelow(this), !this.exploding && this.direction === "left", !this.exploding && this.direction === "right", 0.01, 0.3);
+		moveEntity(this, player.wasAbove(this), player.wasBelow(this), !this.exploding && this.direction === "left", !this.exploding && this.direction === "right", 0.01, speed);
 		Splat.AnimatedEntity.prototype.move.call(this, elapsedMillis);
 	};
 	makeMoveDamageable(cookie, 2, 400);
@@ -365,8 +365,11 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 
 	this.ground = entities.sort(tile.fillAreaRandomly(this.goundSprites, 0, 0, canvas.width, canvas.height));
 
+	var makeChip = makeCookie.bind(undefined, "chip", 0.3, this.player);
+	var makeSnickerdoodle = makeCookie.bind(undefined, "snickerdoodle", 0.6, this.player);
+
 	this.timers.spawn = new Splat.Timer(undefined, 1000, function() {
-		spawnRandom(scene, random.pick([makePot, makeTurtle, makeStove, makeCookie.bind(undefined, scene.player)]));
+		spawnRandom(scene, random.pick([makePot, makeTurtle, makeStove, makeChip, makeSnickerdoodle]));
 		this.reset();
 		this.start();
 	});

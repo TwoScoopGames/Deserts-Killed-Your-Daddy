@@ -90,6 +90,28 @@
 			"flip": "horizontal",
 			"msPerFrame": 20
 		},
+		"cookie-snickerdoodle-left": {
+			"strip": "images/cookie-snickerdoodle-f34.png",
+			"frames": 34,
+			"msPerFrame": 20
+		},
+		"cookie-snickerdoodle-right": {
+			"strip": "images/cookie-snickerdoodle-f34.png",
+			"frames": 34,
+			"flip": "horizontal",
+			"msPerFrame": 20
+		},
+		"cookie-snickerdoodle-pain-left": {
+			"strip": "images/cookie-snickerdoodle-pain-f4.png",
+			"frames": 4,
+			"msPerFrame": 20
+		},
+		"cookie-snickerdoodle-pain-right": {
+			"strip": "images/cookie-snickerdoodle-pain-f4.png",
+			"frames": 4,
+			"flip": "horizontal",
+			"msPerFrame": 20
+		},
 		"destructable-oven-1": {
 			"strip": "images/destructable-oven1-f6.png",
 			"frames": 6,
