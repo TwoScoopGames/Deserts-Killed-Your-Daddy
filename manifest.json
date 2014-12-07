@@ -67,6 +67,11 @@
 			"flip": "horizontal",
 			"msPerFrame": 20
 		},
+		"player-pain-down": {
+			"strip": "images/player-pain-down-f4.png",
+			"frames": 4,
+			"msPerFrame": 50
+		},
 		"player-walk-up": {
 			"strip": "images/player-walk-up-f15.png",
 			"frames": 15,

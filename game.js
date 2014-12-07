@@ -209,7 +209,11 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	this.player.walkLeft = game.animations.get("player-walk-left");
 	this.player.walkRight = game.animations.get("player-walk-right");
 	this.player.direction = "down";
-	this.player.hp = 5;
+	this.player.painUp = game.animations.get("player-pain-down");
+	this.player.painDown = game.animations.get("player-pain-down");
+	this.player.painLeft = game.animations.get("player-pain-down");
+	this.player.painRight = game.animations.get("player-pain-down");
+	makeMoveDamageable(this.player, 5, 1000);
 
 	var swordUp = game.animations.get("player-sword-up");
 	var swordDown = game.animations.get("player-sword-down");
@@ -285,7 +289,6 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 		// game.animations.get("bg-5")
 	];
 
-	// sprite array, x, y, width, height
 	this.ground = entities.sort(tile.fillAreaRandomly(this.goundSprites, 0, 0, canvas.width, canvas.height));
 
 }, function(elapsedMillis) {
@@ -311,7 +314,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 			continue;
 		}
 		if (collided[i].damage) {
-			this.player.hp--;
+			this.player.exploding = true;
 		}
 	}
 
