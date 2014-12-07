@@ -420,21 +420,18 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 
 	entities.draw(context, this.ground);
 
-	this.swordUp.draw(context);
-	this.swordLeft.draw(context);
-	this.swordRight.draw(context);
-	this.player.draw(context);
+	var toDraw = [this.swordUp, this.swordLeft, this.swordRight, this.player, this.swordDown];
 	outline(context, this.player, "red");
-	this.swordDown.draw(context);
 
+	toDraw = toDraw.concat(this.solid.slice(0));
 	for (var i = 0; i < this.solid.length; i++) {
-		this.solid[i].draw(context);
 		outline(context, this.solid[i], "yellow");
 	}
+	toDraw = toDraw.concat(this.ghosts.slice(0));
 	for (i = 0; i < this.ghosts.length; i++) {
-		this.ghosts[i].draw(context);
 		outline(context, this.ghosts[i], "gray");
 	}
+	entities.draw(context, entities.sort(toDraw));
 
 	var heart = game.images.get("heart");
 	for (i = 0; i < this.player.hp; i++) {
