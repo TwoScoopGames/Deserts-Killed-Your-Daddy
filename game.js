@@ -7,7 +7,9 @@ var manifest = require("./manifest.json");
 
 var game = new Splat.Game(canvas, manifest);
 
-var moveEntity = require("./lib/move-entity.js");
+var entities = require("./lib/entities");
+var moveEntity = require("./lib/move-entity");
+var random = require("./lib/random");
 
 function movePlayer(player) {
 	moveEntity(player, game.keyboard.isPressed("w"), game.keyboard.isPressed("s"), game.keyboard.isPressed("a"), game.keyboard.isPressed("d"), 0.03, 0.8);
@@ -194,8 +196,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	];
 
 	// sprite array, x, y, width, height
-	this.ground = tileArea(this.goundSprites, 0, 0, canvas.width, canvas.height);
-
+	this.ground = entities.sort(tileArea(this.goundSprites, 0, 0, canvas.width, canvas.height));
 
 }, function(elapsedMillis) {
 	// simulation
@@ -203,13 +204,9 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	if (game.keyboard.consumePressed("f2")) {
 		debug = !debug;
 	}
-	movePlayer(this.player);
 
+	movePlayer(this.player);
 	moveSword(this.player, this.timers.sword);
-	// this.swordUp.move(elapsedMillis);
-	// this.swordDown.move(elapsedMillis);
-	// this.swordLeft.move(elapsedMillis);
-	// this.swordRight.move(elapsedMillis);
 
 	this.player.move(elapsedMillis);
 	this.player.solveCollisions(this.solid, []);
@@ -263,10 +260,8 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	}
 }, function(context) {
 	// draw
-	context.fillStyle = "#000000";
-	context.fillRect(0, 0, canvas.width, canvas.height);
 
-	sortAndDraw(context, this.ground);
+	entities.draw(context, this.ground);
 
 	this.player.draw(context);
 	outline(context, this.player, "red");
@@ -274,9 +269,6 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	this.swordDown.draw(context);
 	this.swordLeft.draw(context);
 	this.swordRight.draw(context);
-	// if (this.swordvisible) {
-	// 	outline(context, this.sword, "green");
-	// }
 
 	for (var i = 0; i < this.solid.length; i++) {
 		this.solid[i].draw(context);
@@ -296,36 +288,15 @@ function outline(context, entity, color) {
 	context.strokeRect(entity.x, entity.y, entity.width, entity.height);
 }
 
-function randomBetween(min, max) {
-	return Math.floor(Math.random() * max) + min;
-}
-
 function tileArea(sprites, x, y, width, height) {
 	var array = [];
 	for (var w = x; w < width; w += sprites[0].width) {
 		for (var h = y; h < height; h += sprites[0].height) {
-			var thisSprite = sprites[randomPick(sprites)];
+			var thisSprite = sprites[random.pick(sprites)];
 			array.push(new Splat.AnimatedEntity(w, h, thisSprite.width, thisSprite.height, thisSprite, 0, 0));
 		}
 	}
 	return array;
-}
-
-function sortAndDraw(context, entities) {
-	var array = sortEntities(entities);
-	for (var i = 0; i < array.length; i++) {
-		array[i].draw(context);
-	}
-}
-
-function sortEntities(entities) {
-	return entities.sort(function(b, a) {
-		return (b.y + b.height) - (a.y + a.height);
-	});
-}
-
-function randomPick(array) {
-	return Math.floor(Math.random() * array.length);
 }
 
 function centerText(context, text, offsetX, offsetY) {
