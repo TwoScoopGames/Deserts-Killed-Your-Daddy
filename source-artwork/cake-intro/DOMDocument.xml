@@ -1,20 +1,288 @@
-<DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" backgroundColor="#993399" width="1920" height="1080" currentTimeline="1" xflVersion="2.2" creatorInfo="Adobe Flash Professional CS6" platform="Macintosh" versionInfo="Saved by Adobe Flash Macintosh 12.0 build 481" majorVersion="12" buildNumber="481" guidesSnapTo="false" snapAlign="false" objectsSnapTo="false" vanishingPoint3DX="960" vanishingPoint3DY="540" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false" autoSaveEnabled="true" autoSaveIntervalMinutes="1">
+<DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" width="1348.4" height="2298.05" currentTimeline="1" xflVersion="2.2" creatorInfo="Adobe Flash Professional CS6" platform="Macintosh" versionInfo="Saved by Adobe Flash Macintosh 12.0 build 481" majorVersion="12" buildNumber="481" guidesSnapTo="false" snapAlign="false" objectsSnapTo="false" viewAngle3D="40.163803807143" vanishingPoint3DX="960" vanishingPoint3DY="540" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false" autoSaveEnabled="true" autoSaveIntervalMinutes="1">
+     <folders>
+          <DOMFolderItem name="Duplicate Items Folder" itemID="548619fb-00000336"/>
+     </folders>
      <symbols>
+          <Include href="Duplicate Items Folder/Symbol 1.xml" loadImmediate="false" itemID="548619fb-00000337" lastModified="1417895179"/>
+          <Include href="Duplicate Items Folder/Symbol 5.xml" loadImmediate="false" itemID="548619fb-00000339" lastModified="1417884328"/>
           <Include href="heart-gui.xml" loadImmediate="false" itemID="548605aa-00000259" lastModified="1418069491"/>
           <Include href="Symbol 1.xml" loadImmediate="false" itemID="54860e47-0000027a" lastModified="1418071623"/>
           <Include href="Symbol 2.xml" loadImmediate="false" itemID="54860fbe-000002a2" lastModified="1418071999"/>
-          <Include href="Symbol 3.xml" loadImmediate="false" itemID="54860fda-000002a9" lastModified="1418072026"/>
+          <Include href="Symbol 3.xml" loadImmediate="false" itemID="54860fda-000002a9" lastModified="1418073773"/>
+          <Include href="Symbol 4.xml" loadImmediate="false" itemID="5486178a-000002bf" lastModified="1418073994"/>
+          <Include href="Symbol 5.xml" loadImmediate="false" itemID="5486182c-000002c6" lastModified="1418075698"/>
+          <Include href="Symbol 6.xml" loadImmediate="false" itemID="54861b40-00000373" lastModified="1418074952"/>
+          <Include href="Symbol 7.xml" loadImmediate="false" itemID="54861e49-00000377" lastModified="1418075733"/>
+          <Include href="Symbol 8.xml" loadImmediate="false" itemID="5483cb13-00000617" lastModified="1417923347"/>
+          <Include href="Symbol 9.xml" loadImmediate="false" itemID="5483cb3c-0000061b" lastModified="1417923388"/>
+          <Include href="Symbol 10.xml" loadImmediate="false" itemID="5483cbd2-00000627" lastModified="1418074649"/>
+          <Include href="Symbol 11.xml" loadImmediate="false" itemID="5483cc53-00000631" lastModified="1417923667"/>
+          <Include href="Symbol 12.xml" loadImmediate="false" itemID="5483cc57-00000635" lastModified="1417923671"/>
+          <Include href="Symbol 13.xml" loadImmediate="false" itemID="5483cc5b-00000639" lastModified="1417923675"/>
+          <Include href="Symbol 14.xml" loadImmediate="false" itemID="5483cc61-0000063d" lastModified="1417923681"/>
+          <Include href="Tween 11.xml" itemIcon="1" loadImmediate="false" itemID="54829f79-000002a4" lastModified="1417846649"/>
+          <Include href="Tween 13.xml" itemIcon="1" loadImmediate="false" itemID="54829f79-000002a8" lastModified="1417883538"/>
+          <Include href="Tween 15.xml" itemIcon="1" loadImmediate="false" itemID="54829f79-000002ac" lastModified="1417846649"/>
      </symbols>
      <timelines>
           <DOMTimeline name="Scene 1">
                <layers>
-                    <DOMLayer name="Layer 9" color="#4FFF4F" current="true" isSelected="true">
+                    <DOMLayer name="Layer 11" color="#FF800A">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements/>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="Layer 10" color="#9933CC" current="true" isSelected="true">
                          <frames>
                               <DOMFrame index="0" keyMode="9728">
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="Symbol 3" selected="true" centerPoint3DX="538.9" centerPoint3DY="391.95">
+                                        <DOMSymbolInstance libraryItemName="Symbol 4" selected="true" centerPoint3DX="514.2" centerPoint3DY="1994.55">
                                              <matrix>
-                                                  <Matrix a="3.28118896484375" d="2.90864562988281" tx="79.75" ty="88.45"/>
+                                                  <Matrix a="0.983535766601562" b="-0.180679321289062" c="0.180679321289062" d="0.983535766601562" tx="387.6" ty="1938.9"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="114.55" y="77.7"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Duplicate Items Folder/Symbol 5" centerPoint3DX="1222.65" centerPoint3DY="1333.75">
+                                             <matrix>
+                                                  <Matrix a="-0.329513549804688" b="0.826583862304688" c="0.8251953125" d="0.33282470703125" tx="1211.25" ty="1253.8"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="46.1" y="10.65"/>
+                                             </transformationPoint>
+                                             <color>
+                                                  <Color tintMultiplier="0.37"/>
+                                             </color>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Tween 15" symbolType="graphic" loop="loop">
+                                             <matrix>
+                                                  <Matrix a="-0.999496459960938" b="-0.02264404296875" c="-0.02264404296875" d="0.999496459960938" tx="1099.6" ty="1209.5"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="-24.35" y="-5.65"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Symbol 10" centerPoint3DX="1151.1" centerPoint3DY="1197.8">
+                                             <matrix>
+                                                  <Matrix a="-0.998626708984375" b="0.0522003173828125" c="0.0522003173828125" d="0.998626708984375" tx="1261.15" ty="1098.95"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="114.9" y="93.15"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Symbol 11" centerPoint3DX="1155.15" centerPoint3DY="1041.2">
+                                             <matrix>
+                                                  <Matrix a="-0.998626708984375" b="0.0522003173828125" c="0.0522003173828125" d="0.998626708984375" tx="1232.8" ty="960.25"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="81.2" y="77.2"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Symbol 12" centerPoint3DX="1054.25" centerPoint3DY="1058.85">
+                                             <matrix>
+                                                  <Matrix a="-0.998626708984375" b="0.0522003173828125" c="0.0522003173828125" d="0.998626708984375" tx="1131.9" ty="982.55"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="24.05" y="55.95"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Symbol 13" centerPoint3DX="1160.25" centerPoint3DY="1118.15">
+                                             <matrix>
+                                                  <Matrix a="-0.998626708984375" b="0.0522003173828125" c="0.0522003173828125" d="0.998626708984375" tx="1237.7" ty="1054.15"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="75.55" y="9.35"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Symbol 14" centerPoint3DX="1284.85" centerPoint3DY="1075.1">
+                                             <matrix>
+                                                  <Matrix a="-0.998626708984375" b="0.0522003173828125" c="0.0522003173828125" d="0.998626708984375" tx="1339.25" ty="984.75"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="102.6" y="61.3"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Duplicate Items Folder/Symbol 5" centerPoint3DX="1148.65" centerPoint3DY="1306.35">
+                                             <matrix>
+                                                  <Matrix a="-0.998626708984375" b="0.0522003173828125" c="0.0522003173828125" d="0.998626708984375" tx="1226.85" ty="1256.55"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="60.85" y="18.4"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Tween 11" symbolType="graphic" loop="loop">
+                                             <matrix>
+                                                  <Matrix a="0.195388793945312" b="0.980712890625" c="-0.980712890625" d="0.195388793945312" tx="1295.2" ty="1190.5"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="-3.75" y="-28"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Duplicate Items Folder/Symbol 1" centerPoint3DX="549.65" centerPoint3DY="1130.2">
+                                             <matrix>
+                                                  <Matrix a="-0.1640625" b="0.985488891601562" c="0.985488891601562" d="0.1640625" tx="114.3" ty="947.2"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="122.75" y="869.8"/>
+                                             </transformationPoint>
+                                             <color>
+                                                  <Color alphaMultiplier="0.2890625"/>
+                                             </color>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Duplicate Items Folder/Symbol 1" centerPoint3DX="561.25" centerPoint3DY="1087.7">
+                                             <matrix>
+                                                  <Matrix a="-0.270156860351562" b="0.961822509765625" c="0.961822509765625" d="0.270156860351562" tx="147.9" ty="857.8"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="122.75" y="869.8"/>
+                                             </transformationPoint>
+                                             <color>
+                                                  <Color alphaMultiplier="0.16015625"/>
+                                             </color>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Duplicate Items Folder/Symbol 1" centerPoint3DX="577.55" centerPoint3DY="1046.25">
+                                             <matrix>
+                                                  <Matrix a="-0.372650146484375" b="0.92694091796875" c="0.92694091796875" d="0.372650146484375" tx="190.8" ty="772.9"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="122.75" y="869.85"/>
+                                             </transformationPoint>
+                                             <color>
+                                                  <Color alphaMultiplier="0.1015625"/>
+                                             </color>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Duplicate Items Folder/Symbol 1" centerPoint3DX="599.05" centerPoint3DY="1005.65">
+                                             <matrix>
+                                                  <Matrix a="-0.47454833984375" b="0.879135131835938" c="0.879135131835938" d="0.47454833984375" tx="244.9" ty="690.15"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="122.75" y="869.85"/>
+                                             </transformationPoint>
+                                             <color>
+                                                  <Color alphaMultiplier="0.03125"/>
+                                             </color>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Duplicate Items Folder/Symbol 1" centerPoint3DX="543.25" centerPoint3DY="1173.75">
+                                             <matrix>
+                                                  <Matrix a="-0.056732177734375" b="0.9974365234375" c="0.9974365234375" d="0.056732177734375" tx="90.75" ty="1039.1"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="122.7" y="869.8"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Tween 11" symbolType="graphic" loop="loop">
+                                             <matrix>
+                                                  <Matrix a="1.30789184570312" tx="979.4" ty="1232.2"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="-3.75" y="-28.05"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Duplicate Items Folder/Symbol 5" centerPoint3DX="625.75" centerPoint3DY="581.85">
+                                             <matrix>
+                                                  <Matrix a="-0.544692993164062" b="0.703628540039062" c="-0.705795288085938" d="-0.541824340820312" tx="700.6" ty="551.15"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="46.15" y="10.65"/>
+                                             </transformationPoint>
+                                             <color>
+                                                  <Color tintMultiplier="0.37"/>
+                                             </color>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Tween 15" symbolType="graphic" loop="loop">
+                                             <matrix>
+                                                  <Matrix a="0.999496459960938" b="-0.02264404296875" c="0.02264404296875" d="0.999496459960938" tx="807.75" ty="491.95"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="-24.35" y="-5.65"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Tween 11" symbolType="graphic" loop="loop">
+                                             <matrix>
+                                                  <Matrix a="-0.19537353515625" b="0.980712890625" c="0.980712890625" d="0.19537353515625" tx="874.15" ty="468.85"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="-3.75" y="-28"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Symbol 10" centerPoint3DX="756.25" centerPoint3DY="480.25">
+                                             <matrix>
+                                                  <Matrix a="0.998626708984375" b="0.0522003173828125" c="-0.0522003173828125" d="0.998626708984375" tx="646.2" ty="381.4"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="114.9" y="93.15"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Symbol 11" centerPoint3DX="752.2" centerPoint3DY="323.65">
+                                             <matrix>
+                                                  <Matrix a="0.998626708984375" b="0.0522003173828125" c="-0.0522003173828125" d="0.998626708984375" tx="674.55" ty="242.7"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="81.2" y="77.2"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Symbol 12" centerPoint3DX="853.1" centerPoint3DY="341.3">
+                                             <matrix>
+                                                  <Matrix a="0.998626708984375" b="0.0522003173828125" c="-0.0522003173828125" d="0.998626708984375" tx="775.45" ty="265"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="24.05" y="55.95"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Symbol 13" centerPoint3DX="747.1" centerPoint3DY="400.6">
+                                             <matrix>
+                                                  <Matrix a="0.998626708984375" b="0.0522003173828125" c="-0.0522003173828125" d="0.998626708984375" tx="669.65" ty="336.6"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="75.55" y="9.35"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Symbol 14" centerPoint3DX="622.5" centerPoint3DY="357.55">
+                                             <matrix>
+                                                  <Matrix a="0.998626708984375" b="0.0522003173828125" c="-0.0522003173828125" d="0.998626708984375" tx="568.1" ty="267.2"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="102.6" y="61.3"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Duplicate Items Folder/Symbol 5" centerPoint3DX="852.5" centerPoint3DY="581.75">
+                                             <matrix>
+                                                  <Matrix a="0.908218383789062" b="-0.41845703125" c="0.41845703125" d="0.908218383789062" tx="759.8" ty="574.25"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="60.85" y="18.35"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Tween 11" symbolType="graphic" loop="loop">
+                                             <matrix>
+                                                  <Matrix a="-1.30787658691406" tx="694.8" ty="507.25"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="-3.75" y="-28.05"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="Symbol 6" centerPoint3DX="842.35" centerPoint3DY="1910.45">
+                                             <matrix>
+                                                  <Matrix a="0.765457153320312" tx="788.5" ty="1831.25"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="70.35" y="79.2"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="Layer 9" color="#4FFF4F">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="Symbol 3" centerPoint3DX="459.2" centerPoint3DY="1781.55">
+                                             <matrix>
+                                                  <Matrix a="3.28118896484375" d="2.90864562988281" tx="0.05" ty="1478.05"/>
                                              </matrix>
                                              <transformationPoint>
                                                   <Point x="140.1" y="104.5"/>
@@ -28,12 +296,12 @@
                          <frames>
                               <DOMFrame index="0" keyMode="9728">
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="Symbol 3" selected="true" centerPoint3DX="547.7" centerPoint3DY="604.45">
+                                        <DOMSymbolInstance libraryItemName="Symbol 7" centerPoint3DX="468" centerPoint3DY="1994">
                                              <matrix>
-                                                  <Matrix a="3.28118896484375" d="2.90864562988281" tx="88.05" ty="300.4"/>
+                                                  <Matrix tx="8.3" ty="1690"/>
                                              </matrix>
                                              <transformationPoint>
-                                                  <Point x="140.1" y="104.5"/>
+                                                  <Point x="459.7" y="304"/>
                                              </transformationPoint>
                                         </DOMSymbolInstance>
                                    </elements>
@@ -300,6 +568,7 @@
                     <SolidSwatchItem color="#FFFFFF" brightness="240"/>
                     <SolidSwatchItem color="#C8AC7B" alpha="0.976470588235294" hue="26" saturation="98" brightness="152"/>
                     <SolidSwatchItem color="#E29696" alpha="0.976470588235294" saturation="137" brightness="177"/>
+                    <SolidSwatchItem color="#CBCACB" hue="200" saturation="2" brightness="191"/>
                </swatches>
           </swatchList>
      </swatchLists>

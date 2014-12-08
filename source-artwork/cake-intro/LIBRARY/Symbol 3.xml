@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 3" itemID="54860fda-000002a9" lastModified="1418072026" lastUniqueIdentifier="34">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Symbol 3" itemID="54860fda-000002a9" lastModified="1418073773" lastUniqueIdentifier="34">
   <timeline>
     <DOMTimeline name="Symbol 3">
       <layers>
@@ -16,22 +16,22 @@
                     </FillStyle>
                   </fills>
                   <edges>
-                    <Edge fillStyle0="1" fillStyle1="2" edges="!5271 1951S3[#1480.B1 #7DF.38 5216 2066!5216 2066[#1436.27 #852.F8 5107.5 2194!5107.5 2194[#1352.DE #929.A7 4642 2485!4642 2485[4509 2546 4096 2626!4096 2626[3977 2661 3892 2680!3892 2680[3744 2713 3021 2823!3021 2823[2892 2850 2834 2868
+                    <Edge fillStyle0="1" fillStyle1="2" edges="!5271 1951[#1480.B1 #7DF.38 5216 2066!5216 2066[#1436.27 #852.F8 5107.5 2194!5107.5 2194[#1352.DE #929.A7 4642 2485!4642 2485[4509 2546 4096 2626!4096 2626[3977 2661 3892 2680!3892 2680[3744 2713 3021 2823!3021 2823[2892 2850 2834 2868
 !2834 2868|2530 2868!2530 2868[1692 2683 1051 2334!1051 2334[#281.65 #83E.94 454.5 1884.5!454.5 1884.5[#15E.15 #6DE.BA 315 1632!315 1632[290 1583 278 1490!278 1490[#10F.F1 #564.ED 269 1330.5!269 1330.5[267 #509.3F 267 1287!267 1287[267
  1001 512 741!512 741[715 525 1051 361!1051 361[1337 220 1589 174!1589 174[1612 170 1633 167!1633 167[2028 46 2757 11!2757 11[3053 -4 3417 46!3417 46[3819 101 4019 203!4019 203[4288 283 4469 392!4469 392[4617 481 4804 655!4804 655[4994
  832 5152 1113!5152 1113[5319 1413 5319 1613!5319 1613[5319 #715.02 5271 1951"/>
                     <Edge fillStyle1="1" edges="
-!5460 1737S2[5460 1914.5 5390.5 2067.5!5390.5 2067.5[#1517.43 #818.86 5407 2081!5407 2081[5429 2105 5430 2147!5430 2147|5430 2153!5430 2153[5429 2179 5403 2370!5403 2370[5418 2359 5430 2355!5430 2355|5430 2613!5430 2613[5423 2656 5409
- 2724!5409 2724[5399 2781 5399 2830!5399 2830|5400 2835!5400 2835[5398 2849 5397 2861!5397 2861[5392 2924 5389 2971!5389 2971|5389 3045!5389 3045[5385 3067 5376 3185!5376 3185[5368 3230 5351 3257!5351 3257[5328 3372 5295 3417!5295 3417
-[5287 3448 5278 3483!5278 3483[5242 3591 5159 3665!5159 3665[4932 3866 4548 3980!4548 3980[4333 4043 3888 4119!3888 4119[3792 4142 3722 4151!3722 4151|3519 4151!3519 4151[3346 4162 3111 4162!3111 4162[3048 4162 2996 4161!2996 4161[3005
- 4170 3005 4180!3005 4180|3005 4181!3005 4181[2967 4176 2924 4172!2924 4172|2611 4172!2611 4172[2574 4180 2480 4168!2480 4168[2332 4135 2194 4101!2194 4101[2193 4101 2192 4101!2192 4101[2203 4108 2214 4115!2214 4115[2122 4092 1970 4053
-!1970 4053[1735 3993 1637 3978!1637 3978[1624 3976 1612 3975!1612 3975[1602 3968 1591 3961!1591 3961[1489 3895 1466 3858!1466 3858[1238 3852 1046 3736!1046 3736[889 3694 727 3564!727 3564[697 3540 670 3515!670 3515[666 3515 661 3515!661
- 3515[591 3515 574 3455!574 3455[573 3439 572 3427!572 3427[433 3363 395 3306!395 3306[333 3272 310 3062!310 3062|310 3046!310 3046[279 2962 257 2797!257 2797[247 2685 241 2610!241 2610[227 2580 217 2531!217 2531[169 2506 166 2356!166
- 2356[168 2322 170 2295!170 2295[162 2281 157 2263!157 2263[144 2210 156 2173!156 2173|156 1944!156 1944[136 1773 136 1766!136 1766[136 #6B2.0A 145.5 1691.5!145.5 1691.5[#8E.D3 #68D.7 140.5 1663!140.5 1663[#7E.77 #64C.7E 126 1552!126
- 1552[116 1441 116 1440!116 1440[116 1398 131 1331!131 1331[126 1271 126 1206!126 1206[126 797 689 467!689 467[822 389 976 322!976 322[1177 224 1333 186!1333 186[1348 182 1362 180!1362 180[1727 67 2177 0!2177 0|3197 0!3197 0[3731 -5 4191
- 190!4191 190[4589 359 4897 662!4897 662[5165 924 5320 1236!5320 1236[5460 1520 5460 1737"/>
+!5460 1737[5460 1914.5 5390.5 2067.5!5390.5 2067.5[#1517.43 #818.86 5407 2081!5407 2081[5429 2105 5430 2147!5430 2147|5430 2153!5430 2153[5429 2179 5403 2370!5403 2370[5418 2359 5430 2355!5430 2355|5430 2613!5430 2613[5423 2656 5409 2724
+!5409 2724[5399 2781 5399 2830!5399 2830|5400 2835!5400 2835[5398 2849 5397 2861!5397 2861[5392 2924 5389 2971!5389 2971|5389 3045!5389 3045[5385 3067 5376 3185!5376 3185[5368 3230 5351 3257!5351 3257[5328 3372 5295 3417!5295 3417[5287
+ 3448 5278 3483!5278 3483[5242 3591 5159 3665!5159 3665[4932 3866 4548 3980!4548 3980[4333 4043 3888 4119!3888 4119[3792 4142 3722 4151!3722 4151|3519 4151!3519 4151[3346 4162 3111 4162!3111 4162[3048 4162 2996 4161!2996 4161[3005 4170
+ 3005 4180!3005 4180|3005 4181!3005 4181[2967 4176 2924 4172!2924 4172|2611 4172!2611 4172[2574 4180 2480 4168!2480 4168[2332 4135 2194 4101!2194 4101[2193 4101 2192 4101!2192 4101[2203 4108 2214 4115!2214 4115[2122 4092 1970 4053!1970
+ 4053[1735 3993 1637 3978!1637 3978[1624 3976 1612 3975!1612 3975[1602 3968 1591 3961!1591 3961[1489 3895 1466 3858!1466 3858[1238 3852 1046 3736!1046 3736[889 3694 727 3564!727 3564[697 3540 670 3515!670 3515[666 3515 661 3515!661 3515
+[591 3515 574 3455!574 3455[573 3439 572 3427!572 3427[433 3363 395 3306!395 3306[333 3272 310 3062!310 3062|310 3046!310 3046[279 2962 257 2797!257 2797[247 2685 241 2610!241 2610[227 2580 217 2531!217 2531[169 2506 166 2356!166 2356
+[168 2322 170 2295!170 2295[162 2281 157 2263!157 2263[144 2210 156 2173!156 2173|156 1944!156 1944[136 1773 136 1766!136 1766[136 #6B2.0A 145.5 1691.5!145.5 1691.5[#8E.D3 #68D.7 140.5 1663!140.5 1663[#7E.77 #64C.7E 126 1552!126 1552
+[116 1441 116 1440!116 1440[116 1398 131 1331!131 1331[126 1271 126 1206!126 1206[126 797 689 467!689 467[822 389 976 322!976 322[1177 224 1333 186!1333 186[1348 182 1362 180!1362 180[1727 67 2177 0!2177 0|3197 0!3197 0[3731 -5 4191 190
+!4191 190[4589 359 4897 662!4897 662[5165 924 5320 1236!5320 1236[5460 1520 5460 1737"/>
                     <Edge fillStyle0="2" fillStyle1="1" edges="
-!4684 3779S3[5258 3568 5279 3145!5279 3145|5279 2591!5279 2591[5286 2538 5293 2460!5293 2460[5299 2388 5299 2367!5299 2367[5299 2300 5273 2269!5273 2269[#1495.99 #8D8.E4 5266 2261.5!5266 2261.5[#1378.47 #A21.8F 4294 2783!4294 2783[3904
+!4684 3779[5258 3568 5279 3145!5279 3145|5279 2591!5279 2591[5286 2538 5293 2460!5293 2460[5299 2388 5299 2367!5299 2367[5299 2300 5273 2269!5273 2269[#1495.99 #8D8.E4 5266 2261.5!5266 2261.5[#1378.47 #A21.8F 4294 2783!4294 2783[3904
  2889 3422 2938!3422 2938[3266 2954 3131 2962!3131 2962[2961 2987 2814 3000!2814 3000|2520 3000!2520 3000[2095 2970 1886 2898!1886 2898[1811 2873 1696 2819!1696 2819[1574 2762 1504 2731!1504 2731[1266 2656 1101 2595!1101 2595[719 2452
  539 2309!539 2309[443 2233 384 2139!384 2139[#15E.79 #854.E7 320.5 2110.5!320.5 2110.5[309 #854.81 309 2170!309 2170[309 2273 334 2399!334 2399[359 2526 359 2610!359 2610[359 2716 347 2803!347 2803[348 2880 419 3106!419 3106[456 3224
  625 3379!625 3379[800 3539 969 3596!969 3596[1130 3650 1411 3760!1411 3760[1645 3852 1788 3894!1788 3894[2220 4021 3056 4071!3056 4071|3722 4071!3722 4071[3753 4072 3775 4044!3775 4044[3781 4037 3785 4030!3785 4030[3836 4040 3864 4040
@@ -204,7 +204,7 @@
                     <Edge cubics="!336 2092(;330,2097 325,2103 321,2111q336 2092Q327 2099q321 2111);"/>
                   </edges>
                 </DOMShape>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="12.85" centerPoint3DY="93.75">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="12.85" centerPoint3DY="93.75">
                   <matrix>
                     <Matrix a="0.678863525390625" b="-0.7342529296875" c="0.7342529296875" d="0.678863525390625" tx="4.4" ty="95.1"/>
                   </matrix>
@@ -212,7 +212,7 @@
                     <Point x="6.85" y="5.5"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="20.95" centerPoint3DY="99.45">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="20.95" centerPoint3DY="99.45">
                   <matrix>
                     <Matrix a="0.414169311523438" b="0.91015625" c="-0.91015625" d="0.414169311523438" tx="22.75" ty="91.45"/>
                   </matrix>
@@ -220,7 +220,7 @@
                     <Point x="6.85" y="5.5"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="30.45" centerPoint3DY="107.15">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="30.45" centerPoint3DY="107.15">
                   <matrix>
                     <Matrix a="0.414169311523438" b="0.91015625" c="-0.91015625" d="0.414169311523438" tx="32.25" ty="99.15"/>
                   </matrix>
@@ -228,7 +228,7 @@
                     <Point x="6.85" y="5.5"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="37.95" centerPoint3DY="115.8">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="37.95" centerPoint3DY="115.8">
                   <matrix>
                     <Matrix a="0.37921142578125" b="-0.925277709960938" c="0.925277709960938" d="0.37921142578125" tx="30.55" ty="120"/>
                   </matrix>
@@ -236,7 +236,7 @@
                     <Point x="6.9" y="5.5"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="47.65" centerPoint3DY="118.3">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="47.65" centerPoint3DY="118.3">
                   <matrix>
                     <Matrix a="0.706298828125" b="0.707855224609375" c="-0.707855224609375" d="0.706298828125" tx="46.5" ty="110.15"/>
                   </matrix>
@@ -244,7 +244,7 @@
                     <Point x="6.85" y="5.5"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="58.95" centerPoint3DY="124.6">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="58.95" centerPoint3DY="124.6">
                   <matrix>
                     <Matrix a="0.99847412109375" b="0.0540771484375" c="-0.0540771484375" d="0.99847412109375" tx="52.55" ty="119.05"/>
                   </matrix>
@@ -252,7 +252,7 @@
                     <Point x="6.8" y="5.45"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="68.5" centerPoint3DY="130.25">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="68.5" centerPoint3DY="130.25">
                   <matrix>
                     <Matrix a="0.337554931640625" b="-0.9412841796875" c="0.9412841796875" d="0.337554931640625" tx="61.3" ty="135.25"/>
                   </matrix>
@@ -260,7 +260,7 @@
                     <Point x="6.85" y="5.45"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="78.2" centerPoint3DY="132.55">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="78.2" centerPoint3DY="132.55">
                   <matrix>
                     <Matrix a="0.7371826171875" b="0.675628662109375" c="-0.675628662109375" d="0.7371826171875" tx="76.65" ty="124.75"/>
                   </matrix>
@@ -268,7 +268,7 @@
                     <Point x="6.9" y="5.45"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="90" centerPoint3DY="135.9">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="90" centerPoint3DY="135.9">
                   <matrix>
                     <Matrix a="0.7371826171875" b="0.675628662109375" c="-0.675628662109375" d="0.7371826171875" tx="88.5" ty="128.1"/>
                   </matrix>
@@ -276,7 +276,7 @@
                     <Point x="6.75" y="5.45"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="100.7" centerPoint3DY="141.25">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="100.7" centerPoint3DY="141.25">
                   <matrix>
                     <Matrix a="-0.012939453125" b="-0.999862670898438" c="0.999862670898438" d="-0.012939453125" tx="95.05" ty="147.95"/>
                   </matrix>
@@ -284,7 +284,7 @@
                     <Point x="6.95" y="5.5"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="110" centerPoint3DY="141.2">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="110" centerPoint3DY="141.2">
                   <matrix>
                     <Matrix a="0.926910400390625" b="0.375152587890625" c="-0.375152587890625" d="0.926910400390625" tx="105.85" ty="134.1"/>
                   </matrix>
@@ -292,7 +292,7 @@
                     <Point x="6.9" y="5.55"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="122.05" centerPoint3DY="142.6">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="122.05" centerPoint3DY="142.6">
                   <matrix>
                     <Matrix a="0.926910400390625" b="0.375152587890625" c="-0.375152587890625" d="0.926910400390625" tx="118.1" ty="135.6"/>
                   </matrix>
@@ -300,7 +300,7 @@
                     <Point x="6.85" y="5.5"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="268.65" centerPoint3DY="102.2">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="268.65" centerPoint3DY="102.2">
                   <matrix>
                     <Matrix a="-0.6260986328125" b="-0.77972412109375" c="-0.77972412109375" d="0.6260986328125" tx="277.3" ty="104.1"/>
                   </matrix>
@@ -308,7 +308,7 @@
                     <Point x="6.85" y="5.45"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="260.35" centerPoint3DY="107.25">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="260.35" centerPoint3DY="107.25">
                   <matrix>
                     <Matrix a="-0.47650146484375" b="0.879119873046875" c="0.879119873046875" d="0.47650146484375" tx="259.25" ty="99.15"/>
                   </matrix>
@@ -316,7 +316,7 @@
                     <Point x="6.8" y="5.45"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="250.35" centerPoint3DY="114.35">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="250.35" centerPoint3DY="114.35">
                   <matrix>
                     <Matrix a="-0.47650146484375" b="0.879119873046875" c="0.879119873046875" d="0.47650146484375" tx="249.25" ty="106.15"/>
                   </matrix>
@@ -324,7 +324,7 @@
                     <Point x="6.9" y="5.45"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="242" centerPoint3DY="122.7">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="242" centerPoint3DY="122.7">
                   <matrix>
                     <Matrix a="-0.313888549804688" b="-0.949432373046875" c="-0.949432373046875" d="0.313888549804688" tx="249.45" ty="127.05"/>
                   </matrix>
@@ -332,7 +332,7 @@
                     <Point x="6.85" y="5.4"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="232.3" centerPoint3DY="124.35">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="232.3" centerPoint3DY="124.35">
                   <matrix>
                     <Matrix a="-0.75384521484375" b="0.656967163085938" c="0.656967163085938" d="0.75384521484375" tx="234.25" ty="116.15"/>
                   </matrix>
@@ -340,7 +340,7 @@
                     <Point x="6.9" y="5.55"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="220.85" centerPoint3DY="129.75">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="220.85" centerPoint3DY="129.75">
                   <matrix>
                     <Matrix a="-0.99981689453125" b="-0.01556396484375" c="-0.01556396484375" d="0.99981689453125" tx="227.6" ty="124.6"/>
                   </matrix>
@@ -348,7 +348,7 @@
                     <Point x="6.8" y="5.4"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="210.85" centerPoint3DY="134.65">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="210.85" centerPoint3DY="134.65">
                   <matrix>
                     <Matrix a="-0.271209716796875" b="-0.962493896484375" c="-0.962493896484375" d="0.271209716796875" tx="217.75" ty="140.15"/>
                   </matrix>
@@ -356,7 +356,7 @@
                     <Point x="6.85" y="5.5"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="200.9" centerPoint3DY="136.2">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="200.9" centerPoint3DY="136.2">
                   <matrix>
                     <Matrix a="-0.78240966796875" b="0.6226806640625" c="0.6226806640625" d="0.78240966796875" tx="203.15" ty="128.6"/>
                   </matrix>
@@ -364,7 +364,7 @@
                     <Point x="6.9" y="5.5"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="188.9" centerPoint3DY="138.85">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="188.9" centerPoint3DY="138.85">
                   <matrix>
                     <Matrix a="-0.78240966796875" b="0.6226806640625" c="0.6226806640625" d="0.78240966796875" tx="191.1" ty="131.1"/>
                   </matrix>
@@ -372,7 +372,7 @@
                     <Point x="6.8" y="5.5"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="177.9" centerPoint3DY="143.8">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="177.9" centerPoint3DY="143.8">
                   <matrix>
                     <Matrix a="0.0825042724609375" b="-0.99652099609375" c="-0.99652099609375" d="-0.0825042724609375" tx="183.2" ty="150.45"/>
                   </matrix>
@@ -380,7 +380,7 @@
                     <Point x="6.9" y="5.5"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="168.45" centerPoint3DY="142.9">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="168.45" centerPoint3DY="142.9">
                   <matrix>
                     <Matrix a="-0.950775146484375" b="0.3096923828125" c="0.3096923828125" d="0.950775146484375" tx="173.35" ty="135.9"/>
                   </matrix>
@@ -388,7 +388,7 @@
                     <Point x="6.85" y="5.55"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="156.4" centerPoint3DY="143.6">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="156.4" centerPoint3DY="143.6">
                   <matrix>
                     <Matrix a="-0.950775146484375" b="0.3096923828125" c="0.3096923828125" d="0.950775146484375" tx="161.05" ty="136.55"/>
                   </matrix>
@@ -396,7 +396,7 @@
                     <Point x="6.85" y="5.45"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="143.75" centerPoint3DY="144.6">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="143.75" centerPoint3DY="144.6">
                   <matrix>
                     <Matrix a="0.478515625" b="-0.87799072265625" c="0.87799072265625" d="0.478515625" tx="136.15" ty="147.6"/>
                   </matrix>
@@ -404,7 +404,7 @@
                     <Point x="6.85" y="5.5"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="135.35" centerPoint3DY="144.75">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="135.35" centerPoint3DY="144.75">
                   <matrix>
                     <Matrix a="-0.194625854492188" b="0.980804443359375" c="-0.980804443359375" d="-0.194625854492188" tx="141.45" ty="139.75"/>
                   </matrix>
@@ -412,7 +412,7 @@
                     <Point x="6.85" y="5.45"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="8.95" centerPoint3DY="80.35">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="8.95" centerPoint3DY="80.35">
                   <matrix>
                     <Matrix a="0.73394775390625" b="0.67913818359375" c="-0.67913818359375" d="0.73394775390625" tx="7.7" ty="71.9"/>
                   </matrix>
@@ -420,7 +420,7 @@
                     <Point x="6.85" y="5.5"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="8.65" centerPoint3DY="69.2">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="8.65" centerPoint3DY="69.2">
                   <matrix>
                     <Matrix a="-0.54486083984375" b="0.83843994140625" c="-0.83843994140625" d="-0.54486083984375" tx="16.75" ty="66.6"/>
                   </matrix>
@@ -428,7 +428,7 @@
                     <Point x="6.85" y="5.5"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="11.95" centerPoint3DY="53.7">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="11.95" centerPoint3DY="53.7">
                   <matrix>
                     <Matrix a="-0.601547241210938" b="0.798736572265625" c="-0.798736572265625" d="-0.601547241210938" tx="20.25" ty="51.7"/>
                   </matrix>
@@ -436,7 +436,7 @@
                     <Point x="6.85" y="5.55"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="269.8" centerPoint3DY="90.2">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="269.8" centerPoint3DY="90.2">
                   <matrix>
                     <Matrix a="-0.86077880859375" b="0.67913818359375" c="0.7965087890625" d="0.73394775390625" tx="271.15" ty="81.75"/>
                   </matrix>
@@ -444,7 +444,7 @@
                     <Point x="6.85" y="5.5"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="269.8" centerPoint3DY="77.85">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="269.8" centerPoint3DY="77.85">
                   <matrix>
                     <Matrix a="0.6390380859375" b="0.83843994140625" c="0.98333740234375" d="-0.54486083984375" tx="260.55" ty="75.25"/>
                   </matrix>
@@ -452,7 +452,7 @@
                     <Point x="6.85" y="5.5"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 1" selected="true" centerPoint3DX="266.9" centerPoint3DY="63.55">
+                <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="266.9" centerPoint3DY="63.55">
                   <matrix>
                     <Matrix a="0.70550537109375" b="0.798736572265625" c="0.936767578125" d="-0.601547241210938" tx="256.45" ty="61.55"/>
                   </matrix>
@@ -460,15 +460,15 @@
                     <Point x="6.85" y="5.5"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 2" selected="true" centerPoint3DX="212.4" centerPoint3DY="46.65">
+                <DOMSymbolInstance libraryItemName="Symbol 2" centerPoint3DX="196.05" centerPoint3DY="15.05">
                   <matrix>
-                    <Matrix tx="171" ty="24.8"/>
+                    <Matrix a="0.517166137695312" d="0.67694091796875" tx="174.65" ty="0.25"/>
                   </matrix>
                   <transformationPoint>
                     <Point x="41.4" y="21.85"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Symbol 2" selected="true" centerPoint3DX="63.9" centerPoint3DY="105.9">
+                <DOMSymbolInstance libraryItemName="Symbol 2" centerPoint3DX="63.9" centerPoint3DY="105.9">
                   <matrix>
                     <Matrix a="-0.496337890625" b="-0.042938232421875" c="0.0467376708984375" d="-0.540130615234375" tx="83.4" ty="119.25"/>
                   </matrix>
