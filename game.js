@@ -400,6 +400,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	var mkStove = makeStove.bind(undefined, this.ghosts);
 	var mkTurtle = makeTurtle.bind(undefined, this.ghosts, "");
 	var mkChocTurtle = makeTurtle.bind(undefined, this.ghosts, "choc-");
+	var mkPurpleTurtle = makeTurtle.bind(undefined, this.ghosts, "purple-");
 	var makeRaisin = makeCookie.bind(undefined, this.ghosts, "raisin", 0.1, 3, this.player);
 	var makeChip = makeCookie.bind(undefined, this.ghosts, "chip", 0.3, 2, this.player);
 	var makeSnickerdoodle = makeCookie.bind(undefined, this.ghosts, "snickerdoodle", 0.6, 1, this.player);
@@ -411,7 +412,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	spawnRandom(this, mkPot);
 	spawnRandom(this, mkPot);
 	spawnRandom(this, mkTurtle);
-	spawnRandom(this, mkChocTurtle);
+	spawnRandom(this, mkPurpleTurtle);
 	spawnRandom(this, mkStove);
 
 	this.goundSprites = [
@@ -425,7 +426,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	this.ground = entities.sort(tile.fillAreaRandomly(this.goundSprites, 0, 0, canvas.width, canvas.height));
 
 	this.timers.spawn = new Splat.Timer(undefined, 1000, function() {
-		spawnRandom(scene, random.pick([mkPot, mkTurtle, mkChocTurtle, mkStove, makeChip, makeSnickerdoodle, makeRaisin, makePeanutButter]));
+		spawnRandom(scene, random.pick([mkPot, mkTurtle, mkPurpleTurtle, mkChocTurtle, mkStove, makeChip, makeSnickerdoodle, makeRaisin, makePeanutButter]));
 		this.reset();
 		this.start();
 	});
