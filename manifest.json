@@ -1,6 +1,5 @@
 {
 	"images": {
-		"heart": "images/heart-full.png"
 	},
 	"sounds": {
 		"clank": "audio/clank.mp3",
@@ -249,6 +248,11 @@
 			"strip": "images/heart-fade-f6.png",
 			"frames": 6,
 			"msPerFrame": 50
+		},
+		"heart-full": {
+			"strip": "images/heart-full-f9.png",
+			"frames": 9,
+			"msPerFrame": 25
 		},
 		"player-pain-down": {
 			"strip": "images/player-pain-down-f4.png",

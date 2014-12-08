@@ -453,6 +453,10 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 }, function(elapsedMillis) {
 	// simulation
 
+	var heart = game.animations.get("heart-full");
+	heart.frames[0].time = 1000;
+	heart.move(elapsedMillis);
+
 	if (game.keyboard.consumePressed("f2")) {
 		debug = !debug;
 	}
@@ -567,9 +571,8 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	}
 	entities.draw(context, entities.sort(toDraw));
 
-	var heart = game.images.get("heart");
 	for (i = 0; i < this.player.hp; i++) {
-		context.drawImage(heart, 30 + i * 50, 30);
+		game.animations.get("heart-full").draw(context, 30 + i * 50, 30);
 	}
 
 	context.font = "25px helvetica";
