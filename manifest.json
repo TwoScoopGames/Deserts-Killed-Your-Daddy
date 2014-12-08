@@ -1,5 +1,6 @@
 {
 	"images": {
+		"title": "images/title.png"
 	},
 	"sounds": {
 		"clank": "audio/clank.mp3",
@@ -28,6 +29,7 @@
 		"stove-hit-1": "audio/stove-hit.mp3",
 		"stove-hit-2": "audio/stove-hit2.mp3",
 		"stove-hit-3": "audio/stove-hit3.mp3",
+		"siren": "audio/siren.mp3",
 		"sword": "audio/sword.wav",
 	},
 	"fonts": {},
