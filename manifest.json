@@ -239,6 +239,26 @@
 			"frames": 4,
 			"msPerFrame": 100
 		},
+		"gingerboss-down": {
+			"strip": "images/gingerboss-f14.png",
+			"frames": 14,
+			"msPerFrame": 20
+		},
+		"gingerboss-up": {
+			"strip": "images/gingerboss-up-f14.png",
+			"frames": 14,
+			"msPerFrame": 20
+		},
+		"gingerboss-down-pain": {
+			"strip": "images/gingerboss-f14.png",
+			"frames": 14,
+			"msPerFrame": 20
+		},
+		"gingerboss-up-pain": {
+			"strip": "images/gingerboss-up-f14.png",
+			"frames": 14,
+			"msPerFrame": 20
+		},
 		"heart-item": {
 			"strip": "images/heart-item.png",
 			"frames": 1,

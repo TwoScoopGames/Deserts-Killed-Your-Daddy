@@ -193,11 +193,41 @@ function makeCookie(heartList, type, speed, hp, player, x, y) {
 		if (player.wasRight(this)) {
 			this.direction = "right";
 		}
-		moveEntity(this, player.wasAbove(this), player.wasBelow(this), !this.exploding && this.direction === "left", !this.exploding && this.direction === "right", 0.01, speed);
+		if (!this.exploding) {
+			moveEntity(this, player.wasAbove(this), player.wasBelow(this), this.direction === "left", this.direction === "right", 0.01, speed);
+		}
 		Splat.AnimatedEntity.prototype.move.call(this, elapsedMillis);
 	};
 	makeMoveDamageable(cookie, hp, 400, 0.02, heartList);
 	return cookie;
+}
+
+function makeGingerboss(heartList, player, x, y) {
+	var anim = game.animations.get("gingerboss-down").copy();
+	var gingerboss = new Splat.AnimatedEntity(x, y, 171, 62, anim, -37, -248);
+	gingerboss.walkDown = anim;
+	gingerboss.walkUp = game.animations.get("gingerboss-up").copy();
+	gingerboss.painDown = game.animations.get("gingerboss-up-pain").copy();
+	gingerboss.painUp = game.animations.get("gingerboss-down-pain").copy();
+	gingerboss.direction = "down";
+	gingerboss.damage = 1;
+	gingerboss.hitSound = ["cookie-raisin-pain", "cookie-raisin-pain2", "cookie-raisin-pain3"];
+	gingerboss.blowback = 0.5;
+	gingerboss.score = 1;
+	gingerboss.move = function(elapsedMillis) {
+		if (player.wasAbove(this)) {
+			this.direction = "up";
+		}
+		if (player.wasBelow(this)) {
+			this.direction = "down";
+		}
+		if (!this.exploding) {
+			moveEntity(this, this.direction === "up", this.direction === "down", player.wasLeft(this), player.wasRight(this), 0.01, 0.2);
+		}
+		Splat.AnimatedEntity.prototype.move.call(this, elapsedMillis);
+	};
+	makeMoveDamageable(gingerboss, 10, 400, 0.02, heartList);
+	return gingerboss;
 }
 
 function animationTotalTime(anim) {
@@ -424,6 +454,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	var makeChip = makeCookie.bind(undefined, this.ghosts, "chip", 0.3, 2, this.player);
 	var makeSnickerdoodle = makeCookie.bind(undefined, this.ghosts, "snickerdoodle", 0.6, 1, this.player);
 	var makePeanutButter = makeCookie.bind(undefined, this.ghosts, "peanutbutter", 0.3, 2, this.player);
+	var mkGingerboss = makeGingerboss.bind(undefined, this.ghosts, this.player);
 
 	spawnRandom(this, mkPot);
 	spawnRandom(this, mkPot);
@@ -450,6 +481,20 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 		this.start();
 	});
 	this.timers.spawn.start();
+
+	this.timers.gingerboss = new Splat.Timer(undefined, 1000, function() {
+		this.iters++;
+		if (this.iters < 3) {
+			game.sounds.play("cookie-raisin-pain");
+			this.reset();
+			this.start();
+			return;
+		}
+
+		spawnRandom(scene, mkGingerboss);
+		this.iters = 0;
+	});
+	this.timers.gingerboss.iters = 0;
 }, function(elapsedMillis) {
 	// simulation
 
@@ -548,6 +593,10 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 			if (this.ghosts[i].score) {
 				score += this.ghosts[i].score;
 				game.sounds.play("pop");
+
+				if (score % 50 === 0) {
+					this.timers.gingerboss.start();
+				}
 			}
 			this.ghosts.splice(i, 1);
 			i--;
@@ -570,6 +619,16 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 		outline(context, this.ghosts[i], "gray");
 	}
 	entities.draw(context, entities.sort(toDraw));
+
+	if (this.timers.gingerboss.running) {
+		var alpha = Math.min(0.5, Splat.math.oscillate(this.timers.gingerboss.time, 500));
+		context.fillStyle = "rgba(226, 0, 0, " + alpha + ")";
+		context.fillRect(0, 0, canvas.width, canvas.height);
+
+		context.font = "50px helvetica";
+		context.fillStyle = "rgba(255, 255, 255, " + alpha + ")";
+		centerText(context, "GINGERBOSS INCOMING", 0, canvas.height / 2);
+	}
 
 	for (i = 0; i < this.player.hp; i++) {
 		game.animations.get("heart-full").draw(context, 30 + i * 50, 30);
