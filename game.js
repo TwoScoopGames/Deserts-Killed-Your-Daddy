@@ -36,7 +36,7 @@ function moveSword(player, timer) {
 
 var debug = false;
 
-function makePot(list, x, y) {
+function makePot(heartList, x, y) {
 	var anim = game.animations.get("pot").copy();
 	var pot = new Splat.AnimatedEntity(x, y, 56, 56, anim, -28, -13);
 	pot.painRight = anim;
@@ -48,7 +48,7 @@ function makePot(list, x, y) {
 		}
 		Splat.AnimatedEntity.prototype.move.call(this, elapsedMillis);
 	};
-	makeMoveDamageable(pot, 1, animationTotalTime(anim), 0.1, list);
+	makeMoveDamageable(pot, 1, animationTotalTime(anim), 0.1, heartList);
 	return pot;
 }
 
@@ -58,9 +58,14 @@ function makeHeart(x, y) {
 	heart.heal = 1;
 	heart.time = 0;
 	heart.hitSound = ["heart"];
+	heart.exploding = true;
 	heart.move = function(elapsedMillis) {
 		Splat.AnimatedEntity.prototype.move.call(this, elapsedMillis);
 		this.time += elapsedMillis;
+		if (this.exploding && this.time > 200) {
+			this.time = 0;
+			this.exploding = false;
+		}
 		if (!this.fading && this.time > 4000) {
 			this.sprite = game.animations.get("heart-fade").copy();
 			this.fading = true;
@@ -99,7 +104,7 @@ function makeStove(x, y) {
 	return stove;
 }
 
-function makeMoveDamageable(entity, hp, invincibleTime, heartChance, list) {
+function makeMoveDamageable(entity, hp, invincibleTime, heartChance, heartList) {
 	entity.hitTime = 0;
 	entity.hp = hp;
 	entity.heartChance = heartChance;
@@ -108,7 +113,7 @@ function makeMoveDamageable(entity, hp, invincibleTime, heartChance, list) {
 	entity.move = function(elapsedMillis) {
 		if (this.exploding) {
 			if (Math.random() < entity.heartChance) {
-				list.push(makeHeart(entity.x, entity.y));
+				heartList.push(makeHeart(entity.x, entity.y));
 			}
 			entity.heartChance = 0;
 			this.sprite = this.painRight;
@@ -389,7 +394,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	this.solid = [];
 	this.ghosts = [];
 
-	var mkPot = makePot.bind(undefined, this.solid);
+	var mkPot = makePot.bind(undefined, this.ghosts);
 	var mkTurtle = makeTurtle.bind(undefined, "");
 	var mkChocTurtle = makeTurtle.bind(undefined, "choc-");
 	spawnRandom(this, mkPot);
