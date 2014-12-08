@@ -13,6 +13,9 @@ var manifest = require("./manifest.json");
 var game = new Splat.Game(canvas, manifest);
 
 function movePlayer(player) {
+	if (player.hp < 1) {
+		return;
+	}
 	moveEntity(player,
 		game.keyboard.isPressed("w") || game.keyboard.isPressed("up"),
 		game.keyboard.isPressed("s") || game.keyboard.isPressed("down"),
@@ -87,8 +90,11 @@ function makeStove(x, y) {
 	makeMoveDamageable(stove, 6, 500, 0, []);
 	var oldMove = stove.move;
 	stove.move = function(elapsedMillis) {
-		this.painRight = this.painAnims[this.hp - 1];
+		this.painRight = this.painAnims[Math.min(this.painAnims.length - 1, this.hp)];
 		oldMove.call(this, elapsedMillis);
+		if (this.exploding) {
+			this.sprite = this.painRight = this.painAnims[Math.min(this.painAnims.length - 1, this.hp)];
+		}
 	};
 	return stove;
 }
@@ -118,11 +124,11 @@ function makeMoveDamageable(entity, hp, invincibleTime, heartChance, list) {
 
 			if (this.hitTime === 0) {
 				this.sprite.reset();
+				this.hp--;
 			}
 			this.hitTime += elapsedMillis;
 
 			if (this.hitTime > invincibleTime) {
-				this.hp--;
 				if (this.hp <= 0) {
 					this.dead = true;
 				} else {
