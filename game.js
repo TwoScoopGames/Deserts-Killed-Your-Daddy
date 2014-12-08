@@ -214,6 +214,7 @@ function makeGingerboss(heartList, player, x, y) {
 	gingerboss.hitSound = ["cookie-raisin-pain", "cookie-raisin-pain2", "cookie-raisin-pain3"];
 	gingerboss.blowback = 0.5;
 	gingerboss.score = 1;
+	gingerboss.enterSound = "gingerboss-enter";
 	gingerboss.move = function(elapsedMillis) {
 		if (player.wasAbove(this)) {
 			this.direction = "up";
@@ -256,6 +257,10 @@ function makeFallingEntity(x, y, entity, list, player) {
 			this.dead = true;
 			this.source.vy = 0;
 			list.push(this.source);
+			if (this.source.enterSound) {
+				game.sounds.play(this.source.enterSound);
+			}
+
 			if (this.collides(player)) {
 				player.exploding = true;
 				game.sounds.play(random.pick(player.hitSound));
