@@ -320,5 +320,11 @@
 			"frames": 1,
 			"msPerFrame": 20
 		},
+		"two-scoop": {
+			"strip": "images/two-scoop-anim.png",
+			"frames": 32,
+			"msPerFrame": 50,
+			"repeatAt": 31
+		},
 	}
 }

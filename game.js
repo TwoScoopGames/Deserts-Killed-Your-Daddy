@@ -257,7 +257,26 @@ function makeSwordDraw(player, direction) {
 		outline(context, this, "green");
 	};
 }
+
 game.scenes.add("title", new Splat.Scene(canvas, function() {
+	this.timers.running = new Splat.Timer(null, 2000, function() {
+		game.scenes.switchTo("game-title");
+	});
+	this.timers.running.start();
+}, function(elapsedMillis) {
+	game.animations.get("two-scoop").move(elapsedMillis);
+}, function(context) {
+	context.fillStyle = "#93cbcd";
+	context.fillRect(0, 0, canvas.width, canvas.height);
+	var anim = game.animations.get("two-scoop");
+	context.fillStyle = "#ffffff";
+	context.font = "50px olivier";
+	centerText(context, "Two Scoop Games", 0, (canvas.height / 2) + (anim.height / 2) + 30);
+
+	anim.draw(context, (canvas.width / 2) - (anim.width / 2), (canvas.height / 2) - (anim.height / 2));
+}));
+
+game.scenes.add("game-title", new Splat.Scene(canvas, function() {
 	// initialization
 }, function() {
 	// simulation
