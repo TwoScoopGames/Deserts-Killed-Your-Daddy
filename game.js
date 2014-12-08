@@ -646,11 +646,13 @@ game.scenes.add("gameover", new Splat.Scene(canvas, function() {
 	// initialization
 	this.timers.next = new Splat.Timer(undefined, 1000, undefined);
 	this.timers.next.start();
-}, function() {
+}, function(elapsedMillis) {
 	// simulation
 	if (!this.timers.next.running && (game.keyboard.consumePressed("space") || game.keyboard.consumePressed("j"))) {
 		game.scenes.switchTo("main");
 	}
+
+	game.animations.get("game-over").move(elapsedMillis);
 }, function(context) {
 	// draw
 	context.fillStyle = "black";
@@ -663,6 +665,8 @@ game.scenes.add("gameover", new Splat.Scene(canvas, function() {
 	if (!this.timers.next.running) {
 		centerText(context, "J or SPACE to RESTART", 0, canvas.height / 2 + 100);
 	}
+
+	game.animations.get("game-over").draw(context, 885, 485);
 }));
 
 game.scenes.switchTo("loading");

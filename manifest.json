@@ -241,6 +241,11 @@
 			"frames": 4,
 			"msPerFrame": 100
 		},
+		"game-over": {
+			"strip": "images/game-over-f23.png",
+			"frames": 23,
+			"msPerFrame": 100
+		},
 		"gingerboss-down": {
 			"strip": "images/gingerboss-f14.png",
 			"frames": 14,
