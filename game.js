@@ -259,12 +259,11 @@ function makeSwordDraw(player, direction) {
 }
 game.scenes.add("title", new Splat.Scene(canvas, function() {
 	// initialization
-	this.timers.expire = new Splat.Timer(undefined, 3000, function() {
-		game.scenes.switchTo("main");
-	});
-	this.timers.expire.start();
 }, function() {
 	// simulation
+	if (game.keyboard.consumePressed("space") || game.keyboard.consumePressed("j")) {
+		game.scenes.switchTo("main");
+	}
 }, function(context) {
 	// draw
 	context.fillStyle = "black";
@@ -276,8 +275,9 @@ game.scenes.add("title", new Splat.Scene(canvas, function() {
 
 	context.fillStyle = "#fff";
 	context.font = "25px helvetica";
-	centerText(context, "WASD, ARROWS = MOVE", 0, canvas.height / 2 + 40);
-	centerText(context, "J, SPACE = ATTACK", 0, canvas.height / 2 + 90);
+	centerText(context, "WASD or ARROWS to MOVE", 0, canvas.height / 2 + 40);
+	centerText(context, "J or SPACE to ATTACK", 0, canvas.height / 2 + 90);
+	centerText(context, "J or SPACE to START", 0, canvas.height / 2 + 300);
 }));
 
 function resolveCollisionShortest(player, entity) {
@@ -574,9 +574,11 @@ function centerText(context, text, offsetX, offsetY) {
 
 game.scenes.add("gameover", new Splat.Scene(canvas, function() {
 	// initialization
+	this.timers.next = new Splat.Timer(undefined, 1000, undefined);
+	this.timers.next.start();
 }, function() {
 	// simulation
-	if (game.keyboard.consumePressed("space")) {
+	if (!this.timers.next.running && (game.keyboard.consumePressed("space") || game.keyboard.consumePressed("j"))) {
 		game.scenes.switchTo("main");
 	}
 }, function(context) {
@@ -588,7 +590,9 @@ game.scenes.add("gameover", new Splat.Scene(canvas, function() {
 	context.font = "25px helvetica";
 	centerText(context, "GAME OVER", 0, canvas.height / 2 - 13);
 	centerText(context, score + " PTS", 0, canvas.height / 2 + 30);
-	centerText(context, "PRESS SPACE TO RESTART", 0, canvas.height / 2 + 100);
+	if (!this.timers.next.running) {
+		centerText(context, "J or SPACE to RESTART", 0, canvas.height / 2 + 100);
+	}
 }));
 
 game.scenes.switchTo("loading");
