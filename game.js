@@ -79,7 +79,7 @@ function makeHeart(x, y) {
 	return heart;
 }
 
-function makeStove(x, y) {
+function makeStove(heartList, x, y) {
 	var anim = game.animations.get("stove").copy();
 	var stove = new Splat.AnimatedEntity(x, y, anim.width, anim.height - 74, anim, 0, 74 - anim.height);
 	stove.hitSound = ["stove-hit-1", "stove-hit-2", "stove-hit-3"];
@@ -92,7 +92,7 @@ function makeStove(x, y) {
 		game.animations.get("destructable-oven-2").copy(),
 		game.animations.get("destructable-oven-1").copy()
 	];
-	makeMoveDamageable(stove, 6, 500, 0, []);
+	makeMoveDamageable(stove, 6, 500, 0.1, heartList);
 	var oldMove = stove.move;
 	stove.move = function(elapsedMillis) {
 		this.painRight = this.painAnims[Math.min(this.painAnims.length - 1, this.hp)];
@@ -112,10 +112,6 @@ function makeMoveDamageable(entity, hp, invincibleTime, heartChance, heartList) 
 
 	entity.move = function(elapsedMillis) {
 		if (this.exploding) {
-			if (Math.random() < entity.heartChance) {
-				heartList.push(makeHeart(entity.x, entity.y));
-			}
-			entity.heartChance = 0;
 			this.sprite = this.painRight;
 			if (this.direction === "left") {
 				this.sprite = this.painLeft;
@@ -141,12 +137,18 @@ function makeMoveDamageable(entity, hp, invincibleTime, heartChance, heartList) 
 				}
 				this.hitTime = 0;
 			}
+			if (this.hp <= 0) {
+				if (Math.random() < entity.heartChance) {
+					heartList.push(makeHeart(entity.x, entity.y));
+				}
+				entity.heartChance = 0;
+			}
 		}
 		origMove.call(this, elapsedMillis);
 	};
 }
 
-function makeTurtle(type, x, y) {
+function makeTurtle(heartList, type, x, y) {
 	var anim = game.animations.get("cake-turtle-" + type + "left").copy();
 	var turtle = new Splat.AnimatedEntity(x, y, 74, 74, anim, -25, -4);
 	turtle.walkLeft = anim;
@@ -168,11 +170,11 @@ function makeTurtle(type, x, y) {
 		moveEntity(this, false, false, !this.exploding && this.direction === "left", !this.exploding && this.direction === "right", 0.01, 0.3);
 		Splat.AnimatedEntity.prototype.move.call(this, elapsedMillis);
 	};
-	makeMoveDamageable(turtle, 2, 400, 0, []);
+	makeMoveDamageable(turtle, 2, 400, 0.02, heartList);
 	return turtle;
 }
 
-function makeCookie(type, speed, hp, player, x, y) {
+function makeCookie(heartList, type, speed, hp, player, x, y) {
 	var anim = game.animations.get("cookie-" + type + "-left").copy();
 	var cookie = new Splat.AnimatedEntity(x, y, 74, 74, anim, -25, -4);
 	cookie.walkLeft = anim;
@@ -194,7 +196,7 @@ function makeCookie(type, speed, hp, player, x, y) {
 		moveEntity(this, player.wasAbove(this), player.wasBelow(this), !this.exploding && this.direction === "left", !this.exploding && this.direction === "right", 0.01, speed);
 		Splat.AnimatedEntity.prototype.move.call(this, elapsedMillis);
 	};
-	makeMoveDamageable(cookie, hp, 400, 0, []);
+	makeMoveDamageable(cookie, hp, 400, 0.02, heartList);
 	return cookie;
 }
 
@@ -395,8 +397,14 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	this.ghosts = [];
 
 	var mkPot = makePot.bind(undefined, this.ghosts);
-	var mkTurtle = makeTurtle.bind(undefined, "");
-	var mkChocTurtle = makeTurtle.bind(undefined, "choc-");
+	var mkStove = makeStove.bind(undefined, this.ghosts);
+	var mkTurtle = makeTurtle.bind(undefined, this.ghosts, "");
+	var mkChocTurtle = makeTurtle.bind(undefined, this.ghosts, "choc-");
+	var makeRaisin = makeCookie.bind(undefined, this.ghosts, "raisin", 0.1, 3, this.player);
+	var makeChip = makeCookie.bind(undefined, this.ghosts, "chip", 0.3, 2, this.player);
+	var makeSnickerdoodle = makeCookie.bind(undefined, this.ghosts, "snickerdoodle", 0.6, 1, this.player);
+	var makePeanutButter = makeCookie.bind(undefined, this.ghosts, "peanutbutter", 0.3, 2, this.player);
+
 	spawnRandom(this, mkPot);
 	spawnRandom(this, mkPot);
 	spawnRandom(this, mkPot);
@@ -404,7 +412,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	spawnRandom(this, mkPot);
 	spawnRandom(this, mkTurtle);
 	spawnRandom(this, mkChocTurtle);
-	spawnRandom(this, makeStove);
+	spawnRandom(this, mkStove);
 
 	this.goundSprites = [
 		game.animations.get("bg-1"),
@@ -416,13 +424,8 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 
 	this.ground = entities.sort(tile.fillAreaRandomly(this.goundSprites, 0, 0, canvas.width, canvas.height));
 
-	var makeRaisin = makeCookie.bind(undefined, "raisin", 0.1, 3, this.player);
-	var makeChip = makeCookie.bind(undefined, "chip", 0.3, 2, this.player);
-	var makeSnickerdoodle = makeCookie.bind(undefined, "snickerdoodle", 0.6, 1, this.player);
-	var makePeanutButter = makeCookie.bind(undefined, "peanutbutter", 0.3, 2, this.player);
-
 	this.timers.spawn = new Splat.Timer(undefined, 1000, function() {
-		spawnRandom(scene, random.pick([mkPot, mkTurtle, mkChocTurtle, makeStove, makeChip, makeSnickerdoodle, makeRaisin, makePeanutButter]));
+		spawnRandom(scene, random.pick([mkPot, mkTurtle, mkChocTurtle, mkStove, makeChip, makeSnickerdoodle, makeRaisin, makePeanutButter]));
 		this.reset();
 		this.start();
 	});
