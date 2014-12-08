@@ -485,7 +485,6 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 	this.timers.gingerboss = new Splat.Timer(undefined, 1000, function() {
 		this.iters++;
 		if (this.iters < 3) {
-			game.sounds.play("cookie-raisin-pain");
 			this.reset();
 			this.start();
 			return;
@@ -596,6 +595,7 @@ game.scenes.add("main", new Splat.Scene(canvas, function() {
 
 				if (score % 50 === 0) {
 					this.timers.gingerboss.start();
+					game.sounds.play("siren");
 				}
 			}
 			this.ghosts.splice(i, 1);
